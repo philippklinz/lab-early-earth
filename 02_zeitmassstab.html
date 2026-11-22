@@ -7,7 +7,10 @@
 <title>Geological Time Explorer — Die frühe Erde</title>
 <link rel="stylesheet" href="modern-objectivity.css">
 <link rel="stylesheet" href="earth-lab.css">
+<link rel="stylesheet" href="period-portraits.css">
 <script defer src="time-data.js"></script>
+<script defer src="period-portraits-data.js"></script>
+<script defer src="period-portraits.js"></script>
 <script defer src="timeline.js"></script>
 </head>
 <body class="earth-stage">
@@ -65,9 +68,87 @@
  </dl>
  <p id="inspector-fact">Ein Abschnitt der frühen Erdgeschichte.</p>
  <p id="inspector-note"></p>
- <div class="earth-chip-group"><button type="button" id="focus-selection" class="mo-btn mo-btn-primary mo-btn-sm">Abschnitt vergrößern ↗</button><button type="button" id="parent-selection" class="mo-btn mo-btn-sm" hidden>Übergeordneten Abschnitt wählen</button></div>
+ <div class="earth-chip-group"><button type="button" id="portrait-read" class="mo-btn mo-btn-primary mo-btn-sm">Zeitporträt lesen ↓</button><button type="button" id="focus-selection" class="mo-btn mo-btn-sm">Abschnitt vergrößern ↗</button><button type="button" id="parent-selection" class="mo-btn mo-btn-sm" hidden>Übergeordneten Abschnitt wählen</button></div>
 </aside>
 </div>
+<section class="earth-portrait" id="portrait-panel" aria-labelledby="portrait-heading">
+  <header class="portrait-top">
+    <div><span class="earth-overline">02 / WISSENSHILFE · 36 GEOLOGISCHE ZEITPORTRÄTS</span>
+    <h2 id="portrait-heading">Was macht dieses Zeitalter aus?</h2>
+    <p>Wähle oben einen Abschnitt, um seine Geschichte, geologischen Merkmale und Grenzen zu untersuchen.</p></div>
+    <div class="portrait-switch" role="group" aria-label="Benachbarte Zeiteinheiten">
+      <button type="button" class="mo-btn mo-btn-sm" id="portrait-prev">← Älter</button>
+      <button type="button" class="mo-btn mo-btn-sm" id="portrait-next">Jünger →</button>
+      <button type="button" class="mo-btn mo-btn-sm" id="portrait-copy-link">Link kopieren ↗</button>
+    </div>
+  </header>
+  <div class="portrait-main">
+    <div class="portrait-graphic" aria-label="Symbolische geologische Illustration">
+      <div class="accent-line" aria-hidden="true"></div>
+      <div class="portrait-graphic-header"><span id="portrait-graphic-identity">ÄON / HADAIKUM</span><span>FIG. 002 / SYMBOLISCH</span></div>
+      <div id="portrait-illustration" class="portrait-visual" role="img" aria-label="Symbolische Darstellung der frühen Erde">
+        <p>Die Illustration wird geladen. Inhalt und Quellen sind ohne JavaScript in den Links der geologischen Fachliteratur zugänglich.</p>
+      </div>
+      <p id="portrait-graphic-caption" class="portrait-graphic-caption">Keine maßstabsgetreue Rekonstruktion.</p>
+      <div class="portrait-graphic-footer"><span>WISSENSHILFE, KEIN MESSBILD</span><span>ICS / 2026-06</span></div>
+    </div>
+    <div class="portrait-intro">
+      <span id="portrait-breadcrumb" class="portrait-breadcrumb">Hadaikum</span>
+      <h3 id="portrait-name" tabindex="-1">Hadaikum</h3>
+      <p id="portrait-tagline" class="portrait-tagline">Die früheste Erdgeschichte beginnt.</p>
+      <p id="portrait-definition" class="portrait-description">Fachlicher Überblick wird geladen.</p>
+      <div class="portrait-time-context" aria-label="Dauer im übergeordneten Zeitraum">
+        <div class="portrait-context-title"><strong id="portrait-parent-label">Gesamte Erdgeschichte</strong><span id="portrait-period">4567–4031 Ma</span></div>
+        <div class="portrait-context-track"><div id="portrait-context-band" class="portrait-context-band" style="left:0;width:12%"></div></div>
+        <div class="portrait-context-caption"><span id="portrait-context-older">4567 Ma</span><span id="portrait-context-younger">heute</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="portrait-sections">
+    <section class="portrait-block feature" aria-labelledby="portrait-features-title">
+      <span class="portrait-block-overline">01 / CHARAKTERISTIK</span>
+      <h4 id="portrait-features-title">Drei Dinge, die diesen Abschnitt prägen</h4>
+      <div id="portrait-feature-grid" class="portrait-feature-grid"><p>Wähle ein Äon, eine Ära oder Periode auf der Zeitleiste.</p></div>
+    </section>
+    <section class="portrait-block boundary" aria-labelledby="portrait-why-title">
+      <span class="portrait-block-overline">02 / STRATIGRAPHIE</span>
+      <h4 id="portrait-why-title">Warum beginnt das Zeitalter hier?</h4>
+      <p id="portrait-boundary">Die geologische Grenzdefinition wird geladen.</p>
+    </section>
+    <section class="portrait-block caution" aria-labelledby="portrait-caution-title">
+      <span class="portrait-block-overline">03 / WISSENSCHAFTLICHE EINORDNUNG</span>
+      <h4 id="portrait-caution-title">Was wir nicht behaupten sollten</h4>
+      <p id="portrait-caution">Aussagen über geologische Grenzwerte besitzen verschiedene Grade an Sicherheit.</p>
+    </section>
+    <div class="portrait-memory">
+      <span class="memory-symbol" aria-hidden="true">✳</span>
+      <div><span class="portrait-block-overline">04 / MERKSATZ</span><strong id="portrait-memo">Hadaikum – der Anfang der Erdgeschichte.</strong></div>
+    </div>
+  </div>
+  <section class="portrait-notes-section" aria-labelledby="portrait-notes-title">
+    <div>
+      <span class="earth-overline">05 / DEIN WISSEN</span>
+      <h3 id="portrait-notes-title">Meine Notizen zu diesem Abschnitt</h3>
+      <p>Wie auf deiner ausgedruckten Tabelle: ergänze eigene Merksätze, Fragen und Entdeckungen. Die Notiz wird automatisch nur in diesem Browser gespeichert. Sie ist nicht Teil der wissenschaftlichen Quelle.</p>
+      <label class="mo-field" for="portrait-notes"><span class="mo-field-label">Persönliche Notiz (bis zu 5000 Zeichen)</span></label>
+      <textarea id="portrait-notes" class="mo-textarea" maxlength="5000" placeholder="Zum Beispiel: Woran erkenne ich diese Periode? Welche Fossilien sind typisch? Was will ich noch nachschlagen?"></textarea>
+      <div class="portrait-notes-controls"><button id="portrait-clear-note" class="mo-btn mo-btn-sm" type="button">Diese Notiz löschen</button></div>
+      <span id="portrait-notes-status" class="portrait-notes-status" role="status" aria-live="polite"></span>
+    </div>
+    <aside class="portrait-notes-side">
+      <div><strong>Dein eigenes geologisches Notizbuch</strong><p>Ohne Konto, Server oder Synchronisierung. Browserdaten können gelöscht werden – deshalb kannst du alle Notizen als Datei sichern.</p><small id="portrait-note-count">0 / 36 Abschnitte mit Notizen.</small></div>
+      <div>
+        <div class="portrait-notes-controls"><button id="portrait-export" class="mo-btn mo-btn-primary mo-btn-sm" type="button">Alle Notizen exportieren ↓</button></div>
+        <label class="portrait-note-file" for="portrait-import">Sicherung importieren (ersetzt vorhandene Notizen)<input id="portrait-import" type="file" accept="application/json,.json"></label>
+      </div>
+    </aside>
+  </section>
+  <div class="portrait-sources">
+    <strong>QUELLEN / WEITERLESEN</strong>
+    <div id="portrait-source-links" style="display:flex;gap:15px;flex-wrap:wrap"></div>
+    <p>Die Zahlengrenzen folgen ICS v2026/06. Die erläuternden Porträts sind eigene, vereinfachte Synthesen aus den verlinkten Fachquellen und keine offiziellen Texte der ICS. Ein markantes Ereignis muss nicht mit dem formalen Grenzpunkt identisch sein. Die Grafiken sind symbolisch und nicht wissenschaftlich maßstabsgerecht.</p>
+  </div>
+</section>
 <div class="earth-datapanel earth-catalog">
 <div class="earth-section-heading"><div><div class="earth-overline">GEOLOGISCHE HIERARCHIE</div><h2>Einheiten entdecken</h2></div><p>Die Liste bleibt auch bei kleinsten Zeitabschnitten bedienbar. Wähle einen Namen und springe direkt zu seiner Position.</p></div>
 <div id="unit-directory" class="earth-unit-grid">
