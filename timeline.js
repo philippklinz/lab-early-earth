@@ -8,7 +8,8 @@ const lanes={eon:$('lane-eon'),era:$('lane-era'),period:$('lane-period')};
 if(!lanes.eon||!lanes.era||!lanes.period)return;
 const PRESETS={all:[4567,0],precambrian:[4567,538.8],phan:[538.8,0],paleo:[538.8,251.902],meso:[251.902,66],ceno:[66,0]};
 const TOTAL=4567,MIN_SPAN=.2;
-let view={old:TOTAL,young:0},selected=G.byId.get('had'),mask=false,drag=null;
+const requestedUnit=(location.hash.match(/^#unit=([a-z0-9_-]+)$/)||[])[1];
+let view={old:TOTAL,young:0},selected=G.byId.get(requestedUnit)||G.byId.get('had'),mask=false,drag=null;
 const fmt=n=>G.fmt(n);
 const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
 
@@ -42,6 +43,7 @@ function select(unit){
   $('inspector-note').textContent=unit.note||'Numerische Alter dienen der Kalibrierung und können revidiert werden.';
   $('parent-selection').hidden=!unit.parent;
   renderLanes();
+  window.dispatchEvent(new CustomEvent('geo-unit-selected',{detail:{id:unit.id}}));
 }
 function renderTicks(){
  const scale=$('time-scale'),span=view.old-view.young;
@@ -189,5 +191,17 @@ host.addEventListener('wheel',e=>{
  const x=clamp((e.clientX-box.left)/Math.max(box.width,1),0,1);
  zoom(e.deltaY>0?1.18:.82,view.old-x*(view.old-view.young));
 },{passive:false});
-renderOverview();renderDirectory();select(selected);setWindow(TOTAL,0);
+window.addEventListener('geo-portrait-navigate',event=>{
+  const target=G.byId.get(event.detail?.id);
+  if(!target)return;
+  focusUnit(target);
+  const profile=$('portrait-panel');
+  if(profile){
+    const reduce=window.matchMedia?.('(prefers-reduced-motion:reduce)').matches;
+    profile.scrollIntoView({behavior:reduce?'instant':'smooth',block:'start'});
+  }
+});
+renderOverview();renderDirectory();select(selected);
+if(requestedUnit&&G.byId.has(requestedUnit))focusUnit(selected);
+else setWindow(TOTAL,0);
 })();
