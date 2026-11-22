@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f7f7">
+<meta name="description" content="Geologische Methoden interaktiv verstehen: Stratigraphie, relative Altersabfolge, radiometrische Datierung, Halbwertszeit und Belege für die frühe Erde.">
+<title>Wie wissen wir das? – Learning Lab 01</title>
+<link rel="stylesheet" href="modern-objectivity.css">
+<link rel="stylesheet" href="earth-lab.css">
+<link rel="stylesheet" href="earth-inquiry.css">
+<script defer src="geological-methods.js"></script>
+</head>
+<body class="earth-stage">
+<a href="#main" class="earth-skip">Zum Inhalt springen</a>
+<header class="earth-header"><div class="earth-wrap earth-header-inner">
+<a href="index.html" class="earth-brand"><span class="earth-symbol" aria-hidden="true">◉</span><span class="earth-brand-name">DIE FRÜHE ERDE<small>LEARNING LAB / 01</small></span></a>
+<nav class="earth-nav" aria-label="Labor-Navigation"><a href="index.html">Übersicht</a><a href="01_protoerde.html">Proto-Erde 3D</a><a href="02_zeitmassstab.html">Zeitskala</a><a href="03_zeittrainer.html">Zeittrainer</a><a href="04_junge_erde.html">Junge Erde</a><a href="05_geologische_methoden.html" aria-current="page">Methoden</a><a href="https://philippklinz.github.io/learning-labs/" class="earth-home-link">Alle Labore ↗</a></nav>
+</div></header>
+<main id="main" class="earth-wrap earth-page">
+<div class="earth-crumb"><a href="index.html">LAB 01</a> / UNTERLABOR 05 / GEOLOGISCHE METHODEN</div>
+<section class="inquiry-hero">
+<div><div class="earth-overline">GEOLOGISCHES METHODENLABOR / 05</div>
+<h1>Wie können wir das<br><em>überhaupt wissen?</em></h1>
+<p class="earth-lead">Niemand hat die Entstehung der Erde beobachtet. Was wir wissen, entsteht aus Spuren und überprüfbaren Methoden. Probiere zwei davon selbst aus – und untersuche die Grenzen der Schlussfolgerungen.</p>
+<div class="inquiry-badges"><span>RELATIVE ZEIT</span><span>RADIOAKTIVER ZERFALL</span><span>EVIDENZ &amp; INTERPRETATION</span><span>OHNE BENUTZERKONTO</span></div></div>
+<aside class="inquiry-index"><span>PRINZIP</span><strong>Beobachten → Prüfen → Schließen</strong><span>Ein geologisches Alter ist eine begründete Schlussfolgerung aus messbaren Befunden.</span></aside>
+</section>
+<section class="inquiry-section" id="strata" aria-labelledby="strata-heading">
+<div class="inquiry-section-title">
+<div><div class="earth-overline">01 / RELATIVE DATIERUNG</div><h2 id="strata-heading">Welche Schicht ist älter?</h2></div>
+<p>Schichten erzählen eine Reihenfolge, auch wenn ihre Entstehungszeiten unbekannt sind. Aber ein später eingedrungenes Magma kann ältere Schichten durchschneiden.</p>
+</div>
+<div class="inquiry-panel inquiry-layout">
+<div class="inquiry-stage inquiry-strata">
+ <div class="inquiry-stage-meta"><span>FIG. 005 / SCHEMATISCHER AUFSCHLUSS</span><span>NICHT MASSSTÄBLICH</span></div>
+ <svg viewBox="0 0 640 425" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematischer Gesteinsaufschluss mit vier horizontalen Schichten A bis D, A unten und D oben. Ein magmatischer Gang E durchschneidet A, B und C, aber nicht D.">
+ <defs><pattern id="strata-grain" width="35" height="23" patternUnits="userSpaceOnUse"><path d="M4 9h8m10 7h10M18 2h6" stroke="#244049" stroke-opacity=".32"/></pattern></defs>
+ <rect width="640" height="425" fill="#142a33"/>
+ <path d="M48 361V73H592V361Z" fill="#ddc39a" stroke="#d5eee4" stroke-opacity=".5" stroke-width="2"/>
+ <rect x="48" y="289" width="544" height="72" fill="#a67464"/>
+ <rect x="48" y="234" width="544" height="55" fill="#789eac"/>
+ <rect x="48" y="171" width="544" height="63" fill="#c8af84"/>
+ <rect x="48" y="91" width="544" height="80" fill="#88a99d"/>
+ <rect x="48" y="91" width="544" height="270" fill="url(#strata-grain)" opacity=".75"/>
+ <path d="M48 171Q93 163 141 172T240 171T340 171T446 170T540 170T592 171" fill="none" stroke="#f2e2ce" stroke-width="5"/>
+ <path d="M48 234h544M48 289h544" stroke="#294651" stroke-opacity=".5" stroke-width="2"/>
+ <!-- E intrudes older A/B/C, gets eroded, then D accumulates over the erosional surface. -->
+ <path d="M307 361L322 291L304 244L334 179L379 179L359 245L390 294L371 361Z" fill="#db8065" stroke="#f2baa1" stroke-width="3"/>
+ <path d="M333 179L322 167M378 179l12-10" stroke="#f4e6d2" stroke-width="3" stroke-dasharray="3 6"/>
+ <g font-family="Liberation Mono,monospace" font-size="20" font-weight="bold" fill="#122e37">
+  <text x="100" y="138">D</text><text x="100" y="205">C</text><text x="100" y="269">B</text><text x="100" y="333">A</text>
+  <text x="344" y="300" fill="#fff7e6" text-anchor="middle">E</text>
+ </g>
+ <path d="M468 166L495 141L571 141" stroke="#e7f5e4" stroke-width="2" fill="none"/>
+ <text x="574" y="133" text-anchor="end" font-family="monospace" font-size="12" fill="#e7f5e4">EROSIONSFLÄCHE</text>
+ <path d="M48 385h544" stroke="#92bcba" stroke-opacity=".65"/>
+ <text x="48" y="405" font-family="monospace" font-size="11" fill="#abcac3">A = UNTEN / ÄLTESTE SEDIMENTSCHICHT</text>
+ </svg>
+ <div class="inquiry-stage-foot"><span>A–D / SEDIMENTSCHICHTEN</span><span>E / MAGMATISCHER GANG</span></div>
+</div>
+<div class="inquiry-task">
+<div class="earth-overline">STRATIGRAPHIE / INTERAKTIVER TEST</div>
+<h3 id="strata-question">Welche Sedimentschicht ist bei ungestörter Lagerung die älteste?</h3>
+<p id="strata-counter" class="earth-note">Aufgabe 1 / 4</p>
+<div id="strata-answers" class="inquiry-answer-grid" role="group" aria-label="Antwort wählen">
+ <button type="button" disabled>Aufgaben werden geladen</button>
+</div>
+<div id="strata-feedback" class="inquiry-feedback" role="status" aria-live="polite"></div>
+<button type="button" id="strata-next" class="mo-btn mo-btn-primary inquiry-next" disabled>Nächste Frage →</button>
+</div>
+</div>
+<div class="inquiry-callout"><strong>Zwei Regeln – zwei verschiedene Fragen</strong><p><b>Superpositionsprinzip:</b> In einer nicht umgekippten Abfolge liegt normalerweise die ältere Sedimentschicht unter der jüngeren. <b>Durchschneidungsprinzip:</b> Eine Intrusion ist jünger als die Schichten, die sie durchschneidet. Beides ergibt zunächst eine <em>relative</em>, keine absolute Datierung.</p></div>
+</section>
+<section class="inquiry-section" id="isotope" aria-labelledby="isotope-heading">
+<div class="inquiry-section-title"><div><div class="earth-overline">02 / RADIOMETRISCHE DATIERUNG</div><h2 id="isotope-heading">Eine Uhr im Mineral.</h2></div><p>Radioaktive Isotope zerfallen mit einer charakteristischen Halbwertszeit. In einem stark vereinfachten geschlossenen System kannst du aus dem verbleibenden Anteil das verstrichene Alter berechnen.</p></div>
+<div class="inquiry-panel">
+<div class="inquiry-toolbar"><label for="isotope-select" class="earth-overline" style="align-self:center">ISOTOPENSYSTEM</label>
+<select id="isotope-select" class="mo-select" aria-label="Uran-Isotop wählen"><option value="u238">Uran-238 → Blei-206</option><option value="u235">Uran-235 → Blei-207</option></select>
+</div>
+<div class="inquiry-task">
+<div class="inquiry-layout" style="gap:clamp(20px,3vw,38px)">
+<div>
+<div class="earth-overline">EXPERIMENT / IDEALISIERT</div>
+<h3>Wie viel Mutterisotop ist noch vorhanden?</h3>
+<p>Verschiebe den Regler. Die Ausgangsmenge ist auf 100 % gesetzt; alles nicht mehr vorhandene Mutterisotop gilt hier vereinfacht als zerfallen.</p>
+<label for="isotope-remaining" class="earth-overline" style="display:block;margin-top:25px">VERBLEIBENDER ANTEIL · <span id="isotope-remaining-label">50 %</span></label>
+<input id="isotope-remaining" class="inquiry-range" type="range" min="5" max="100" step="1" value="50" aria-label="Verbleibendes Mutterisotop in Prozent">
+<div class="inquiry-toolbar" style="background:transparent;padding:10px 0;border-bottom:0">
+<button type="button" class="mo-btn mo-btn-sm" data-frac="100">100 % / Start</button>
+<button type="button" class="mo-btn mo-btn-sm" data-frac="50">50 % / 1 Halbwertszeit</button>
+<button type="button" class="mo-btn mo-btn-sm" data-frac="25">25 % / 2 Halbwertszeiten</button>
+</div>
+<div class="inquiry-isotope-graphic">
+<div class="inquiry-isotope-track" role="img" id="isotope-bars" aria-label="50 Prozent Mutterisotop und 50 Prozent vereinfacht entstandenes Tochterisotop">
+<div id="isotope-parent-bar" class="parent" style="width:50%"></div></div>
+<div class="inquiry-isotope-legend"><span id="isotope-parent-legend">Mutterisotop · 50 %</span><span class="daughter" id="isotope-daughter-legend">Zerfallen · 50 %</span></div>
+</div>
+</div>
+<div>
+<div class="earth-overline">ERGEBNIS / SCHÄTZUNG</div>
+<div class="inquiry-metrics">
+<div class="inquiry-metric"><span>HALBWERTSZEIT</span><strong id="isotope-half">4,468 Ga</strong></div>
+<div class="inquiry-metric"><span>VERGANGENE ZEIT</span><strong id="isotope-age" aria-live="polite">4,468 Ga</strong></div>
+<div class="inquiry-metric"><span>HALBWERTSZEITEN</span><strong id="isotope-cycles">1,00</strong></div>
+</div>
+<div class="inquiry-equation" aria-label="Formel für den radioaktiven Zerfall">t = T½ × log₂(1 / f)</div>
+<p><b>t</b> = verstrichene Zeit, <b>T½</b> = Halbwertszeit, <b>f</b> = verbleibender Anteil als Zahl zwischen 0 und 1.</p>
+<div id="isotope-warning" class="inquiry-uncertainty" role="status" aria-live="polite"><strong>WICHTIGE VORAUSSETZUNG</strong><p>Die Formel setzt ein geschlossenes System und einen bekannten Ausgangszustand voraus. Reale U-Pb-Datierungen berücksichtigen Tochterisotope, Anfangszusammensetzung, Verluste und mögliche Störungen.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="inquiry-callout"><strong>Probier es aus: zwei Halbwertszeiten</strong><p>Bei 25 % Restmenge sind zwei Halbwertszeiten vergangen – bei U-238 ungefähr 8,94 Milliarden Jahre. Das wäre älter als die Erde: mathematisch möglich, aber keine plausible Entstehungszeit eines irdischen Minerals. Genau solche Plausibilitätskontrollen gehören zur Wissenschaft.</p></div>
+</section>
+<section class="inquiry-section" id="evidence" aria-labelledby="evidence-heading">
+<div class="inquiry-section-title"><div><div class="earth-overline">03 / BEWEISKETTEN</div><h2 id="evidence-heading">Aus Spuren werden Aussagen.</h2></div><p>Wähle eine geologische Fundgruppe. Unterscheide zwischen direkt beobachtbaren Dingen, daraus gezogenen Schlussfolgerungen und den verbleibenden Unsicherheiten.</p></div>
+<div id="evidence-options" class="inquiry-evidence" role="group" aria-label="Geologische Beleggruppen">
+<button type="button" data-evidence="meteorite" aria-pressed="true"><span>01 / SONNENSYSTEM</span><strong>Meteorite</strong></button>
+<button type="button" data-evidence="zircon" aria-pressed="false"><span>02 / KRISTALL</span><strong>Zirkone</strong></button>
+<button type="button" data-evidence="rock" aria-pressed="false"><span>03 / GESTEIN</span><strong>Alte Kruste</strong></button>
+<button type="button" data-evidence="moon" aria-pressed="false"><span>04 / VERGLEICH</span><strong>Mondproben</strong></button>
+</div>
+<div class="inquiry-evidence-detail" aria-live="polite">
+<div class="earth-overline" id="evidence-label">EVIDENZ 01 / SONNENSYSTEM</div>
+<h3 id="evidence-title">Meteorite: Material aus der Frühzeit</h3>
+<p id="evidence-description">Meteorite bewahren Material aus dem jungen Sonnensystem. Radiometrische Datierungen helfen, dessen Entstehungszeit einzugrenzen.</p>
+<dl>
+<div><dt>WAS WIRD BEOBACHTET?</dt><dd id="evidence-observed">Isotopenverhältnisse in Meteoritenmaterial.</dd></div>
+<div><dt>WAS FOLGERT MAN?</dt><dd id="evidence-inferred">Frühes Festkörpermaterial ist etwa 4,567 Milliarden Jahre alt.</dd></div>
+<div><dt>WAS BLEIBT OFFEN?</dt><dd id="evidence-caveat">Das ist nicht der exakte Zeitpunkt einer fertig entstandenen Erde.</dd></div>
+</dl>
+<div class="inquiry-small-links" style="margin-top:19px"><a id="evidence-link" href="https://www.nist.gov/how-do-you-measure-it/how-do-you-know-age-fossils-and-other-old-things" target="_blank" rel="noopener noreferrer">Wissenschaftliche Quelle öffnen ↗</a></div>
+</div>
+<div class="inquiry-callout"><strong>Eine Datierung ist nicht automatisch die Datierung der Erde.</strong><p>Ein Zirkon misst unter geeigneten Voraussetzungen ein Kristallisationsereignis. Eine datierte Vulkanlage kann das Alter benachbarter Fossilien einschränken. Das Alter eines Meteoriten gibt Hinweise auf das Sonnensystem – aber nicht auf einen einzigen „Geburtstag“ der Erde.</p><div class="inquiry-small-links" style="margin-top:15px"><a href="04_junge_erde.html">Zurück zur jungen Erde ↗</a><a href="02_zeitmassstab.html#unit=had">Hadaikum im Geological Time Explorer ↗</a></div></div>
+<div class="inquiry-source"><strong>Wissenschaftliche Referenzen:</strong> <a href="https://www.usgs.gov/educational-resources/geologic-age-using-radioactive-decay-determine-geologic-age" target="_blank" rel="noopener noreferrer">USGS · Radiometric age dating</a>; <a href="https://www.nps.gov/subjects/geology/radiometric-age-dating.htm" target="_blank" rel="noopener noreferrer">NPS · Halbwertszeiten und Isotopensysteme</a>; <a href="https://www.nist.gov/how-do-you-measure-it/how-do-you-know-age-fossils-and-other-old-things" target="_blank" rel="noopener noreferrer">NIST · Uran-Datierung und Erdalter</a>; <a href="https://www.nature.com/articles/35051550" target="_blank" rel="noopener noreferrer">Wilde et al. (2001) · Zircon und frühe Hydrosphäre</a>; <a href="https://science.nasa.gov/moon/formation/" target="_blank" rel="noopener noreferrer">NASA · Mondentstehung</a>. Alle Grafiken und Probenwerte sind eigene didaktische Modelle, keine gemessenen realen Proben.</div>
+</section>
+</main>
+<footer class="earth-footer"><div class="earth-wrap earth-footer-inner"><span>LEARNING LAB 01 · GEOLOGISCHE METHODEN<br>OPEN ACCESS · NO ACCOUNTS · NO TRACKING</span><span><a href="https://philippklinz.github.io/modern-objectivity-style/">Modern Objectivity ↗</a> · <a href="https://github.com/philippklinz/lab-early-earth">GitHub ↗</a> · <a href="LICENSE">GPL v2.0</a></span></div></footer>
+</body></html>
