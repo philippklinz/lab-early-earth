@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f7f7">
+<meta name="description" content="Geological Time Trainer: geologische Äonen, Ären, Perioden und Zeitgrenzen aktiv lernen. Täglich fünf Minuten – ohne Account oder Tracking.">
+<title>Geological Time Trainer — Die frühe Erde</title>
+<link rel="stylesheet" href="modern-objectivity.css">
+<link rel="stylesheet" href="earth-lab.css">
+<script defer src="time-data.js"></script>
+<script defer src="trainer.js"></script>
+</head>
+<body class="earth-stage">
+<a class="earth-skip" href="#main">Zum Inhalt springen</a>
+<header class="earth-header"><div class="earth-wrap earth-header-inner">
+<a href="index.html" class="earth-brand"><span class="earth-symbol" aria-hidden="true">◉</span><span class="earth-brand-name">DIE FRÜHE ERDE<small>LEARNING LAB / 01</small></span></a>
+<nav class="earth-nav" aria-label="Labor-Navigation"><a href="index.html">Übersicht</a><a href="02_zeitmassstab.html">Zeitskala</a><a href="03_zeittrainer.html" aria-current="page">Zeittrainer</a><a href="https://philippklinz.github.io/learning-labs/" class="earth-home-link">Alle Labore ↗</a></nav>
+</div></header>
+<main id="main" class="earth-wrap earth-page">
+<div class="earth-crumb"><a href="index.html">LAB 01</a> / UNTERLABOR 03 / LERNEN</div>
+<div class="earth-overline" style="margin-top:23px">GEOLOGICAL TIME TRAINER · ACTIVE RECALL</div>
+<h1>Die Zeit im Kopf.</h1>
+<p class="earth-lead">Nicht nur auf die Zeitskala schauen, sondern sie selbst erinnern. Lerne die Reihenfolge, übergeordnete Einheiten und zeitliche Grenzen – in kurzen Runden, passend zu deinem ausgedruckten Chart.</p>
+<div class="earth-datapanel" style="margin-top:27px">
+<div class="earth-section-heading" style="margin-bottom:14px"><div><div class="earth-overline">DEINE LERNRUNDE</div><h2>Was willst du heute üben?</h2></div><p>Starte mit vier Äonen, dann den drei Ären des Phanerozoikums, danach den zwölf Perioden. Präkambrium-Details sind die nächste Stufe.</p></div>
+<div class="earth-toolbar">
+<label class="mo-field" style="flex:1;min-width:190px"><span class="mo-field-label">Schwierigkeitsstufe</span>
+<select class="mo-select" id="learning-level">
+<option value="eons">01 – Die 4 Äonen</option>
+<option value="eras">02 – Die 3 Ären des Phanerozoikums</option>
+<option value="periods" selected>03 – Die 12 Perioden</option>
+<option value="precambrian">04 – Das Präkambrium (Fortgeschritten)</option>
+</select>
+</label>
+<label class="mo-field" style="flex:1;min-width:190px"><span class="mo-field-label">Aufgabentyp</span>
+<select class="mo-select" id="question-mode">
+<option value="mixed" selected>Gemischt – mehrere Aufgabentypen</option>
+<option value="sequence">Reihenfolge erkennen</option>
+<option value="parent">Einheiten zuordnen</option>
+<option value="age">Altersgrenzen merken</option>
+<option value="place">Auf Zeitleiste platzieren</option>
+<option value="flash">Ohne Auswahl selbst erinnern</option>
+</select>
+</label>
+</div>
+<div class="earth-pills"><button id="start-daily" class="mo-btn mo-btn-primary" type="button">Tagesrunde starten (bis zu 8)</button><button id="start-free" class="mo-btn" type="button">Freies Training</button><a href="02_zeitmassstab.html" class="mo-btn">Zeitskala ansehen ↗</a></div>
+<p class="earth-answer-help">Tagesrunde: nur Einheiten, die heute fällig sind. Freies Training: ohne Speichern deiner Antworten. Du kannst jederzeit neu beginnen.</p>
+</div>
+<div class="earth-trainer-layout">
+<section class="earth-trainer-card" aria-label="Trainingsaufgabe" id="trainer-card">
+ <div class="earth-q-head"><b id="quiz-mode-name">BEREIT FÜR DEINE ERSTE RUNDE</b><span id="quiz-step">0 / 0</span></div>
+ <div class="earth-train-progress" role="progressbar" aria-label="Fortschritt der Runde" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="quiz-progress"><div id="quiz-progress-fill"></div></div>
+ <div id="quiz-content" aria-live="polite">
+  <h2 class="earth-question" id="quiz-question">Wie gut kennst du die geologische Zeit?</h2>
+  <p style="color:var(--mo-muted);font-size:14px;max-width:630px">Wähle eine Stufe und starte deine Tagesrunde oder ein freies Training. Du kannst auch direkt darunter die Zeitskala wie einen Lückentext üben.</p>
+ </div>
+ <div id="quiz-feedback" class="earth-feedback" hidden aria-live="polite"></div>
+ <div class="earth-answer-actions" id="quiz-actions" hidden>
+  <button id="next-question" class="mo-btn mo-btn-primary" type="button">Nächste Frage →</button>
+ </div>
+</section>
+<aside class="earth-trainer-aside earth-datapanel">
+ <div class="earth-overline">DEIN LERNSTAND</div><h2 style="font-size:22px">Wiederholung</h2>
+ <div class="earth-stat"><span>Heute fällig (Stufe)</span><strong id="due-count">–</strong></div>
+ <div class="earth-stat"><span>Einheiten geübt (Stufe)</span><strong id="learned-count">–</strong></div>
+ <div class="earth-stat"><span>In dieser Runde richtig</span><strong id="correct-count">0 / 0</strong></div>
+ <p>Dein Fortschritt liegt ausschließlich in diesem Browser auf diesem Gerät (<code>localStorage</code>). Keine Anmeldung, keine Übertragung, kein Tracking. Fehler werden früher wiederholt. Es gibt keine Streaks oder Punktejagd.</p>
+ <button class="mo-btn" type="button" id="reset-progress">Gespeicherten Lernstand löschen</button>
+ <p class="earth-answer-help" id="storage-message" role="status"></p>
+</aside>
+</div>
+<section class="earth-memory-panel" aria-label="Zeitskala auswendig wiedergeben">
+<div class="earth-section-heading" style="margin-bottom:12px"><div><div class="earth-overline">PAPIER → KOPF</div><h2>Der leere Zeitstreifen</h2></div><p>Schau auf dein ausgedrucktes Chart, drehe es um und versuche die Einheiten von alt nach jung aufzusagen. Klicke auf die Felder, um sie aufzudecken.</p></div>
+<div class="earth-memory-cells" id="memory-cells"></div>
+<div class="earth-toolbar" style="margin-bottom:0"><button type="button" class="mo-btn mo-btn-sm" id="hide-memory">Alle verbergen</button><button type="button" class="mo-btn mo-btn-sm" id="reveal-memory">Alle zeigen</button></div>
+</section>
+<div class="earth-source"><strong>Quelle:</strong> <a href="https://stratigraphy.org/chart/" target="_blank" rel="noopener noreferrer">International Commission on Stratigraphy, Chart v2026/06 ↗</a>, CC BY 4.0. Die Lerngrenzen entsprechen numerischen Datierungen und sind teilweise gerundet oder unsicher. Für phanerozoische Grenzen und das Ediacarium definieren GSSPs die Einheiten. <strong>Wiederholungsintervalle</strong> (1 / 3 / 7 / 14 / 30 Tage) sind eine einfache didaktische Heuristik, kein empirisch validierter optimaler Algorithmus.</div>
+</main>
+<footer class="earth-footer"><div class="earth-wrap earth-footer-inner"><span>LEARNING LAB 01 · ZEITTRAINER<br>OPEN ACCESS · LOCAL PROGRESS ONLY · NO TRACKING</span><span><a href="https://philippklinz.github.io/modern-objectivity-style/">Modern Objectivity ↗</a> · <a href="README.md">Projekt</a> · <a href="LICENSE">GPL v2.0</a></span></div></footer>
+</body></html>
