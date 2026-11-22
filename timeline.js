@@ -82,8 +82,8 @@ function renderLanes(){
      button.type='button';
      button.className='earth-band'+(unit.id===selected.id?' selected':'')+(width<6?' tiny':'');
      button.style.left=left+'%';button.style.width=width+'%';button.style.background=unit.color;
-     button.title=unit.name+' · '+fmt(unit.old)+' – '+fmt(unit.young);
-     button.setAttribute('aria-label',G.ranks[rank]+' '+unit.name+', '+fmt(unit.old)+' bis '+fmt(unit.young));
+     button.title=mask?('Namen ausgeblendet · '+fmt(unit.old)+' – '+fmt(unit.young)):(unit.name+' · '+fmt(unit.old)+' – '+fmt(unit.young));
+     button.setAttribute('aria-label',mask?('Name verdeckt, '+G.ranks[rank]+' von '+fmt(unit.old)+' bis '+fmt(unit.young)+'. Zum Aufdecken auswählen.'):(G.ranks[rank]+' '+unit.name+', '+fmt(unit.old)+' bis '+fmt(unit.young)));
      const inner=document.createElement('div');inner.className='earth-band-inner';
      const labelText=document.createElement('span');labelText.textContent=mask?'?':unit.name;
      inner.append(labelText);button.append(inner);
