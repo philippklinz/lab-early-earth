@@ -1,10 +1,11 @@
 /* LAB 01 — two interactive research stations: young Earth and dating evidence.
    Local Modern Objectivity adaptation; no shared runtime and no external assets. */
 .inquiry-hero{padding:40px 0 32px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end}
+.inquiry-hero>*,.inquiry-layout>*,.inquiry-process-nav>*,.inquiry-panel,.inquiry-inspector,.inquiry-section,.inquiry-section-title>*{min-width:0;max-width:100%}
 .inquiry-hero h1{font-size:clamp(42px,5.6vw,76px);letter-spacing:-.064em;line-height:1.06;margin:15px 0 22px}
 .inquiry-hero h1 em{color:var(--mo-accent);font:400 1.03em var(--mo-serif)}
 .inquiry-hero .earth-lead{margin:0;max-width:780px}
-.inquiry-index{font:11px/1.65 var(--mo-mono);color:var(--mo-muted);border-left:2px solid var(--mo-accent);padding:7px 17px;margin-bottom:8px;min-width:210px}
+.inquiry-index{font:11px/1.65 var(--mo-mono);color:var(--mo-muted);border-left:2px solid var(--mo-accent);padding:7px 17px;margin-bottom:8px;min-width:0;overflow-wrap:anywhere}
 .inquiry-index strong{display:block;font-size:16px;color:var(--mo-text-strong);margin:5px 0}
 .inquiry-badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
 .inquiry-badges span{display:inline-flex;align-items:center;border:1px solid var(--mo-border);color:var(--mo-muted);padding:5px 9px;background:var(--mo-surface);border-radius:4px;font:10px var(--mo-mono)}
@@ -104,7 +105,8 @@
 .inquiry-table td,.inquiry-table th{padding:10px 12px;text-align:left;border-bottom:1px solid var(--mo-border)}
 .inquiry-table th{font:700 10px var(--mo-mono);color:var(--mo-muted)}
 .inquiry-a11y{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-@media(max-width:1010px){.inquiry-layout{grid-template-columns:1fr}.inquiry-stage svg{max-height:390px}.inquiry-evidence-detail dl{grid-template-columns:1fr 1fr}.inquiry-hero{grid-template-columns:1fr}.inquiry-index{border-left:0;border-top:2px solid var(--mo-accent);max-width:450px}}
+@media(max-width:1180px){.inquiry-hero{grid-template-columns:minmax(0,1fr)}.inquiry-index{border-left:0;border-top:2px solid var(--mo-accent);max-width:480px}.inquiry-process-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1010px){.inquiry-layout{grid-template-columns:minmax(0,1fr)}.inquiry-stage svg{max-height:390px}.inquiry-evidence-detail dl{grid-template-columns:1fr 1fr}}
 @media(max-width:750px){.inquiry-info-grid{grid-template-columns:1fr}.inquiry-process-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.inquiry-evidence{grid-template-columns:repeat(2,minmax(0,1fr))}.inquiry-evidence-detail dl{grid-template-columns:1fr}.inquiry-metrics{grid-template-columns:1fr 1fr}.inquiry-section{padding:24px 0 45px}.inquiry-stage-foot{font-size:9px}.inquiry-hero{padding-top:25px}}
-@media(max-width:460px){.inquiry-answer-grid{grid-template-columns:1fr}.inquiry-hero h1{font-size:42px}.inquiry-metrics{grid-template-columns:1fr}.inquiry-toolbar{padding:12px}.inquiry-toolbar button{flex:1}}
+@media(max-width:460px){.inquiry-process-nav{grid-template-columns:minmax(0,1fr)}.inquiry-answer-grid{grid-template-columns:1fr}.inquiry-hero h1{font-size:42px}.inquiry-metrics{grid-template-columns:1fr}.inquiry-toolbar{padding:12px}.inquiry-toolbar button{flex:1}}
 @media(prefers-reduced-motion:reduce){.inquiry-scene [data-layer],.inquiry-isotope-track .parent{transition:none}}
