@@ -90,4 +90,36 @@ window.EarthPhases=[
  ['7. Frühe Abkühlung','Abkühlung, wiederholtes Aufschmelzen und die mögliche Bildung von Kruste und Wasser kennzeichnen verschiedene Hypothesen zur jungen Erde.','Die grünen und blauen Muster stehen nicht für nachgewiesene heutige Kontinente; hier wird kein realer Oberflächenzustand behauptet.','Für manche Prozesse liefern sehr alte Zirkone und andere Belege indirekte Hinweise.']
 ];
 </script>
+<script>
+(() => {
+  'use strict';
+  const phases=window.EarthPhases;
+  let current=0,paused=false;
+  const buttons=Array.from(document.querySelectorAll('[data-phase]'));
+  function show(index){
+    current=(index+phases.length)%phases.length;
+    const [name,description,evidence,time]=phases[current];
+    document.getElementById('phase-name').textContent=name;
+    document.getElementById('phase-description').textContent=description;
+    document.getElementById('phase-evidence').textContent=evidence;
+    document.getElementById('phase-time').textContent=time;
+    document.getElementById('stage-caption').textContent='SZENE '+String(current+1).padStart(2,'0')+' / 07';
+    buttons.forEach(b=>{
+      const selected=Number(b.dataset.phase)===current;
+      b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));
+    });
+    window.dispatchEvent(new CustomEvent('earth-phase-change',{detail:current}));
+  }
+  buttons.forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.phase))));
+  document.getElementById('prev-phase').addEventListener('click',()=>show(current-1));
+  document.getElementById('next-phase').addEventListener('click',()=>show(current+1));
+  document.getElementById('pause-motion').addEventListener('click',e=>{
+    paused=!paused;e.currentTarget.setAttribute('aria-pressed',String(paused));
+    e.currentTarget.textContent=paused?'▶ Bewegung fortsetzen':'Ⅱ Bewegung pausieren';
+    window.dispatchEvent(new CustomEvent('earth-motion-toggle',{detail:!paused}));
+  });
+  window.EarthPhaseUI={get index(){return current},get playing(){return !paused}};
+  show(0);
+})();
+</script>
 </body></html>
