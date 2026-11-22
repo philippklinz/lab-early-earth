@@ -34,3 +34,17 @@
 ## License scope
 
 Original source code of this laboratory is GPL-2.0-only (see `LICENSE`). Scientific source data and external libraries retain their own licensing; those conditions and credits are not superseded by the project's GPL.
+
+## Geological portraits (editorial educational content)
+
+The 36 unit profiles in `period-portraits-data.js` are independently written **educational summaries** that integrate geological chronology, the stratigraphic nature of formal boundaries, evolutionary and environmental context, and learning mnemonics. They are not official descriptions published by ICS.
+
+Reference sources used to inform the summaries:
+
+- U.S. Geological Survey, *Fossils, Rocks, and Time*: https://pubs.usgs.gov/gip/fossils/scale.html
+- National Park Service, *Fossils Through Geologic Time*: https://www.nps.gov/subjects/fossils/fossils-through-geologic-time.htm
+- British Geological Survey, *Geological timechart*: https://www.bgs.ac.uk/discovering-geology/fossils-and-geological-time/geological-timechart/
+- International Commission on Stratigraphy, *Global Boundary Stratotype Section and Points*: https://stratigraphy.org/gssps/
+- NASA, *Ancient Crystals Suggest Earlier Ocean*: https://science.nasa.gov/earth/earth-observatory/ancient-crystals-suggest-earlier-ocean/
+
+**Illustrations:** The symbolic SVG graphics are authored locally for this lab. They are **not** original BGS/NPS/ICS artworks, measured geological data, paleogeographical reconstructions, faithful fossils or depictions of specific species. Some sources above use older numerical calibrations than ICS v2026/06; the lab uses ICS exclusively for its numeric ages.

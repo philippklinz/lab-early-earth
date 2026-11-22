@@ -119,3 +119,9 @@ Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, oh
 - `01_protoerde.html` / `proto-earth.js`: sieben schematische Three.js-Szenen, nicht physikalisch berechnet; verständlicher Fallback ohne WebGL.
 - `THIRD_PARTY_NOTICES.md`: wissenschaftliche Quellen, Namensnennung und separate Lizenzen.
 - M4 und M5: ohne Implementierung, weiterhin Zukunftsmodule.
+
+## Ergänzung: geologische Zeitporträts und private Notizen
+
+Der Zeit-Explorer enthält jetzt **36 einheitenspezifische Porträts** für alle Äonen, Ären und Perioden des aktuellen `time-data.js`. Jeder Eintrag bietet eine kontextualisierende Erklärung, drei Lernfakten, die tatsächliche Art der Grenzdefinition (so weit quellenbasiert erklärbar), eine wissenschaftliche Einschränkung, einen Merksatz und eine symbolische SVG-Szene. Ein grafischer Mini-Zeitrahmen zeigt die Dauer innerhalb der übergeordneten Einheit. In der originalen Explorer-Ansicht bleibt die globale Zeitleiste maßstabsgetreu. Inhalte und Quellen liegen getrennt in `period-portraits-data.js`; die Darstellung wird durch `period-portraits.js` und `period-portraits.css` übernommen.
+
+Die **persönlichen Notizen** pro Abschnitt liegen ausschließlich im Browser (`localStorage`), lassen sich als JSON sichern und importieren und sind vom Trainerfortschritt getrennt. Direkte Links auf Abschnitte funktionieren mit `#unit=<id>`; Trainer-Feedback verlinkt die jeweiligen Porträts. Illustrationen sind symbolische Merkbilder, keine exakten zeitgenössischen geologischen Weltkarten.

@@ -9,11 +9,25 @@ Ein eigenständiges, interaktives Lernlabor zur Entstehung der Erde und zur geol
 | Unterlabor | Seite | Was funktioniert? |
 |---|---|---|
 | 01 — Proto-Erde | [01_protoerde.html](01_protoerde.html) | Sieben steuerbare **schematische** 3D-Szenen über Planetenentstehung, Akkretion, Magmaozeane, Differentiation und Mondentstehung. Fachliche Beschreibungen funktionieren auch ohne 3D. |
-| 02 — Geological Time Explorer | [02_zeitmassstab.html](02_zeitmassstab.html) | Maßstabsgetreue Zeitachse, Zoom, horizontales Verschieben, Äonen, Ären, Perioden, Selektion, Hierarchie, Namensausblendung. |
+| 02 — Geological Time Explorer | [02_zeitmassstab.html](02_zeitmassstab.html) | Maßstabsgetreue Zeitachse mit Zoom, Auswahl und **36 illustrierten Zeitporträts**: geologische Merkmale, Grenzdefinitionen, Unsicherheiten, Merksätze, eigene Notizen. |
 | 03 — Geological Time Trainer | [03_zeittrainer.html](03_zeittrainer.html) | Multiple Choice, Reihenfolge, Zuordnung, numerische Grenzwerte, Platzierung, aktive Erinnerung, tägliche Wiederholungen und Lückentabelle. |
 
 Die Unterlabore 04 (junge Erde: Kruste, Atmosphäre, Wasser) und 05 (geologische Datierung und geologische Belege) sind weiterhin nur geplant.
 
+## Zeitporträts und dein geologisches Notizbuch
+
+Im [Geological Time Explorer](02_zeitmassstab.html) erscheint bei Auswahl eines Abschnitts ein ausführlicher **Steckbrief** für **alle 36 Äonen, Ären und Perioden**:
+
+- **Was prägt diesen Abschnitt?** — Kontext, drei zentrale Lernmerkmale (Erdwelt, Leben, geologische Belege) und ein kurzer Merksatz.
+- **Warum beginnt er hier?** — Unterschied zwischen festgelegten numerischen Altersgrenzen (GSSA) und Gesteinsprofilen/GSSPs. Ein wichtiger biologischer oder klimatischer Wandel definiert nicht automatisch einen Grenzhorizont.
+- **Wie ist der Zeitraum eingebettet?** — maßstabsgetreue Miniaturleiste des ausgewählten Abschnitts innerhalb seiner übergeordneten Einheit.
+- **Wie kann ich ihn mir bildlich merken?** — eigens erstellte thematische SVG-Illustrationen mit expliziter Kennzeichnung als **symbolisch, nicht wissenschaftlich rekonstruiert**.
+- **Was möchte ich selbst ergänzen?** — je Zeitabschnitt ein editierbares Notizfeld (max. 5000 Zeichen), automatisch und ausschließlich im Browser gespeichert. JSON-Export/-Import aller Notizen als lokale Sicherung, kein Server.
+- **Weiterlernen:** Auswahl des Steckbriefs direkt auf der Zeitleiste, blätterbare zeitliche Nachbarn (auch über Ären-Grenzen hinweg), teilbarer Link wie `02_zeitmassstab.html#unit=cret`, und ein Link von der Aufgabenrückmeldung im Zeittrainer.
+
+Technische Trennung: `time-data.js` liefert die ICS-Zeiteinheiten und Zahlen; `period-portraits-data.js` enthält **redaktionelle Interpretation** mit Quellenverweisen (kein offizieller ICS-Kommentar); `period-portraits.js` rendert Inhalte und speichert private Notizen; `period-portraits.css` gestaltet den Lesebereich.
+
+Der Notizspeicher (`localStorage`-Schlüssel `lab01-geological-portraits-notes-v1`) ist **separat** vom Lernstand des Trainers. Löschen der Browserdaten kann Notizen entfernen; dafür gibt es die Exportfunktion. Die Porträts sind didaktische Synthesen und beanspruchen keine individuelle Begutachtung durch die ICS.
 ## Zeitdaten und Quellen
 
 - Die geologische Skala beruht auf der [International Chronostratigraphic Chart der ICS, Version 2026/06](https://stratigraphy.org/chart/) (CC BY 4.0).

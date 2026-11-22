@@ -87,3 +87,14 @@ Read [docs/LAB-01-ROADMAP.md](docs/LAB-01-ROADMAP.md) before implementing learni
 - Preserve third-party attribution in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). ICS data = CC BY 4.0, Three.js = MIT, Modern Objectivity = GPL-2.0-only.
 - Verify links among `index.html`, `01_protoerde.html`, `02_zeitmassstab.html`, `03_zeittrainer.html`. M4/M5 remain future work.
 - Correctness is scientific and behavioral: positive interval durations; no gaps between adjacent stratigraphic units at the same rank; keyboard-usable selections; accurate feedback; scientific uncertainty visible.
+
+## 36 geological portraits and personal notes
+
+- The Geological Time Explorer has a fully illustrated portrait for each of the 36 units in `time-data.js`. The substantive teaching data are in `period-portraits-data.js`, keyed by unchanged unit IDs; the display is implemented by `period-portraits.js` and `period-portraits.css`.
+- Keep **36/36 coverage**. For each portrait, maintain a distinct introduction, three meaningful features, explanation of boundary *definition* (not merely an interesting event), caveat, memory hook, schematic motif and credible reference links.
+- Scientific distinction: Phanerozoic/Ediacaran GSSPs are boundary reference points when ratified; other boundaries may be provisional or numerical. Precambrian units often have chronometric GSSA boundaries. Do NOT imply that a mass extinction or evolutionary event itself automatically defines an entire period.
+- Graphic scenes are symbolic SVG motifs, not paleogeographic maps, taxonomic species reconstruction, accurate fossil drawings, or scientific data. Preserve explanatory captions.
+- A selected time unit triggers the `geo-unit-selected` event; portrait controls send `geo-portrait-navigate` events. Hash deep links use `#unit=<stableID>` so users can share a time unit.
+- Per-unit personal notes are stored only in `localStorage` under `lab01-geological-portraits-notes-v1` and are independent of the trainer progress key. Never upload, track, silently remove or migrate them without user consent. Keep JSON export and validated JSON import functional.
+- In the trainer feedback, maintain a contextual link to the time unit's portrait; avoid interrupting the ongoing quiz.
+- Claims in portraits are authored interpretations, sourced via ICS, USGS, BGS, NPS, and NASA—not verbatim official ICS descriptions. Update source attribution when making changes.
