@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f7f7">
+<meta name="description" content="Interaktiver Geological Time Explorer: 4,567 Milliarden Jahre Erdgeschichte maßstabsgetreu darstellen, zoomen und geologische Zeiteinheiten untersuchen.">
+<title>Geological Time Explorer — Die frühe Erde</title>
+<link rel="stylesheet" href="modern-objectivity.css">
+<link rel="stylesheet" href="earth-lab.css">
+<script defer src="time-data.js"></script>
+<script defer src="timeline.js"></script>
+</head>
+<body class="earth-stage">
+<a href="#main" class="earth-skip">Zum Inhalt springen</a>
+<header class="earth-header"><div class="earth-wrap earth-header-inner">
+<a href="index.html" class="earth-brand"><span class="earth-symbol" aria-hidden="true">◉</span><span class="earth-brand-name">DIE FRÜHE ERDE<small>LEARNING LAB / 01</small></span></a>
+<nav class="earth-nav" aria-label="Labor-Navigation"><a href="index.html">Übersicht</a><a href="02_zeitmassstab.html" aria-current="page">Zeitskala</a><a href="03_zeittrainer.html">Zeittrainer</a><a href="https://philippklinz.github.io/learning-labs/" class="earth-home-link">Alle Labore ↗</a></nav>
+</div></header>
+<main id="main" class="earth-wrap earth-page">
+<div class="earth-crumb"><a href="index.html">LAB 01</a> / UNTERLABOR 02 / ZEIT</div>
+<div class="earth-overline" style="margin-top:24px">GEOLOGICAL TIME EXPLORER · ICS 2026/06</div>
+<h1>4,567 Milliarden Jahre.<br>Eine Zeitleiste.</h1>
+<p class="earth-lead">Von der Bildung des Sonnensystems bis heute. Zoome in Äonen, Ären und Perioden hinein, wähle einen Abschnitt und erkunde seine Stellung in der geologischen Zeit.</p>
+<div class="earth-toolbar" aria-label="Zeitausschnitt auswählen">
+ <div class="earth-toolgroup"><span class="earth-toolgroup-label">ANSICHT</span>
+ <button type="button" class="mo-btn mo-btn-sm active" data-preset="all" aria-pressed="true">Gesamte Erde</button>
+ <button type="button" class="mo-btn mo-btn-sm" data-preset="precambrian" aria-pressed="false">Präkambrium</button>
+ <button type="button" class="mo-btn mo-btn-sm" data-preset="phan" aria-pressed="false">Phanerozoikum</button>
+ <button type="button" class="mo-btn mo-btn-sm" data-preset="paleo" aria-pressed="false">Paläozoikum</button>
+ <button type="button" class="mo-btn mo-btn-sm" data-preset="meso" aria-pressed="false">Mesozoikum</button>
+ <button type="button" class="mo-btn mo-btn-sm" data-preset="ceno" aria-pressed="false">Känozoikum</button>
+ </div>
+</div>
+<div class="earth-toolbar" aria-label="Zoom und Lernmodus">
+ <div class="earth-toolgroup"><span class="earth-toolgroup-label">WERKZEUGE</span>
+ <button id="zoom-in" type="button" class="mo-btn mo-btn-sm" aria-label="Zeitleiste vergrößern">＋ Vergrößern</button>
+ <button id="zoom-out" type="button" class="mo-btn mo-btn-sm" aria-label="Zeitleiste verkleinern">－ Verkleinern</button>
+ <button id="reset-view" type="button" class="mo-btn mo-btn-sm">↺ Zurücksetzen</button>
+ <button id="mask-toggle" type="button" class="mo-btn mo-btn-sm" aria-pressed="false">◐ Namen ausblenden</button>
+ <a class="mo-btn mo-btn-sm mo-btn-primary" href="03_zeittrainer.html">Jetzt üben ↗</a>
+ </div>
+</div>
+<div class="earth-timeline-shell">
+<section class="earth-timeline-view" aria-label="Interaktive geologische Zeitleiste">
+ <div class="earth-time-head"><b id="time-window" aria-live="polite">4567–0 Ma</b><span>LINKS = ÄLTER · RECHTS = JÜNGER</span></div>
+ <div class="earth-time-scale" id="time-scale" aria-hidden="true"></div>
+ <div class="earth-time-lanes" id="time-lanes">
+  <div class="earth-lane" id="lane-eon" role="group" aria-label="Äonen, maßstabsgetreu"></div>
+  <div class="earth-lane" id="lane-era" role="group" aria-label="Ären, maßstabsgetreu"></div>
+  <div class="earth-lane" id="lane-period" role="group" aria-label="Perioden, maßstabsgetreu"></div>
+ </div>
+ <p class="earth-time-hint">Wähle einen Farbbalken für Details; Doppelklick vergrößert den Abschnitt. Ziehe auf einer freien Fläche horizontal, um die Zeitachse zu verschieben. Mit <kbd>Strg</kbd> + Mausrad oder den Zoom-Tasten kannst du zoomen. Sehr schmale Abschnitte sind zusätzlich in der Liste unten auswählbar.</p>
+ <div class="earth-overview"><h3>Gesamtüberblick – immer maßstabsgetreu</h3><div class="earth-overview-strip" id="earth-overview" aria-label="Äonen auswählen"></div><div class="earth-overview-caption"><span>4567 Ma</span><span>heute / 0 Ma</span></div></div>
+ <p class="earth-line-indicator" id="scale-note">Auf der Gesamtansicht ist das Phanerozoikum nur ein kleiner Teil der Erdgeschichte. Zoome hinein, um seine Perioden erkennen zu können.</p>
+</section>
+<aside id="inspector" class="earth-inspector earth-datapanel" aria-live="polite" aria-label="Ausgewählter Zeitabschnitt">
+ <div class="earth-overline">ZEITABSCHNITT / INFORMATION</div>
+ <h2 id="inspector-name">Hadaikum</h2>
+ <p id="inspector-path">Äon</p>
+ <dl class="earth-meta-list">
+  <div><dt>BEGINN (ÄLTER)</dt><dd id="inspector-old">4567 Ma</dd></div>
+  <div><dt>ENDE (JÜNGER)</dt><dd id="inspector-young">4031 Ma</dd></div>
+  <div><dt>DAUER</dt><dd id="inspector-duration">536 Ma</dd></div>
+  <div><dt>RANG</dt><dd id="inspector-rank">Äon</dd></div>
+ </dl>
+ <p id="inspector-fact">Ein Abschnitt der frühen Erdgeschichte.</p>
+ <p id="inspector-note"></p>
+ <div class="earth-chip-group"><button type="button" id="focus-selection" class="mo-btn mo-btn-primary mo-btn-sm">Abschnitt vergrößern ↗</button><button type="button" id="parent-selection" class="mo-btn mo-btn-sm" hidden>Übergeordneten Abschnitt wählen</button></div>
+</aside>
+</div>
+<div class="earth-datapanel earth-catalog">
+<div class="earth-section-heading"><div><div class="earth-overline">GEOLOGISCHE HIERARCHIE</div><h2>Einheiten entdecken</h2></div><p>Die Liste bleibt auch bei kleinsten Zeitabschnitten bedienbar. Wähle einen Namen und springe direkt zu seiner Position.</p></div>
+<div id="unit-directory" class="earth-unit-grid">
+  <p>Äonen, Ären und Perioden werden geladen. Ohne JavaScript findest du die offizielle Tabelle direkt bei der <a href="https://stratigraphy.org/chart/">International Commission on Stratigraphy</a>.</p>
+</div>
+</div>
+<div class="earth-source">
+ <strong>Wissenschaftliche Quelle:</strong> International Commission on Stratigraphy (ICS), <a href="https://stratigraphy.org/chart/" target="_blank" rel="noopener noreferrer">International Chronostratigraphic Chart v2026/06 ↗</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Deutsche Namen und die Farbgestaltung sind didaktische Anpassungen. Numerische Grenzalter werden regelmäßig überarbeitet; für viele Einheiten des Phanerozoikums und das Ediacarium definieren GSSPs die Grenzen, nicht die dargestellten Ma-Zahlen. Die gezeigten Dauern sind aus gerundeten Grenzwerten berechnet.
+</div>
+</main>
+<footer class="earth-footer"><div class="earth-wrap earth-footer-inner"><span>LEARNING LAB 01 · DIE FRÜHE ERDE<br>OPEN ACCESS · NO ACCOUNTS · NO TRACKING</span><span><a href="https://philippklinz.github.io/modern-objectivity-style/">Modern Objectivity ↗</a> · <a href="README.md">Projekt</a> · <a href="LICENSE">GPL v2.0</a></span></div></footer>
+</body>
+</html>
