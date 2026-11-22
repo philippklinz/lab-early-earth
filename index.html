@@ -1,49 +1,80 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Wie wurde aus einem jungen Planeten ein möglicher Lebensraum?">
-<title>Die frühe Erde · Learning Lab 01</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f7f7">
+<meta name="description" content="Learning Lab 01: Entstehung der Erde, geologische Zeitskala, tägliches Lernen und schematische Three.js-Modelle.">
+<title>Die frühe Erde — Learning Lab 01</title>
 <link rel="stylesheet" href="modern-objectivity.css">
-<style>
-:root{color-scheme:light;--paper:var(--mo-bg);--ink:var(--mo-text);--graphite:var(--mo-rail);--signal:var(--mo-accent);--edge:var(--mo-border);--muted:var(--mo-muted)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "Liberation Sans",Arial,sans-serif}
-a{color:inherit;text-underline-offset:3px}:focus-visible{outline:3px solid var(--signal);outline-offset:4px}
-header{background:var(--graphite);color:#e9f0ec;border-bottom:3px solid var(--signal)}.top{max-width:1120px;margin:auto;padding:19px 28px;display:flex;justify-content:space-between;gap:20px;align-items:center;font:12px "Liberation Mono",monospace;letter-spacing:.04em}.top a{color:#b5ddd6;text-decoration:none}.top a:hover{text-decoration:underline}
-main{max-width:1120px;margin:auto;padding:74px 28px 110px}.eyebrow{font:11px "Liberation Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:#007973}.hero{padding-bottom:64px;border-bottom:1px solid var(--edge)}h1{font-size:clamp(42px,7vw,86px);font-weight:400;letter-spacing:-.065em;line-height:1.06;max-width:860px;margin:22px 0}h1 strong{font-weight:700}.lead{max-width:800px;font:22px/1.55 "Liberation Serif",Georgia,serif;color:var(--muted)}.note{margin-top:28px;border-left:3px solid var(--signal);padding:11px 17px;background:#fff;font-size:13px;max-width:760px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;padding-top:52px}.panel{min-width:0}h2{font-size:28px;font-weight:400;line-height:1.2;letter-spacing:-.04em;margin:12px 0 23px}ul{padding:0;list-style:none;margin:0}li{display:flex;gap:16px;padding:14px 0;border-top:1px solid var(--edge);font-size:15px}.index{font:11px "Liberation Mono",monospace;color:#007e79;padding-top:5px;min-width:25px}
-footer{max-width:1120px;margin:auto;border-top:1px solid var(--edge);padding:24px 28px 40px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font:12px "Liberation Mono",monospace;color:var(--muted)}footer a{color:#006f6b}
-@media(max-width:720px){main{padding:52px 20px 70px}.grid{grid-template-columns:1fr;gap:42px}.top,footer{padding-left:20px;padding-right:20px}.lead{font-size:19px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Modern Objectivity reference v0.1: stage-specific adjustments. */
-:focus-visible{outline:3px solid var(--mo-focus)!important}
-.note{border-radius:var(--mo-radius-sm);box-shadow:var(--mo-shadow)}
-.eyebrow{color:var(--mo-accent)}
-footer a{color:var(--mo-accent)}
-</style>
+<link rel="stylesheet" href="earth-lab.css">
 </head>
-<body>
-<header><div class="top"><span>LEARNING LAB / 01</span><a href="https://github.com/philippklinz/lab-early-earth">SOURCE / GITHUB</a></div></header>
-<main>
-<section class="hero"><div class="eyebrow">INTERAKTIVES WISSENSLABOR / KONZEPTPHASE</div>
-<h1><strong>Die frühe Erde</strong></h1>
-<p class="lead">Wie wurde aus einem jungen Planeten ein möglicher Lebensraum?</p>
-<p>Entstehung der Erde, frühe Kruste, Ozeane, Atmosphäre und geologische Zeit.</p>
-<div class="note"><strong>Stand:</strong> Dieses Labor ist angelegt, aber die interaktiven Schaubilder sind noch nicht implementiert. Die untenstehenden Inhalte sind Themen und geplante Experimente, keine bereits funktionierenden Features.</div>
-</section>
-<div class="grid">
-<section class="panel"><div class="eyebrow">RESEARCH QUESTIONS</div><h2>Fragen, die wir untersuchen wollen</h2><ul><li><span class="index">01</span><span>Wie entstand die Erde aus dem frühen Sonnensystem?</span></li>
-<li><span class="index">02</span><span>Welche Belege kennen wir für die frühe Erdgeschichte?</span></li>
-<li><span class="index">03</span><span>Wie entwickelten sich Kruste, Ozeane und Atmosphäre?</span></li>
-<li><span class="index">04</span><span>Welche Umweltbedingungen könnten präbiotische Chemie ermöglicht haben?</span></li></ul></section>
-<section class="panel"><div class="eyebrow">FUTURE EXHIBITS</div><h2>Geplante Experimente</h2><ul><li><span class="index">01</span><span>Zeitachse zur Entstehung und Entwicklung der jungen Erde</span></li>
-<li><span class="index">02</span><span>Interaktive Schichten von Erdinnerem, Kruste, Ozean und Atmosphäre</span></li>
-<li><span class="index">03</span><span>Vergleich verschiedener wissenschaftlicher Rekonstruktionen</span></li></ul></section>
+<body class="earth-stage">
+<a href="#main" class="earth-skip">Zum Inhalt springen</a>
+<header class="earth-header"><div class="earth-wrap earth-header-inner">
+<a href="index.html" class="earth-brand"><span class="earth-symbol" aria-hidden="true">◉</span><span class="earth-brand-name">DIE FRÜHE ERDE<small>LEARNING LAB / 01</small></span></a>
+<nav class="earth-nav" aria-label="Labor-Navigation"><a href="index.html" aria-current="page">Übersicht</a><a href="01_protoerde.html">Proto-Erde 3D</a><a href="02_zeitmassstab.html">Zeitskala</a><a href="03_zeittrainer.html">Zeittrainer</a><a href="https://philippklinz.github.io/learning-labs/" class="earth-home-link">Alle Labore ↗</a></nav>
+</div></header>
+<main id="main">
+<div class="earth-wrap">
+<div class="earth-hero">
+ <div class="earth-hero-copy">
+  <div class="earth-overline">GEOLOGICAL LEARNING LABORATORY / 01</div>
+  <h1 class="earth-title">Wie wurde aus<br>Staub ein <em>Planet?</em></h1>
+  <p class="earth-lead">Untersuche die Entstehung der Erde und entdecke 4,567 Milliarden Jahre geologische Zeit – mit 3D-Modellen, einer maßstabsgetreuen Zeitleiste und einem Trainer fürs Gedächtnis.</p>
+  <p class="earth-note">Du kannst frei erkunden. Die Zeitgliederung folgt der International Commission on Stratigraphy, Version 2026/06. Der Beginn der Skala um 4567 Ma ist nicht der punktgenaue Entstehungstag unseres Planeten.</p>
+  <div class="earth-hero-actions"><a class="mo-btn mo-btn-primary mo-btn-lg" href="02_zeitmassstab.html">Zeitleiste erkunden →</a><a class="mo-btn mo-btn-lg" href="03_zeittrainer.html">Zeitskala lernen</a><a class="mo-btn mo-btn-lg" href="01_protoerde.html">Proto-Erde in 3D ↗</a></div>
+ </div>
+ <div class="earth-figure" role="img" aria-label="Schematische Illustration einer glühenden Proto-Erde, umgeben von Material und Umlaufbahnen">
+  <div class="figure-title"><span>FIG. 001 / PROTO-EARTH</span><span>ILLUSTRATION · NOT TO SCALE</span></div>
+  <svg viewBox="0 0 420 300" fill="none" aria-hidden="true">
+   <defs>
+    <radialGradient id="planet-shade" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffd39e"/><stop offset=".27" stop-color="#e68f5c"/><stop offset=".62" stop-color="#a94b37"/><stop offset=".85" stop-color="#54292b"/><stop offset="1" stop-color="#1e2d32"/></radialGradient>
+    <radialGradient id="halo"><stop offset=".2" stop-color="#ed935a" stop-opacity=".3"/><stop offset="1" stop-color="#d16d49" stop-opacity="0"/></radialGradient>
+    <pattern id="sheet" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" stroke="#98c6b6" stroke-opacity=".08"/></pattern>
+   </defs>
+   <rect width="420" height="300" fill="url(#sheet)"/>
+   <circle cx="216" cy="154" r="133" fill="url(#halo)"/>
+   <ellipse cx="216" cy="152" rx="179" ry="71" stroke="#8cb6a8" stroke-width="1.3" opacity=".53" transform="rotate(-20 216 152)"/>
+   <ellipse cx="216" cy="152" rx="152" ry="42" stroke="#da9675" stroke-width="1.6" stroke-dasharray="5 9" opacity=".7" transform="rotate(19 216 152)"/>
+   <circle cx="216" cy="154" r="95" fill="url(#planet-shade)" stroke="#d6a07b" stroke-opacity=".6"/>
+   <path d="M160 115c22-8 23 32 50 28s37-33 56-17-13 29-1 51-37 33-48 5-51-3-57-32" stroke="#ffbb80" stroke-opacity=".62" stroke-width="5" stroke-linecap="round"/>
+   <path d="M151 185c34-20 42 19 66 11s32-12 48 2" stroke="#f99e5a" stroke-opacity=".62" stroke-width="4" stroke-linecap="round"/>
+   <circle cx="80" cy="140" r="9" fill="#cc8f69"/><circle cx="350" cy="192" r="6" fill="#88aead"/><circle cx="321" cy="74" r="5" fill="#a5c5bd"/><circle cx="93" cy="230" r="4" fill="#ebaa7e"/>
+   <path d="M32 28v-9h10M379 19h10v9M32 274v9h10M379 283h10v-9" stroke="#a2c2b7" opacity=".52"/>
+   <text x="26" y="60" fill="#88b7ac" font-family="monospace" font-size="10" letter-spacing="1.4">ILLUSTRATIVE MODEL</text>
+   <path d="M305 222 347 254" stroke="#92b5aa" stroke-opacity=".8"/><text x="295" y="272" fill="#b7d4cb" font-family="monospace" font-size="10">HADAIKUM</text>
+  </svg>
+  <div class="figure-foot"><span>ZEIT: HADAIKUM · CA. 4567–4031 Ma</span><span>01 / ERDENTSTEHUNG</span></div>
+ </div>
 </div>
-<section class="note" style="margin-top:45px"><strong>Wissenschaftliche Einordnung:</strong> Frühe Umweltbedingungen und Datierungen sind aus indirekten Belegen rekonstruiert. Keine lückenlose oder scheinbar exakt beobachtete Erdgeschichte behaupten.</section>
+</div>
+<section class="earth-segment-surface"><div class="earth-wrap">
+<div class="earth-section-heading"><div><div class="earth-overline">01 / UNTERLABORE</div><h2>Drei Wege, die Erde zu verstehen.</h2></div><p>Experimentieren, zeitlich einordnen und aktiv erinnern. Alle drei Unterlabore sind bereits bedienbare Prototypen.</p></div>
+<div class="earth-card-grid">
+ <article class="earth-module-card">
+ <div class="earth-module-art"><svg viewBox="0 0 250 110" fill="none"><circle cx="124" cy="56" r="36" fill="#b75f48" stroke="#e4aa82"/><circle cx="124" cy="56" r="23" fill="#de8454" stroke="#f2b077"/><ellipse cx="125" cy="55" rx="94" ry="29" transform="rotate(-18 125 55)" stroke="#a9cbb7" stroke-dasharray="5 6"/><circle cx="210" cy="21" r="8" fill="#d7a48b"/></svg></div>
+ <div class="earth-module-body"><div class="earth-overline">UNTERLABOR 01 / THREE.JS</div><h3>Die Proto-Erde</h3><p>Sieben räumliche Szenen zur frühen Planetenbildung: Akkretion, Magmaozean, Schichten und Mondentstehung – als erklärtes Modell, nicht als Physiksimulation.</p></div>
+ <div class="earth-module-bottom"><a href="01_protoerde.html">3D-Modell öffnen ↗</a><span class="earth-stage-tag live">PROTOTYP</span></div>
+ </article>
+ <article class="earth-module-card">
+ <div class="earth-module-art"><svg viewBox="0 0 250 110" fill="none"><rect x="15" y="30" width="25" height="50" fill="#b97962"/><rect x="40" y="30" width="83" height="50" fill="#8e667e"/><rect x="123" y="30" width="105" height="50" fill="#687fa0"/><rect x="228" y="30" width="7" height="50" fill="#3e9a88"/><path d="M15 23h220M15 86h220" stroke="#c0ddd1"/><text x="15" y="17" fill="#a5ccc0" font-size="9" font-family="monospace">4567 Ma</text><text x="196" y="102" fill="#a5ccc0" font-size="9" font-family="monospace">HEUTE</text></svg></div>
+ <div class="earth-module-body"><div class="earth-overline">UNTERLABOR 02 / EXPLORE</div><h3>Geological Time Explorer</h3><p>Zoome durch die Erdgeschichte, wähle Äonen, Ären und Perioden. Jede Zeitspanne wird proportional zu ihrer Dauer gezeigt.</p></div>
+ <div class="earth-module-bottom"><a href="02_zeitmassstab.html">Zeitleiste öffnen ↗</a><span class="earth-stage-tag live">INTERAKTIV</span></div>
+ </article>
+ <article class="earth-module-card">
+ <div class="earth-module-art"><svg viewBox="0 0 250 110"><g stroke="#83c3b5" stroke-width="1.5" fill="#1d4146"><rect x="30" y="26" width="54" height="54" rx="5"/><rect x="96" y="26" width="54" height="54" rx="5"/><rect x="162" y="26" width="54" height="54" rx="5"/></g><text x="57" y="60" text-anchor="middle" fill="#bcf2e4" font-size="22" font-family="monospace">?</text><text x="123" y="60" text-anchor="middle" fill="#bcf2e4" font-size="22" font-family="monospace">?</text><text x="189" y="60" text-anchor="middle" fill="#bcf2e4" font-size="22" font-family="monospace">✓</text></svg></div>
+ <div class="earth-module-body"><div class="earth-overline">UNTERLABOR 03 / ACTIVE RECALL</div><h3>Geological Time Trainer</h3><p>Vier Äonen, drei Ären, zwölf Perioden – Reihenfolge, Hierarchie und Zeitgrenzen üben. Lokaler Lernstand ohne Account und ohne Streaks.</p></div>
+ <div class="earth-module-bottom"><a href="03_zeittrainer.html">Jetzt üben ↗</a><span class="earth-stage-tag live">INTERAKTIV</span></div>
+ </article>
+</div>
+</div></section>
+<section class="earth-wrap earth-mini"><div class="earth-section-heading"><div><div class="earth-overline">02 / NÄCHSTE FRAGEN</div><h2>Was kommt danach?</h2></div><p>Diese beiden Unterlabore sind geplant und werden erst verlinkt, sobald sie tatsächlich funktionieren.</p></div>
+<div class="earth-mini-grid">
+ <div class="earth-mini-item"><span class="earth-overline">UNTERLABOR 04 / GEPLANT</span><strong>Die junge Erde</strong><p>Wie entstanden Kruste, Atmosphäre und Ozeane? Welche Hinweise liefern geochemische und mineralogische Belege?</p></div>
+ <div class="earth-mini-item"><span class="earth-overline">UNTERLABOR 05 / GEPLANT</span><strong>Wie wissen wir das?</strong><p>Radiometrische Datierung, Zirkone, Meteoriten, Gesteinsschichten und Unsicherheit wissenschaftlicher Rekonstruktionen.</p></div>
+ <div class="earth-mini-item"><span class="earth-overline">OPTIONALE WISSENSREISE</span><strong>Vom Planeten zum Leben</strong><p>Später kann dieses Labor optional mit <a href="https://philippklinz.github.io/lab-abiogenesis/">LAB 02 – Abiogenese ↗</a> verbunden werden. Keine technische Abhängigkeit.</p></div>
+</div></section>
+<div class="earth-wrap"><p class="earth-source"><strong>Datengrundlage:</strong> <a href="https://stratigraphy.org/chart/">International Commission on Stratigraphy, International Chronostratigraphic Chart v2026/06 ↗</a> (CC BY 4.0). Das 3D-Modell ist eine schematische Darstellung, keine wissenschaftliche Simulation. Die Website nutzt die <a href="https://philippklinz.github.io/modern-objectivity-style/">Modern-Objectivity-Stilreferenz</a> und enthält keine Benutzerkonten oder Telemetrie.</p></div>
 </main>
-<footer><span>STANDALONE · STATIC HTML · <a href="https://philippklinz.github.io/modern-objectivity-style/">MODERN OBJECTIVITY ↗</a></span><span><a href="README.md">README</a> · <a href="AGENTS.md">AGENTS</a> · <a href="LICENSE">GPL v2.0</a></span></footer>
-</body>
-</html>
+<footer class="earth-footer"><div class="earth-wrap earth-footer-inner"><span>LEARNING LAB 01 · DIE FRÜHE ERDE<br>STATIC BY DESIGN · OPEN ACCESS · NO ACCOUNTS · NO TRACKING</span><span><a href="https://philippklinz.github.io/modern-objectivity-style/">Modern Objectivity ↗</a> · <a href="https://github.com/philippklinz/lab-early-earth">GitHub ↗</a> · <a href="LICENSE">GPL v2.0</a></span></div></footer>
+</body></html>
