@@ -54,7 +54,7 @@ body.earth-stage button,body.earth-stage input,body.earth-stage select{font:inhe
 .earth-module-bottom a{font-size:12px;font-weight:700;text-decoration:none}
 .earth-stage-tag{font:10px var(--mo-mono);padding:4px 8px;border:1px solid var(--mo-border);background:var(--mo-surface-2);color:var(--mo-muted);border-radius:4px}
 .earth-stage-tag.live{color:var(--mo-ok);background:var(--mo-ok-bg);border-color:#b3dccb}
-.earth-mini{padding:56px 0}
+.earth-mini{padding-top:56px;padding-bottom:56px}
 .earth-mini-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .earth-mini-item{border-top:1px solid var(--mo-border);padding:18px 0}
 .earth-mini-item strong{display:block;margin:7px 0 8px}
