@@ -22,7 +22,8 @@ Entstehung der Erde, frühe Kruste, Ozeane, Atmosphäre und geologische Zeit.
 - `01_protoerde.html`: seven controllable conceptual Three.js scenes; **not a physics simulation**.
 - `02_zeitmassstab.html` + `timeline.js`: proportional time viewer, zoom, pan, hierarchy, masking.
 - `03_zeittrainer.html` + `trainer.js`: daily and free active-recall practice, intervals, approximate placement, hide/reveal memory strip.
-- `04_junge_erde.html` and `05_geologische_methoden.html`: **planned only**; do not mark as implemented.
+- `04_junge_erde.html` + `young-earth.js`: functional early-Earth process explorer with three conceptual SVG views and separate observations, interpretations and unknowns.
+- `05_geologische_methoden.html` + `geological-methods.js`: working stratigraphy exercise, ideal closed-system uranium decay calculator and evidence case browser.
 
 ## Scientific responsibility
 
@@ -98,3 +99,13 @@ Read [docs/LAB-01-ROADMAP.md](docs/LAB-01-ROADMAP.md) before implementing learni
 - Per-unit personal notes are stored only in `localStorage` under `lab01-geological-portraits-notes-v1` and are independent of the trainer progress key. Never upload, track, silently remove or migrate them without user consent. Keep JSON export and validated JSON import functional.
 - In the trainer feedback, maintain a contextual link to the time unit's portrait; avoid interrupting the ongoing quiz.
 - Claims in portraits are authored interpretations, sourced via ICS, USGS, BGS, NPS, and NASA—not verbatim official ICS descriptions. Update source attribution when making changes.
+
+## Modules 04–05: implementation contracts
+
+- Reuse `earth-inquiry.css` and the lab's local Modern Objectivity reference; avoid introducing new dependencies.
+- The young-Earth module must **never** suggest its four process tabs are four exactly dated, mutually exclusive phases. The Earth diagrams are schematic, not accurate reconstructions of the Hadean.
+- The methods module separates (1) **relative order** from (2) **numeric radiometric ages**. The intrusion E cuts A/B/C but is overlaid by D following an erosional surface; never invert these relationships.
+- The isotope activity is a **closed-system teaching model** with a known initial parent fraction. U-238 half-life approx 4468 Ma; U-235 half-life approx 704 Ma. Actual U-Pb mineral dating is not just a slider reading of surviving atoms. Keep an explicit warning for computed ages older than the Earth.
+- Four evidence choices: meteorites, Jack Hills zircons, old rock, Moon samples. Distinguish measurable observations from geological hypotheses; keep credible external reference links.
+- Avoid localStorage for these modules; they are session-only interactions. Do not invent experiments, fossil evidence or measured isotope results.
+- Check all 5 navigation links and the homepage status after introducing future modules. Running browser-level visual tests and accessibility checks remains desirable.

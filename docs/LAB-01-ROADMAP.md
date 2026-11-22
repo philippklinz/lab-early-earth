@@ -1,6 +1,6 @@
 # LAB 01 — Die frühe Erde: Ausbauplan v0.1
 
-**Status (22. November 2026):** M1 (Zeit-Explorer), M2 (Lerntrainer) und ein schematischer M3-Prototyp (Three.js) sind implementiert. M4–M5 bleiben geplant. Prototypen sind nicht automatisch wissenschaftlich, visuell oder barrierefrei vollständig validiert.
+**Status (22. November 2026):** M1 (Zeit-Explorer), M2 (Lerntrainer) und ein schematischer M3-Prototyp (Three.js) sind implementiert. M4–M5 sind inzwischen als erste interaktive Prototypen umgesetzt. Prototypen sind nicht automatisch wissenschaftlich, visuell oder barrierefrei vollständig validiert.
 
 ## Ziel
 
@@ -94,9 +94,9 @@ Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, oh
 
 **M3 — Proto-Erde in 3D (schematischer Viewer implementiert):** Drei.js-Storyboard mit 4–6 klar getrennten Zeit-/Prozessphasen. Physik- und Evidenzhinweise gut sichtbar. Prüfen, ob lokale Three.js-Bündelung sinnvoll ist.
 
-**M4 — Junge Erde und Methoden:** Hadaikum, Archaikum, Gesteins- und Isotopenbelege, alternative Rekonstruktionsmodelle.
+**M4 — Junge Erde und Methoden (erste Prototypen umgesetzt):** Hadaikum, Archaikum, Gesteins- und Isotopenbelege, alternative Rekonstruktionsmodelle.
 
-**M5 — Detailwissen und Vernetzung:** feinere stratigraphische Ebenen, geologische Ereignisse, Brücke zu LAB 02 Abiogenese. Diese Brücke ist ein optionaler Link, keine Laufzeitabhängigkeit.
+**M5 — Detailwissen und Vernetzung (teilweise umgesetzt; weitere Vertiefung geplant):** feinere stratigraphische Ebenen, geologische Ereignisse, Brücke zu LAB 02 Abiogenese. Diese Brücke ist ein optionaler Link, keine Laufzeitabhängigkeit.
 
 ## Minimaler Abnahmetest M1/M2
 
@@ -118,10 +118,18 @@ Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, oh
 - `03_zeittrainer.html` / `trainer.js`: tägliche Wiederholungen, freie Runden, verschiedene Aufgaben, Lückenstreifen, lokales Zurücksetzen.
 - `01_protoerde.html` / `proto-earth.js`: sieben schematische Three.js-Szenen, nicht physikalisch berechnet; verständlicher Fallback ohne WebGL.
 - `THIRD_PARTY_NOTICES.md`: wissenschaftliche Quellen, Namensnennung und separate Lizenzen.
-- M4 und M5: ohne Implementierung, weiterhin Zukunftsmodule.
+- M4 und M5: erste funktionsfähige Prototypen vorhanden; wissenschaftliche Vertiefungen können folgen.
 
 ## Ergänzung: geologische Zeitporträts und private Notizen
 
 Der Zeit-Explorer enthält jetzt **36 einheitenspezifische Porträts** für alle Äonen, Ären und Perioden des aktuellen `time-data.js`. Jeder Eintrag bietet eine kontextualisierende Erklärung, drei Lernfakten, die tatsächliche Art der Grenzdefinition (so weit quellenbasiert erklärbar), eine wissenschaftliche Einschränkung, einen Merksatz und eine symbolische SVG-Szene. Ein grafischer Mini-Zeitrahmen zeigt die Dauer innerhalb der übergeordneten Einheit. In der originalen Explorer-Ansicht bleibt die globale Zeitleiste maßstabsgetreu. Inhalte und Quellen liegen getrennt in `period-portraits-data.js`; die Darstellung wird durch `period-portraits.js` und `period-portraits.css` übernommen.
 
 Die **persönlichen Notizen** pro Abschnitt liegen ausschließlich im Browser (`localStorage`), lassen sich als JSON sichern und importieren und sind vom Trainerfortschritt getrennt. Direkte Links auf Abschnitte funktionieren mit `#unit=<id>`; Trainer-Feedback verlinkt die jeweiligen Porträts. Illustrationen sind symbolische Merkbilder, keine exakten zeitgenössischen geologischen Weltkarten.
+
+## Umsetzung der bisherigen Zukunftsmodule (V0.1)
+
+- **Unterlabor 04:** `04_junge_erde.html` / `young-earth.js` mit vier interaktiven fachlichen Prozessschwerpunkten und drei umschaltbaren SVG-Sichten. Dazu Beobachtung–Deutung–Offene-Frage und ausgewählte frühe Belege (Zirkone, Mondproben, alte Gesteine). Die vier Schwerpunkte sind **keine datierten, disjunkten Phasen**.
+- **Unterlabor 05:** `05_geologische_methoden.html` / `geological-methods.js` mit 4-Fragen-Quiz zu stratigraphischen Ordnungsregeln, einer parametrisierbaren **idealisierten** U-238/U-235-Halbwertszeit-Uhr sowie vier interaktiven Beweisketten. Der Rechner ist kein Verfahren zur Datierung echter Proben.
+- **Gestaltung:** gemeinsames `earth-inquiry.css` als lokale Ergänzung zur Modern-Objectivity-Bühne.
+- Der LAB-01-Startbereich „Was kommt danach?“ und das Hauptmenü verlinken jetzt alle fünf real existierenden Module.
+- Weitere Arbeit: vertiefte Datenmodelle, wissenschaftliche Gutprüfung einzelner Hypothesen, browserbasierte visuelle und assistive Qualitätssicherung.

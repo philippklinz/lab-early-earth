@@ -1,6 +1,6 @@
 # LAB 01 — Die frühe Erde
 
-Ein eigenständiges, interaktives Lernlabor zur Entstehung der Erde und zur geologischen Zeitskala. **Status: drei interaktive Prototypen umgesetzt; weitere Unterlabore geplant.**
+Ein eigenständiges, interaktives Lernlabor zur Entstehung der Erde und zur geologischen Zeitskala. **Status: fünf interaktive Unterlabore als funktionale Prototypen umgesetzt.**
 
 **Online:** https://philippklinz.github.io/lab-early-earth/
 
@@ -12,7 +12,22 @@ Ein eigenständiges, interaktives Lernlabor zur Entstehung der Erde und zur geol
 | 02 — Geological Time Explorer | [02_zeitmassstab.html](02_zeitmassstab.html) | Maßstabsgetreue Zeitachse mit Zoom, Auswahl und **36 illustrierten Zeitporträts**: geologische Merkmale, Grenzdefinitionen, Unsicherheiten, Merksätze, eigene Notizen. |
 | 03 — Geological Time Trainer | [03_zeittrainer.html](03_zeittrainer.html) | Multiple Choice, Reihenfolge, Zuordnung, numerische Grenzwerte, Platzierung, aktive Erinnerung, tägliche Wiederholungen und Lückentabelle. |
 
-Die Unterlabore 04 (junge Erde: Kruste, Atmosphäre, Wasser) und 05 (geologische Datierung und geologische Belege) sind weiterhin nur geplant.
+| 04 — Die junge Erde | [04_junge_erde.html](04_junge_erde.html) | Vier auswählbare Prozesse mit Oberfläche/Querschnitt/Atmosphärenansicht; Beobachtungen, Interpretationen und wissenschaftliche Unsicherheiten getrennt. |
+| 05 — Wie wissen wir das? | [05_geologische_methoden.html](05_geologische_methoden.html) | Vier Fragen zur relativen Stratigraphie, ein interaktiver idealisierter Uran-Zerfallsrechner und Beweisketten zu Zirkonen, Meteoriten, alten Gesteinen und Mondproben. |
+
+Die ersten drei Unterlabore bleiben eigenständig; 04 und 05 sind über die Startseite und das globale Labormenü erreichbar.
+
+## Die junge Erde und geologische Methoden
+
+Das [Unterlabor 04](04_junge_erde.html) erschließt geologische Prozesse, die im Hadaikum abliefen oder sich überlagerten: Schmelzen durch Einschläge und Wärme, Metall-Silikat-Differentiation, Krustenbildung und frühe Wasserkreisläufe. Die Oberfläche, ein nicht maßstabsgetreuer Querschnitt sowie Atmosphäre/Wasser sind als **schematische SVG-Modelle** umschaltbar. Jeder Prozess trennt **Beobachtung, Deutung und offene Frage**. Es handelt sich nicht um eine berechnete physikalische Simulation oder eine exakte Chronologie.
+
+Das [Unterlabor 05](05_geologische_methoden.html) unterscheidet **relative Datierung** von **radiometrischer Datierung**:
+
+- **Schichtenexperiment:** vier Fragen zur Abfolge der Sedimentschichten A–D sowie einer Intrusion E. Die zugrundeliegenden Prinzipien sind Superposition und Durchschneidungsverhältnisse; keine absoluten Alter werden aus der Abfolge allein abgeleitet.
+- **Isotopenuhr:** U-238 → Pb-206 mit angenommener Halbwertszeit 4468 Ma und U-235 → Pb-207 mit 704 Ma. Der Prozentregler nutzt die **ideal vereinfachte** Formel `t = T½ × log₂(1/f)`, wobei f der bekannte Restanteil der Mutterisotope ist. Reale Uran-Blei-Datierungen messen Isotopenverhältnisse, berücksichtigen Tochterprodukte und mögliche Systemstörungen. Rechnerische Werte über 4567 Ma werden als für eine irdische Mineralprobe unplausibel gekennzeichnet.
+- **Beweisketten:** Meteorite, Jack-Hills-Zirkone, alte Krustengesteine und Mondgesteine werden jeweils nach Befund, Schlussfolgerung und Unsicherheit erklärt.
+
+Die beiden neuen Module benötigen keine zusätzlichen JavaScript-Bibliotheken oder externe Laufzeitressourcen. Wissenschaftliche Links befinden sich direkt auf jeder Seite; Eigenzeichnungen sind **nicht maßstabsgerecht oder reale Forschungsdaten**.
 
 ## Zeitporträts und dein geologisches Notizbuch
 

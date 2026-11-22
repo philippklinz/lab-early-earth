@@ -48,3 +48,17 @@ Reference sources used to inform the summaries:
 - NASA, *Ancient Crystals Suggest Earlier Ocean*: https://science.nasa.gov/earth/earth-observatory/ancient-crystals-suggest-earlier-ocean/
 
 **Illustrations:** The symbolic SVG graphics are authored locally for this lab. They are **not** original BGS/NPS/ICS artworks, measured geological data, paleogeographical reconstructions, faithful fossils or depictions of specific species. Some sources above use older numerical calibrations than ICS v2026/06; the lab uses ICS exclusively for its numeric ages.
+
+## Geological methods and young-Earth interactive experiments
+
+The materials in `04_junge_erde.html`, `young-earth.js`, `05_geologische_methoden.html`, `geological-methods.js`, and `earth-inquiry.css` are authored for this lab and use schematic diagrams; no scientific photos, third-party illustrations, or proprietary data are embedded.
+
+Scientific references:
+
+- National Park Service, *Radiometric Age Dating*, https://www.nps.gov/subjects/geology/radiometric-age-dating.htm. The uranium isotope half-lives and dating context are approximate teaching values.
+- U.S. Geological Survey, *Geologic Age: Using Radioactive Decay to Determine Geologic Age*, https://www.usgs.gov/educational-resources/geologic-age-using-radioactive-decay-determine-geologic-age.
+- National Institute of Standards and Technology, *How Do You Know the Age of Fossils and Other Old Things?*, https://www.nist.gov/how-do-you-measure-it/how-do-you-know-age-fossils-and-other-old-things.
+- Wilde, S. A., Valley, J. W., Peck, W. H., & Graham, C. M. (2001), *Evidence from detrital zircons for the existence of continental crust and oceans on the Earth 4.4 Gyr ago*, Nature 409, 175–178, https://doi.org/10.1038/35051550.
+- NASA, *Moon Formation*, https://science.nasa.gov/moon/formation/.
+
+The stratigraphic outcrop, isotope experiment, selected isotope quantities and planetary cross section are intentionally fictional/idealised educational models and must not be attributed as measured field or laboratory observations.
