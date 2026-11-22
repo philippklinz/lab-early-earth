@@ -1,6 +1,6 @@
 # LAB 01 — Die frühe Erde: Ausbauplan v0.1
 
-**Status:** Fachliches und didaktisches Konzept; **keine** hier aufgeführten Experimente sind damit bereits implementiert.
+**Status (22. November 2026):** M1 (Zeit-Explorer), M2 (Lerntrainer) und ein schematischer M3-Prototyp (Three.js) sind implementiert. M4–M5 bleiben geplant. Prototypen sind nicht automatisch wissenschaftlich, visuell oder barrierefrei vollständig validiert.
 
 ## Ziel
 
@@ -88,11 +88,11 @@ Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, oh
 
 ## Reihenfolge der Umsetzung
 
-**M1 — Verständnis der Zeit:** lokale Datenstruktur, interaktive Zeitleiste mit nachvollziehbarem Zoom, Auswahl und einer Übersicht über Äonen, Ären, Perioden. Funktioniert ohne Three.js.
+**M1 — Verständnis der Zeit (Prototyp implementiert):** lokale Datenstruktur, interaktive Zeitleiste mit nachvollziehbarem Zoom, Auswahl und einer Übersicht über Äonen, Ären, Perioden. Funktioniert ohne Three.js.
 
-**M2 — Erinnern und Wiederholen:** täglicher Lerntrainer, Einordnungs-/Reihenfolgeaufgaben, freie Übung und lokaler Fortschritt. Wichtigste Anforderung: nach kurzer Nutzung kann der Lernende die 4 Äonen und 3 Ären selbst reproduzieren.
+**M2 — Erinnern und Wiederholen (Prototyp implementiert):** täglicher Lerntrainer, Einordnungs-/Reihenfolgeaufgaben, freie Übung und lokaler Fortschritt. Wichtigste Anforderung: nach kurzer Nutzung kann der Lernende die 4 Äonen und 3 Ären selbst reproduzieren.
 
-**M3 — Proto-Erde in 3D:** Drei.js-Storyboard mit 4–6 klar getrennten Zeit-/Prozessphasen. Physik- und Evidenzhinweise gut sichtbar. Prüfen, ob lokale Three.js-Bündelung sinnvoll ist.
+**M3 — Proto-Erde in 3D (schematischer Viewer implementiert):** Drei.js-Storyboard mit 4–6 klar getrennten Zeit-/Prozessphasen. Physik- und Evidenzhinweise gut sichtbar. Prüfen, ob lokale Three.js-Bündelung sinnvoll ist.
 
 **M4 — Junge Erde und Methoden:** Hadaikum, Archaikum, Gesteins- und Isotopenbelege, alternative Rekonstruktionsmodelle.
 
@@ -110,3 +110,12 @@ Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, oh
 - Ohne JavaScript ist der didaktische Überblick und die Quellenangabe weiterhin lesbar.
 - Keine fälschlich als implementiert gekennzeichneten Konzeptkapitel.
 - Neue Seiten unabhängig über GitHub Pages aufrufbar; keine Verletzung existierender Links.
+
+## Implementierungsstand V0.1
+
+- `time-data.js`: gemeinsame ICS-2026/06-Basis für Äonen, Ären und Perioden.
+- `02_zeitmassstab.html` / `timeline.js`: 4.567–0 Ma proportional, Zoom/Schwenken, Maskieren, Hierarchie und Detailinformationen.
+- `03_zeittrainer.html` / `trainer.js`: tägliche Wiederholungen, freie Runden, verschiedene Aufgaben, Lückenstreifen, lokales Zurücksetzen.
+- `01_protoerde.html` / `proto-earth.js`: sieben schematische Three.js-Szenen, nicht physikalisch berechnet; verständlicher Fallback ohne WebGL.
+- `THIRD_PARTY_NOTICES.md`: wissenschaftliche Quellen, Namensnennung und separate Lizenzen.
+- M4 und M5: ohne Implementierung, weiterhin Zukunftsmodule.

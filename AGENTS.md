@@ -17,11 +17,12 @@ Entstehung der Erde, frühe Kruste, Ozeane, Atmosphäre und geologische Zeit.
 - Wie entwickelten sich Kruste, Ozeane und Atmosphäre?
 - Welche Umweltbedingungen könnten präbiotische Chemie ermöglicht haben?
 
-### Candidate interactive exhibits — not yet implemented
+### Implemented exhibits (working prototypes)
 
-- Zeitachse zur Entstehung und Entwicklung der jungen Erde
-- Interaktive Schichten von Erdinnerem, Kruste, Ozean und Atmosphäre
-- Vergleich verschiedener wissenschaftlicher Rekonstruktionen
+- `01_protoerde.html`: seven controllable conceptual Three.js scenes; **not a physics simulation**.
+- `02_zeitmassstab.html` + `timeline.js`: proportional time viewer, zoom, pan, hierarchy, masking.
+- `03_zeittrainer.html` + `trainer.js`: daily and free active-recall practice, intervals, approximate placement, hide/reveal memory strip.
+- `04_junge_erde.html` and `05_geologische_methoden.html`: **planned only**; do not mark as implemented.
 
 ## Scientific responsibility
 
@@ -74,4 +75,15 @@ Use the **locally vendored** `modern-objectivity.css` (the v0.1 draft [practical
 
 ## Agreed lab structure (planning)
 
-Read [docs/LAB-01-ROADMAP.md](docs/LAB-01-ROADMAP.md) before implementing learning exhibits. In particular, the user wants an accurate **Geological Time Explorer**, a daily **Geological Time Trainer** to complement a printed chart, and a Three.js visual exploration of Proto-Earth formation. Use the ICS v2026/06 chart as the versioned starting source; do not hard-code silently outdated ages or claim planetary animations are physically validated. Follow the roadmap incrementally without introducing a cross-lab dependency. The roadmap is not proof that features are already implemented.
+Read [docs/LAB-01-ROADMAP.md](docs/LAB-01-ROADMAP.md) before implementing learning exhibits. In particular, the user wants an accurate **Geological Time Explorer**, a daily **Geological Time Trainer** to complement a printed chart, and a Three.js visual exploration of Proto-Earth formation. Use the ICS v2026/06 chart as the versioned starting source; do not hard-code silently outdated ages or claim planetary animations are physically validated. Follow the roadmap incrementally without introducing a cross-lab dependency. M1, M2 and the conceptual M3 viewer are now implemented as prototypes. A prototype is not proof of scientific or accessibility validation.
+
+## Current code contracts
+
+- Shared stratigraphic units are in `time-data.js` (ICS v2026/06, CC BY 4.0). Do not duplicate dates or silently alter boundaries in experiments.
+- `earth-lab.css` is the local stage design; keep `modern-objectivity.css` as an unchanged upstream vendor stylesheet.
+- Keep the full-Earth timeline **proportional**. The other presets are zoom states, not different age data.
+- Trainer progression is local-only (`localStorage`). Free practice **must not** write progress; due-date sessions may. Keep straightforward interval logic and reset controls.
+- The 3D viewer uses Three.js 0.160.0 from an external pinned CDN. Its inline page controls work even if Three.js cannot be loaded. Do not claim N-body, SPH or temperature-field simulation.
+- Preserve third-party attribution in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). ICS data = CC BY 4.0, Three.js = MIT, Modern Objectivity = GPL-2.0-only.
+- Verify links among `index.html`, `01_protoerde.html`, `02_zeitmassstab.html`, `03_zeittrainer.html`. M4/M5 remain future work.
+- Correctness is scientific and behavioral: positive interval durations; no gaps between adjacent stratigraphic units at the same rank; keyboard-usable selections; accurate feedback; scientific uncertainty visible.
