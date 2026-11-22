@@ -152,22 +152,36 @@ $('mask-toggle').addEventListener('click',e=>{
  renderLanes();
 });
 const host=$('time-lanes');
+let suppressClickUntil=0;
 host.addEventListener('pointerdown',e=>{
- if(e.target.closest('button')||e.button!==0)return;
- drag={x:e.clientX,old:view.old,young:view.young};
- host.classList.add('dragging');
- if(host.setPointerCapture)host.setPointerCapture(e.pointerId);
+ if(e.button!==0)return;
+ drag={x:e.clientX,old:view.old,young:view.young,moved:false,pointerId:e.pointerId};
 });
 host.addEventListener('pointermove',e=>{
  if(!drag)return;
+ const dx=e.clientX-drag.x;
+ // A normal click still selects the underlying geological unit.
+ if(!drag.moved&&Math.abs(dx)<6)return;
+ if(!drag.moved){
+   drag.moved=true;
+   host.classList.add('dragging');
+   if(host.setPointerCapture)host.setPointerCapture(drag.pointerId);
+ }
  const width=Math.max(1,host.getBoundingClientRect().width);
- const shift=(e.clientX-drag.x)/width*(drag.old-drag.young);
+ const shift=dx/width*(drag.old-drag.young);
  const span=drag.old-drag.young;
  const old=clamp(drag.old+shift,span,TOTAL);
  view={old,young:old-span};render();
 });
-function endDrag(){drag=null;host.classList.remove('dragging')}
-host.addEventListener('pointerup',endDrag);host.addEventListener('pointercancel',endDrag);
+function endDrag(){
+ if(drag?.moved)suppressClickUntil=Date.now()+220;
+ drag=null;host.classList.remove('dragging');
+}
+host.addEventListener('pointerup',endDrag);
+host.addEventListener('pointercancel',endDrag);
+host.addEventListener('click',e=>{
+ if(Date.now()<suppressClickUntil){e.stopPropagation();e.preventDefault()}
+},true);
 host.addEventListener('wheel',e=>{
  if(!e.ctrlKey&&!e.metaKey)return;
  e.preventDefault();
