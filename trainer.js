@@ -103,6 +103,12 @@ function feedback(correct,explain,answer){
  out.append(create('p','',(answer?'Richtige Antwort: '+answer+'. ':'')+explain));
  const note=current?.unit?.note;
  if(note)out.append(create('p','',note));
+ if(current?.unit){
+   const link=create('a','mo-btn mo-btn-sm','Zeitporträt dieser Einheit ansehen ↗');
+   link.href='02_zeitmassstab.html#unit='+encodeURIComponent(current.unit.id);
+   link.target='_blank';link.rel='noopener noreferrer';link.style.marginTop='13px';
+   out.append(link);
+ }
 }
 function finishAnswer(correct,details,answer){
  if(!current||current.done)return;
