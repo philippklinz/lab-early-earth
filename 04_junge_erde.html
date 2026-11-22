@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f7f7">
+<meta name="description" content="Die junge Erde: Kruste, Mantel, frühe Atmosphäre und Wasser interaktiv erkunden – mit wissenschaftlichen Belegen und klaren Modellgrenzen.">
+<title>Die junge Erde – Learning Lab 01</title>
+<link rel="stylesheet" href="modern-objectivity.css">
+<link rel="stylesheet" href="earth-lab.css">
+<link rel="stylesheet" href="earth-inquiry.css">
+<script defer src="young-earth.js"></script>
+</head>
+<body class="earth-stage">
+<a href="#main" class="earth-skip">Zum Inhalt springen</a>
+<header class="earth-header"><div class="earth-wrap earth-header-inner">
+<a href="index.html" class="earth-brand"><span class="earth-symbol" aria-hidden="true">◉</span><span class="earth-brand-name">DIE FRÜHE ERDE<small>LEARNING LAB / 01</small></span></a>
+<nav class="earth-nav" aria-label="Labor-Navigation"><a href="index.html">Übersicht</a><a href="01_protoerde.html">Proto-Erde 3D</a><a href="02_zeitmassstab.html">Zeitskala</a><a href="03_zeittrainer.html">Zeittrainer</a><a href="04_junge_erde.html" aria-current="page">Junge Erde</a><a href="05_geologische_methoden.html">Methoden</a><a href="https://philippklinz.github.io/learning-labs/" class="earth-home-link">Alle Labore ↗</a></nav>
+</div></header>
+<main id="main" class="earth-wrap earth-page">
+<div class="earth-crumb"><a href="index.html">LAB 01</a> / UNTERLABOR 04 / HABITABILITÄT</div>
+<section class="inquiry-hero">
+<div><div class="earth-overline">JUNGE ERDE / HADAIKUM</div>
+<h1>Eine Welt, die wir<br><em>nie gesehen haben.</em></h1>
+<p class="earth-lead">Wie wurden aus einer heißen Proto-Erde Kruste, Atmosphäre und möglicherweise frühe Ozeane? Untersuche vier Prozesse und trenne dabei Beobachtungen, Schlussfolgerungen und offene Fragen.</p>
+<div class="inquiry-badges"><span>INTERAKTIVE SCHICHTEN</span><span>4 PROZESSE</span><span>BELEGE &amp; HYPOTHESEN</span><span>KEINE PHYSIKSIMULATION</span></div></div>
+<aside class="inquiry-index"><span>GEOLOGISCHE EINORDNUNG</span><strong>4567–4031 Ma</strong><span>Hadaikum · ICS 2026/06</span><br><span>Die Prozesse überlappen sich; dies ist kein genauer Ablaufplan.</span></aside>
+</section>
+<section class="inquiry-section" aria-labelledby="process-heading">
+<div class="inquiry-section-title"><div><div class="earth-overline">01 / PROZESSE ERKUNDEN</div><h2 id="process-heading">Vom Gestein zur Umwelt.</h2></div><p>Die Prozesse sind miteinander verbunden. Wähle einen Schwerpunkt und betrachte die Erde von außen, im Schnitt oder mit atmosphärischem Fokus.</p></div>
+<div class="inquiry-process-nav" role="group" aria-label="Frühe Erdprozesse">
+<button type="button" class="inquiry-choice" data-phase="0" aria-pressed="true"><span>01 / ENERGIE</span><b>Einschläge &amp; Schmelze</b></button>
+<button type="button" class="inquiry-choice" data-phase="1" aria-pressed="false"><span>02 / AUFBAU</span><b>Kern &amp; Mantel</b></button>
+<button type="button" class="inquiry-choice" data-phase="2" aria-pressed="false"><span>03 / OBERFLÄCHE</span><b>Erste Kruste</b></button>
+<button type="button" class="inquiry-choice" data-phase="3" aria-pressed="false"><span>04 / STOFFKREISLAUF</span><b>Wasser &amp; Atmosphäre</b></button>
+</div>
+<div class="inquiry-panel">
+<div class="inquiry-toolbar" role="group" aria-label="Erddarstellung wählen">
+ <span class="earth-overline" style="align-self:center;margin-right:10px">ANSICHT</span>
+ <button class="mo-btn mo-btn-sm" type="button" data-view="surface" aria-pressed="true">Oberfläche</button>
+ <button class="mo-btn mo-btn-sm" type="button" data-view="section" aria-pressed="false">Querschnitt</button>
+ <button class="mo-btn mo-btn-sm" type="button" data-view="atmosphere" aria-pressed="false">Atmosphäre / Wasser</button>
+</div>
+<div class="inquiry-layout">
+ <div id="young-scene" class="inquiry-stage inquiry-scene" data-phase="0" data-view="surface" role="img" aria-label="Schematische Darstellung einer heißen frühen Erde; Ansichten und Prozesse werden über die Schaltflächen gesteuert.">
+  <div class="inquiry-stage-meta"><span>FIG. 004 / KONZEPTMODELL</span><span id="young-visual-label">ENERGIE / SCHMELZE</span></div>
+  <svg viewBox="0 0 640 445" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="young-planet" cx="37%" cy="33%" r="72%"><stop offset="0%" stop-color="#ffd6a0"/><stop offset="36%" stop-color="#ce835d"/><stop offset="71%" stop-color="#9a5844"/><stop offset="100%" stop-color="#243a44"/></radialGradient>
+      <radialGradient id="young-halo"><stop offset="30%" stop-color="#dd875a" stop-opacity=".3"/><stop offset="100%" stop-color="#dd875a" stop-opacity="0"/></radialGradient>
+      <clipPath id="young-cut"><path d="M318 219 L458 68 A180 180 0 0 1 470 357 Z"/></clipPath>
+      <pattern id="young-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" stroke="#b8ddd5" stroke-opacity=".07" fill="none"/></pattern>
+    </defs>
+    <rect width="640" height="445" fill="url(#young-grid)"/>
+    <circle cx="318" cy="219" r="218" fill="url(#young-halo)"/>
+    <ellipse cx="318" cy="219" rx="245" ry="78" transform="rotate(-17 318 219)" stroke="#799e9c" stroke-width="2" stroke-dasharray="5 10" fill="none" opacity=".6"/>
+    <circle cx="318" cy="219" r="150" fill="url(#young-planet)" class="earth-core-body" stroke="#c9a38b" stroke-opacity=".5" stroke-width="2"/>
+    <g data-layer="surface">
+      <path d="M217 160q43-43 91 8t89-14M210 239q42-33 99 17t110-12M251 312q54-38 112 0" fill="none" stroke="#ffcc96" stroke-width="10" opacity=".72" stroke-linecap="round"/>
+      <path d="M268 94q66 23 87 58M219 292q40 29 101 39" fill="none" stroke="#74443c" stroke-width="7" opacity=".65" stroke-linecap="round"/>
+    </g>
+    <g data-layer="section" clip-path="url(#young-cut)">
+      <circle cx="318" cy="219" r="150" fill="#d9a58a"/>
+      <circle cx="318" cy="219" r="137" fill="#a65f4d"/>
+      <circle cx="318" cy="219" r="92" fill="#d78e58" stroke="#f5c091" stroke-width="2"/>
+      <circle cx="318" cy="219" r="52" fill="#ffd4a0" stroke="#ffe6ba" stroke-width="2"/>
+      <circle cx="318" cy="219" r="11" fill="#fff0bc"/>
+    </g>
+    <g data-layer="atmosphere">
+      <circle cx="318" cy="219" r="161" fill="none" stroke="#91dbe4" stroke-width="14" opacity=".55"/>
+      <circle cx="318" cy="219" r="177" fill="none" stroke="#75babc" stroke-width="3" stroke-dasharray="8 12" opacity=".8"/>
+      <path d="M215 270q53 27 103 8t96-4M234 310q79 37 159-12" stroke="#7ae3ee" stroke-width="13" opacity=".77" fill="none" stroke-linecap="round"/>
+      <path d="M195 178q51-30 119-4t111-10M210 142q54-26 111-10t95 3" stroke="#d8eced" stroke-width="7" opacity=".6" fill="none" stroke-linecap="round"/>
+    </g>
+    <circle cx="116" cy="137" r="13" fill="#bd7b68"/>
+    <circle cx="512" cy="300" r="7" fill="#e2a883"/>
+    <path d="M457 115l70-53M461 305l70 49" stroke="#9fc6c2" stroke-width="1.5" fill="none"/>
+    <text x="529" y="58" class="diagram-label">MODELL</text>
+    <text x="529" y="369" class="diagram-annotation">NICHT</text>
+    <text x="529" y="382" class="diagram-annotation">MASSSTÄBLICH</text>
+  </svg>
+  <div class="inquiry-stage-foot"><span id="young-stage-foot">MODELLDARSTELLUNG · FRÜHE ERDE</span><span>SCHEMATISCH / NICHT BERECHNET</span></div>
+ </div>
+ <div class="inquiry-inspector">
+  <div class="earth-overline" id="young-step-label">PROZESS 01 / ENERGIE</div>
+  <h3 id="young-title">Einschläge &amp; Schmelze</h3>
+  <p id="young-intro" class="main-description">Das Wachstum der Proto-Erde setzte Energie frei. Einschläge, Gravitation und radioaktive Wärmequellen konnten große Bereiche aufschmelzen.</p>
+  <p id="young-subtitle">Eine Magmaozean-Phase kann mehrfach aufgetreten sein. Die Erde war nicht notwendigerweise während des gesamten Hadaikums ein glühender Ozean.</p>
+  <div class="inquiry-uncertainty"><strong>WAS IST UNSICHER?</strong><p id="young-limit">Die räumliche Ausdehnung und Dauer solcher Schmelzphasen ist nicht direkt beobachtet.</p></div>
+  <div class="inquiry-small-links"><a href="01_protoerde.html">Proto-Erde in 3D ↗</a><a href="02_zeitmassstab.html#unit=had">Hadaikum im Zeitmaßstab ↗</a></div>
+ </div>
+</div>
+</div>
+<div class="inquiry-info-grid" aria-label="Beobachtung, Schlussfolgerung und offene Forschungsfrage">
+ <article class="inquiry-fact"><small>01 / WIR BEOBACHTEN</small><strong>Geologische Spuren</strong><p id="young-observed">Alte Minerale und extraterrestrisches Material bewahren indirekte Hinweise auf den frühen Wärmehaushalt.</p></article>
+ <article class="inquiry-fact"><small>02 / WIR SCHLIESSEN DARAUS</small><strong>Wissenschaftliches Modell</strong><p id="young-interpreted">Energiereiche Wachstumsprozesse konnten umfangreiche Schmelzen erzeugen.</p></article>
+ <article class="inquiry-fact"><small>03 / WIR FRAGEN NOCH</small><strong>Offene Forschungsfrage</strong><p id="young-open">Wann und wie oft bedeckten Magmaozeane größere Bereiche der Erde?</p></article>
+</div>
+</section>
+<section class="inquiry-section" aria-labelledby="evidence-heading">
+<div class="inquiry-section-title"><div><div class="earth-overline">02 / BELEGE ANSEHEN</div><h2 id="evidence-heading">Kein Foto. Trotzdem Hinweise.</h2></div><p>Die Erde erneuert ihre Kruste. Die frühesten Umweltzustände erschließen wir daher aus winzigen Mineralen, den ältesten Gesteinen, Meteoriten und dem Mond.</p></div>
+<div class="inquiry-info-grid">
+<article class="inquiry-fact"><small>INDIZ / MINERAL</small><strong>Zirkone der Jack Hills</strong><p>Einige Zirkone sind etwa 4,4 Milliarden Jahre alt. Ihre Isotope wurden als Hinweis auf Gestein-Wasser-Wechselwirkungen gedeutet. Das beweist keinen weltweit vorhandenen Ozean.</p></article>
+<article class="inquiry-fact"><small>BEOBACHTUNG / GESTEIN</small><strong>Alte Kruste</strong><p>Sehr alte Gesteinskomplexe, etwa der Acasta-Gneis, bewahren Teile der frühen Krustengeschichte. Die ältesten einzelnen Minerale sind noch älter.</p></article>
+<article class="inquiry-fact"><small>INDIZ / MOND</small><strong>Mondgestein</strong><p>Das Alter und die Zusammensetzung von Mondproben helfen, frühe Einschläge und Magmaozeane zu rekonstruieren. Verschiedene Entstehungsmodelle sind weiterhin Gegenstand der Forschung.</p></article>
+</div>
+<div class="inquiry-callout"><strong>Die entscheidende Frage lautet nicht: „Wie sah die Erde genau aus?“</strong><p>Sondern: Welche Beobachtung erlaubt welche Schlussfolgerung – und welche alternativen Erklärungen sind noch möglich? Im Methodenlabor kannst du das an geologischen Schichten und einer vereinfachten Isotopenuhr selbst ausprobieren.</p><div class="inquiry-small-links" style="margin-top:14px"><a href="05_geologische_methoden.html">Geologisches Methodenlabor öffnen ↗</a><a href="03_zeittrainer.html">Zeitskala üben ↗</a></div></div>
+<div class="inquiry-source"><strong>Quellen:</strong> <a href="https://stratigraphy.org/chart/" target="_blank" rel="noopener noreferrer">ICS · International Chronostratigraphic Chart v2026/06</a> (CC BY 4.0); <a href="https://www.nature.com/articles/35051550" target="_blank" rel="noopener noreferrer">Wilde et al. (2001) · Jack-Hills-Zirkone</a>; <a href="https://science.nasa.gov/moon/formation/" target="_blank" rel="noopener noreferrer">NASA · Moon Formation</a>. Diese Seite enthält eigene didaktische Illustrationen, keine Fotos oder physikalisch validierten Simulationen.</div>
+</section>
+</main>
+<footer class="earth-footer"><div class="earth-wrap earth-footer-inner"><span>LEARNING LAB 01 · DIE JUNGE ERDE<br>SCHEMATIC BY DESIGN · OPEN ACCESS · NO TRACKING</span><span><a href="https://philippklinz.github.io/modern-objectivity-style/">Modern Objectivity ↗</a> · <a href="https://github.com/philippklinz/lab-early-earth">GitHub ↗</a> · <a href="LICENSE">GPL v2.0</a></span></div></footer>
+</body></html>
