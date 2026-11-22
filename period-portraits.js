@@ -28,7 +28,7 @@ try { const n=JSON.parse(localStorage.getItem(storageKey)||'{}');if(n&&typeof n=
 let current=G.byId.get('had');
 const set=(id,text)=>{if($(id))$(id).textContent=text};
 const make=(tag,text,className)=>{const el=document.createElement(tag);if(className)el.className=className;el.textContent=text;return el};
-const peers=u=>u.rank==='eon'?G.eons:G.units.filter(x=>x.parent===u.parent&&x.rank===u.rank).sort((a,b)=>b.old-a.old);
+const peers=u=>G.units.filter(x=>x.rank===u.rank).sort((a,b)=>b.old-a.old);
 function render(unit) {
   if(!unit || !D.byId.has(unit.id))return;
   current=unit;
