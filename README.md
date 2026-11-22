@@ -1,54 +1,53 @@
-# Die frühe Erde — Learning Lab 01
+# LAB 01 — Die frühe Erde
 
-> Wie wurde aus einem jungen Planeten ein möglicher Lebensraum?
+Ein eigenständiges, interaktives Lernlabor zur Entstehung der Erde und zur geologischen Zeitskala. **Status: drei interaktive Prototypen umgesetzt; weitere Unterlabore geplant.**
 
-**Status: Konzept / Grundgerüst; Ausbauplan für interaktive Unterlabore festgelegt.** Interaktive Experimente sind hier noch nicht implementiert. Dieses Repository ist eine eigenständige, öffentlich teilbare Lernumgebung und wird unabhängig von den anderen Learning Labs entwickelt.
+**Online:** https://philippklinz.github.io/lab-early-earth/
 
-## Warum dieses Labor?
+## Jetzt ausprobieren
 
-Entstehung der Erde, frühe Kruste, Ozeane, Atmosphäre und geologische Zeit.
+| Unterlabor | Seite | Was funktioniert? |
+|---|---|---|
+| 01 — Proto-Erde | [01_protoerde.html](01_protoerde.html) | Sieben steuerbare **schematische** 3D-Szenen über Planetenentstehung, Akkretion, Magmaozeane, Differentiation und Mondentstehung. Fachliche Beschreibungen funktionieren auch ohne 3D. |
+| 02 — Geological Time Explorer | [02_zeitmassstab.html](02_zeitmassstab.html) | Maßstabsgetreue Zeitachse, Zoom, horizontales Verschieben, Äonen, Ären, Perioden, Selektion, Hierarchie, Namensausblendung. |
+| 03 — Geological Time Trainer | [03_zeittrainer.html](03_zeittrainer.html) | Multiple Choice, Reihenfolge, Zuordnung, numerische Grenzwerte, Platzierung, aktive Erinnerung, tägliche Wiederholungen und Lückentabelle. |
 
-### Leitfragen
+Die Unterlabore 04 (junge Erde: Kruste, Atmosphäre, Wasser) und 05 (geologische Datierung und geologische Belege) sind weiterhin nur geplant.
 
-- Wie entstand die Erde aus dem frühen Sonnensystem?
-- Welche Belege kennen wir für die frühe Erdgeschichte?
-- Wie entwickelten sich Kruste, Ozeane und Atmosphäre?
-- Welche Umweltbedingungen könnten präbiotische Chemie ermöglicht haben?
+## Zeitdaten und Quellen
 
-### Geplante Lernstationen
+- Die geologische Skala beruht auf der [International Chronostratigraphic Chart der ICS, Version 2026/06](https://stratigraphy.org/chart/) (CC BY 4.0).
+- `time-data.js` ist die gemeinsame lokale Datenbasis für die Zeitleiste und den Trainer: 4 Äonen, 10 Ären und 22 Perioden. Im Phanerozoikum sind es 3 Ären und 12 Perioden.
+- Einheiten und Grenzwerte werden in **Ma** (Millionen Jahre vor heute) angegeben. 4567 Ma bezeichnet den Beginn der ICS-Skala, **nicht** den punktgenauen Zeitpunkt einer vollständig entstandenen Erde.
+- Numerische Grenzalter werden laufend verbessert. Grenzen des Phanerozoikums und des Ediacariums werden durch GSSPs definiert, nicht einfach durch gerundete Ma-Werte.
+- Deutsche Namen und unsere Farben sind didaktische Adaptionen, keine offizielle ICS-Übersetzung.
 
-- Zeitachse zur Entstehung und Entwicklung der jungen Erde
-- Interaktive Schichten von Erdinnerem, Kruste, Ozean und Atmosphäre
-- Vergleich verschiedener wissenschaftlicher Rekonstruktionen
+## Fünf Minuten täglich lernen
 
-## Wissenschaftliche Sorgfalt
+1. Starte mit den **vier Äonen**, dann den **drei Ären des Phanerozoikums**, schließlich den **zwölf Perioden**.
+2. Wähle zwischen einer **Tagesrunde** (fällige Wiederholungen) und **freiem Training**.
+3. Übe Reihenfolge, übergeordnete Einheiten, numerische Altersgrenzen, grobes Platzieren und selbstständiges Erinnern.
+4. Nutze den Lückenstreifen als digitales Gegenstück zu einer ausgedruckten geologischen Zeittabelle.
 
-Frühe Umweltbedingungen und Datierungen sind aus indirekten Belegen rekonstruiert. Keine lückenlose oder scheinbar exakt beobachtete Erdgeschichte behaupten.
+Die einfachen Wiederholungsintervalle sind **1, 3, 7, 14 und 30 Tage**. Fehler bleiben wieder fällig. Dies ist eine didaktische Heuristik, **kein** empirisch validierter optimaler Algorithmus. Der Tagesfortschritt wird nur in deinem Browser in `localStorage` abgelegt, kann in der UI gelöscht werden und wird bei freien Runden nicht verändert. **Keine Konten, keine Telemetrie und kein Netzwerk-Tracking.**
 
-Unser didaktisches Ziel: **beobachten → vermuten → experimentieren → erklären**. Wir trennen Modelle und Vereinfachungen von Messdaten, Belegen und offenen Hypothesen. Ein Einstieg ohne Vorwissen ist ausdrücklich vorgesehen.
+## Three.js-Modell und seine Grenzen
 
-## Nutzung und Technik
+Der [Proto-Erde-Explorer](01_protoerde.html) lädt **Three.js 0.160.0** als fest versioniertes ES-Modul über ein CDN und benötigt für 3D eine Internetverbindung. Die Erklärungen und Schaltflächen bleiben unabhängig von WebGL und der Bibliothek bedienbar.
 
-Die [Startseite](index.html) ist eine eigenständige HTML-Datei und kann direkt im Browser geöffnet oder über GitHub Pages veröffentlicht werden.
+**Es handelt sich ausdrücklich nicht um eine physikalische Simulation.** Die 3D-Szenen berechnen weder N-Körper-Bahnen noch Fluiddynamik, thermodynamische Prozesse, echte Materialverteilungen oder die Mondbildung. Rotationen, Farben, Größen und Szenenfolgen sind schematische Interpretationen. Die einzelnen frühen Vorgänge können sich überschneiden.
 
-- Statisches HTML, CSS und JavaScript; bei Bedarf SVG, Canvas oder Three.js.
-- Keine zentrale Plattform, Datenbank, Registrierung oder Build-Pflicht.
-- Alle künftigen Lernstationen sind innerhalb **dieses Repositories** lauffähig.
-- Verweise auf andere Labore sind optional, nicht für die Funktion notwendig.
-- Gestalterische Richtung: **Modern Objectivity** (Arbeitsfassung), Graphit, warmes Off-White, Signal-Türkis `#009E98`.
+## Architektur
 
-## Entwicklung
+- GitHub Pages, statisches HTML, CSS und JavaScript; kein Backend, Build oder Framework erforderlich.
+- Lokal versionierte [Modern-Objectivity-Referenz-CSS](https://philippklinz.github.io/modern-objectivity-style/) (`modern-objectivity.css`) und eigenständige Labor-Bühne (`earth-lab.css`).
+- `timeline.js` und `trainer.js` verwenden dieselbe geologische Quelle (`time-data.js`) ohne Fremddienste.
+- `proto-earth.js` ist ein optionales 3D-Modul. Ohne WebGL ist die textliche Nutzung weiterhin möglich.
+- Die neue Zeitskala ist gegen ICS 2026/06 abgeglichen; die Funktionslogik wurde statisch und mithilfe simulierter DOM-Interaktionen geprüft. Ein umfassender visueller und assistiver Browser-Test steht noch aus.
 
-Siehe [AGENTS.md](AGENTS.md) für Aufgaben, Designgrundsätze, Prüfpunkte und wissenschaftliche Leitplanken.
+## Entwicklung und Lizenzen
 
-## Lizenz
-
-[GNU General Public License v2.0](LICENSE) (GPL-2.0-only). Abweichende Lizenzen hinzugefügter Bibliotheken oder fremder Inhalte sind getrennt zu beachten.
-
-## Modern Objectivity style kit
-
-Die Gestaltung nutzt eine **lokale, unveränderte Kopie** des [Modern Objectivity Style Kits v0.1 (Draft)](https://philippklinz.github.io/modern-objectivity-style/) aus [`styles/modern-objectivity.css`](https://github.com/philippklinz/modern-objectivity-style/blob/main/styles/modern-objectivity.css), Quellstand `c6af71a8688b9001313d19a642e8f308fa463280` (GPL-2.0-only). Die eigenständige HTML-Seite definiert ihre spezifische Bühne über die semantischen `--mo-*`-Tokens. Keine externe Runtime oder CDN erforderlich.
-
-## Ausbauplan LAB 01
-
-Der [detaillierte Ausbauplan](docs/LAB-01-ROADMAP.md) beschreibt fünf eigenständige Unterlabore: Entstehung der Proto-Erde (Three.js), Geological Time Explorer, Geological Time Trainer, junge Erde und geologische Methoden. Referenz für die Zeitskala ist die ICS-Chart **2026/06**. Die Übungen sollen tägliches Lernen aus einer gedruckten Zeitskala unterstützen; bislang sind sie geplant, nicht implementiert.
+- [AGENTS.md](AGENTS.md): Entwicklungsgrundsätze und technische Leitplanken.
+- [Ausbauplan LAB 01](docs/LAB-01-ROADMAP.md): Details und nächste Schritte.
+- [Quellen und Lizenzen](THIRD_PARTY_NOTICES.md): ICS (CC BY 4.0), Modern Objectivity (GPL-2.0-only), Three.js (MIT), NASA-Literaturhinweis.
+- [LICENSE](LICENSE): Eigener Projektquellcode unter der **GNU GPL v2.0 only**. Externe Inhalte behalten ihre jeweils eigene Lizenz.
