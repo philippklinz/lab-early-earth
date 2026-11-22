@@ -18,7 +18,7 @@ body.earth-stage button,body.earth-stage input,body.earth-stage select{font:inhe
 .earth-symbol{height:37px;width:37px;border:1px solid var(--mo-accent);color:var(--mo-accent);display:grid;place-items:center;border-radius:var(--mo-radius-sm);font:23px var(--mo-serif)}
 .earth-brand-name{font:750 15px/1.15 var(--mo-font);letter-spacing:-.02em}
 .earth-brand-name small{display:block;font:10px/1.6 var(--mo-mono);letter-spacing:.08em;color:var(--mo-muted)}
-.earth-nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.earth-nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;min-width:0;max-width:100%}
 .earth-nav a{padding:9px 11px;text-decoration:none;color:var(--mo-muted);font-size:12px;font-weight:700;border-radius:5px}
 .earth-nav a:hover{background:var(--mo-surface-2);color:var(--mo-text-strong)}
 .earth-nav a[aria-current="page"]{color:var(--mo-accent-active);background:var(--mo-accent-light)}
@@ -63,7 +63,7 @@ body.earth-stage button,body.earth-stage input,body.earth-stage select{font:inhe
 .earth-footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:28px;padding-bottom:31px;font:11px/1.7 var(--mo-mono)}
 .earth-footer a{color:#96ddd2}
 .earth-footer a:hover{color:white}
-.earth-page{padding:34px 0 65px}
+.earth-page{width:100%;min-width:0;padding:34px clamp(18px,4vw,60px) 65px}
 .earth-page h1{font-size:clamp(37px,4.3vw,62px);letter-spacing:-.05em;margin:12px 0 12px}
 .earth-page .earth-lead{max-width:830px}
 .earth-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}
@@ -169,3 +169,6 @@ body.earth-stage button,body.earth-stage input,body.earth-stage select{font:inhe
 @media(max-width:850px){.earth-hero{grid-template-columns:1fr}.earth-figure{min-height:280px;max-width:560px}.earth-timeline-shell,.earth-trainer-layout{grid-template-columns:1fr}.earth-inspector{position:static}.earth-mini-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.earth-header-inner{justify-content:flex-start}.earth-nav{width:100%}.earth-nav a{padding:8px 9px}.earth-hero{padding:45px 0}.earth-title{font-size:48px}.earth-card-grid,.earth-unit-grid,.earth-mini-grid{grid-template-columns:1fr}.earth-time-lane{height:76px}.earth-lane{height:72px}.earth-timeline-view{padding:12px}.earth-choice-list{grid-template-columns:1fr}.earth-test-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.earth-figure{min-height:220px}.earth-figure svg{height:220px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.earth-band,.earth-train-progress>div{transition:none!important}}
+
+/* Keep the seven-entry lab navigation within the viewport at intermediate widths. */
+@media(max-width:1250px){.earth-header-inner .earth-nav{flex-basis:100%;width:100%}}
