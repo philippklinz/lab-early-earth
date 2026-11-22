@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f3f7f7">
+<meta name="description" content="Die Entstehung der Proto-Erde in 3D: Akkretion, Magmaozean, Differentiation und Mondentstehung als wissenschaftlich eingeordnete Modellbilder.">
+<title>Proto-Erde in 3D — Die frühe Erde</title>
+<link rel="stylesheet" href="modern-objectivity.css">
+<link rel="stylesheet" href="earth-lab.css">
+<style>
+.proto-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:15px;align-items:start;margin-top:18px}
+.proto-stage{position:relative;background:#0c1922;min-height:520px;border:1px solid #2b4b52;border-radius:var(--mo-radius);overflow:hidden;color:#c9e2e0;display:flex;align-items:stretch;flex-direction:column}
+.proto-stage::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#6fc3b80d 1px,transparent 1px),linear-gradient(90deg,#6fc3b80d 1px,transparent 1px);background-size:24px 24px}
+.proto-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.proto-stage-head{position:relative;z-index:1;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:17px 20px;pointer-events:none;font:10px var(--mo-mono);letter-spacing:.07em;color:#93c7bc}
+.proto-stage-foot{position:relative;z-index:1;margin-top:auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px 20px;border-top:1px solid #38535c;background:#0c1922bf;font:10px var(--mo-mono);color:#9dbfbd;pointer-events:none}
+.proto-fallback{position:absolute;inset:85px 20px 70px;display:grid;place-content:center;justify-items:center;gap:14px;text-align:center;color:#b4d6d0}
+.proto-fallback .proto-orb{height:185px;width:185px;display:block;border-radius:50%;background:radial-gradient(circle at 34% 31%,#ee966b,#a94b3c 55%,#48262b 77%,#181d2b 100%);box-shadow:0 0 50px #ea774e51,0 0 130px #f2693733}
+.proto-fallback p{max-width:42ch;font-size:12px}
+.proto-fallback[hidden]{display:none}
+.proto-inspector h2{font-size:28px;letter-spacing:-.04em}
+.proto-inspector p{font-size:13px;color:var(--mo-muted);line-height:1.8}
+.proto-inspector .proto-fact{padding:14px;background:var(--mo-surface-2);border-left:3px solid var(--mo-accent);border-radius:0 5px 5px 0;color:var(--mo-text)}
+.proto-sequence{margin-top:18px;border-top:1px solid var(--mo-border);padding-top:16px}
+.proto-sequence h3{font-size:14px}
+.proto-step-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.proto-step-grid button{border:1px solid var(--mo-border-strong);background:var(--mo-surface);padding:12px;text-align:left;min-height:72px;border-radius:5px;color:var(--mo-text)}
+.proto-step-grid button.active,.proto-step-grid button[aria-pressed=true]{border-color:var(--mo-accent);background:var(--mo-accent-light)}
+.proto-step-grid button span{display:block;font:10px var(--mo-mono);color:var(--mo-accent)}
+.proto-step-grid button strong{display:block;font-size:12px;margin-top:8px}
+.proto-control-row{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}
+.proto-mini-note{font:11px/1.8 var(--mo-mono);color:var(--mo-muted)}
+@media(max-width:870px){.proto-layout{grid-template-columns:1fr}.proto-stage{min-height:410px}}
+@media(max-width:550px){.proto-stage{min-height:350px}.proto-step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.proto-stage-head,.proto-stage-foot{font-size:9px;padding:12px}}
+</style>
+<script type="module" src="proto-earth.js"></script>
+</head>
+<body class="earth-stage">
+<a href="#main" class="earth-skip">Zum Inhalt springen</a>
+<header class="earth-header"><div class="earth-wrap earth-header-inner">
+<a href="index.html" class="earth-brand"><span class="earth-symbol" aria-hidden="true">◉</span><span class="earth-brand-name">DIE FRÜHE ERDE<small>LEARNING LAB / 01</small></span></a>
+<nav class="earth-nav" aria-label="Labor-Navigation"><a href="index.html">Übersicht</a><a href="01_protoerde.html" aria-current="page">Proto-Erde 3D</a><a href="02_zeitmassstab.html">Zeitskala</a><a href="03_zeittrainer.html">Zeittrainer</a><a href="https://philippklinz.github.io/learning-labs/" class="earth-home-link">Alle Labore ↗</a></nav>
+</div></header>
+<main id="main" class="earth-wrap earth-page">
+<div class="earth-crumb"><a href="index.html">LAB 01</a> / UNTERLABOR 01 / PLANETENENTSTEHUNG</div>
+<div class="earth-overline" style="margin-top:24px">PROTO-EARTH EXPLORER · 3D CONCEPTUAL MODEL</div>
+<h1>Wie entsteht ein Planet?</h1>
+<p class="earth-lead">Vom protoplanetaren Material zur frühen Erde. Betrachte sieben schematische 3D-Szenen: Akkretion, große Einschläge, Magmaozeane, Kernbildung und mögliche Wege zur Entstehung des Mondes.</p>
+<div class="proto-layout">
+<section class="proto-stage" id="proto-stage" aria-label="Dreidimensionales Modell der Proto-Erde">
+ <div class="proto-stage-head"><span>3D MODEL / SCHEMATISCH</span><span id="stage-caption">SZENE 01 / 07</span></div>
+ <div class="proto-fallback" id="proto-fallback"><span class="proto-orb" aria-hidden="true"></span><p id="proto-load-status">3D-Darstellung wird geladen. Falls WebGL oder die Three.js-Bibliothek nicht verfügbar ist, bleiben die fachlichen Erläuterungen und Szenentasten nutzbar.</p></div>
+ <div class="proto-stage-foot"><span>ZEIT: HADAIKUM · CA. 4567–4031 Ma</span><span>MAUS / TOUCH: DREHEN</span></div>
+</section>
+<aside class="earth-datapanel proto-inspector">
+ <div class="earth-overline">SZENENMODELL / 01–07</div>
+ <h2 id="phase-name">1. Protoplanetare Scheibe</h2>
+ <p id="phase-description">Gas und Staub umgeben die junge Sonne. Aus festem Material können sich größere Körper entwickeln.</p>
+ <p id="phase-evidence" class="proto-fact">Modell: Diese Szene ist eine didaktische Rekonstruktion, keine Aufnahme der frühen Erde und keine numerische Simulation.</p>
+ <p class="proto-mini-note" id="phase-time">Einordnung: frühes Sonnensystem; einzelne Vorgänge überlappen sich.</p>
+ <div class="proto-control-row"><button class="mo-btn" id="prev-phase" type="button">← Zurück</button><button class="mo-btn mo-btn-primary" id="next-phase" type="button">Nächster Schritt →</button><button class="mo-btn" id="pause-motion" type="button" aria-pressed="false">Ⅱ Bewegung pausieren</button></div>
+ <div class="proto-sequence"><h3>Prozesse auswählen</h3><div class="proto-step-grid" id="phase-buttons">
+  <button type="button" data-phase="0" class="active" aria-pressed="true"><span>01</span><strong>Scheibe</strong></button>
+  <button type="button" data-phase="1" aria-pressed="false"><span>02</span><strong>Planetesimale</strong></button>
+  <button type="button" data-phase="2" aria-pressed="false"><span>03</span><strong>Proto-Erde</strong></button>
+  <button type="button" data-phase="3" aria-pressed="false"><span>04</span><strong>Magmaozean</strong></button>
+  <button type="button" data-phase="4" aria-pressed="false"><span>05</span><strong>Schichten</strong></button>
+  <button type="button" data-phase="5" aria-pressed="false"><span>06</span><strong>Mondbildung</strong></button>
+  <button type="button" data-phase="6" aria-pressed="false"><span>07</span><strong>Abkühlung</strong></button>
+ </div></div>
+</aside>
+</div>
+<p class="earth-mode-note">Wichtig: Das sind <strong>konzeptionelle 3D-Bilder</strong>, keine physikalisch berechneten N-Körper-, Fluid- oder thermodynamischen Simulationen. Die Anzahl und Größe der Körper, Rotationen, Farben, räumlichen Abstände und Abfolgen sind nicht maßstabsgerecht. Kernbildung, Magmaozeane und große Einschläge können sich zeitlich überschneiden. Die Mondentstehung ist durch verschiedene Giant-Impact-Modelle erklärt, nicht durch einen unmittelbar beobachteten Einzelablauf.</p>
+<section class="earth-mini"><div class="earth-section-heading"><div><span class="earth-overline">WEITER FORSCHEN</span><h2>Wo passt das in die Erdgeschichte?</h2></div></div>
+<div class="earth-mini-grid"><div class="earth-mini-item"><span class="earth-overline">ZEITLICHE EINORDNUNG</span><strong>Hadaikum</strong><p>Das älteste Äon der ICS-Zeitskala, von 4567 bis 4031 Ma. Der Beginn markiert nicht den vollständigen Abschluss der Erdentstehung.</p><a href="02_zeitmassstab.html">Auf Zeitleiste ansehen ↗</a></div>
+<div class="earth-mini-item"><span class="earth-overline">DAS WARUM</span><strong>Geochemische Spuren</strong><p>Radiometrische Altersbestimmungen von Meteoriten und alten Mineralen helfen, den frühen Zeitraum zu rekonstruieren.</p></div>
+<div class="earth-mini-item"><span class="earth-overline">NÄCHSTE FRAGE</span><strong>Wie merken wir uns das?</strong><p>Im Zeittrainer kannst du die vier Äonen und ihre Grenzwerte aktiv wiederholen.</p><a href="03_zeittrainer.html">Zum Zeittrainer ↗</a></div></div></section>
+<p class="earth-source"><strong>Quellen und Modelle:</strong> <a href="https://stratigraphy.org/chart/">ICS Chart 2026/06</a> (CC BY 4.0) für die geologische Zeitgliederung; für die Modellfamilie der Mondentstehung siehe z. B. <a href="https://science.nasa.gov/moon/formation/" target="_blank" rel="noopener noreferrer">NASA – Moon Formation</a>. Three.js 0.160.0 wird in diesem ersten 3D-Prototyp als fest versioniertes ES-Modul über ein CDN geladen. Ohne Internet bleibt die statische Erklärung erhalten. Die 3D-Szenen ersetzen keine Belege oder Simulationsergebnisse.</p>
+</main>
+<footer class="earth-footer"><div class="earth-wrap earth-footer-inner"><span>LEARNING LAB 01 · PLANETENENTSTEHUNG<br>SCIENTIFIC MODEL · NOT TO SCALE</span><span><a href="https://philippklinz.github.io/modern-objectivity-style/">Modern Objectivity ↗</a> · <a href="README.md">Projekt</a> · <a href="LICENSE">GPL v2.0</a></span></div></footer>
+<script>
+/* Text and phase controls remain usable even when the Three.js import fails. */
+window.EarthPhases=[
+ ['1. Protoplanetare Scheibe','Gas und Staub umkreisen die junge Sonne. Aus festem Material entstehen Keime größerer Körper.','Die Größenverteilung und Bahnen sind nur schematisch. Die Erde existiert hier noch nicht als fertiger Planet.','Sehr frühe Phase des Sonnensystems; keine einzelne gemessene Jahreszahl.'],
+ ['2. Planetesimale','Staub und größere Festkörper können zu kilometergroßen Planetesimalen anwachsen. Kollisionen und gegenseitige Gravitation spielen wichtige Rollen.','Die Kugeln repräsentieren Körpergruppen; ihr Wachstum und ihre Dynamik werden nicht physikalisch berechnet.','Überlappende Akkretionsphasen in der frühen Geschichte des Sonnensystems.'],
+ ['3. Die Proto-Erde','Größere Protoplaneten wachsen durch Zusammenstöße und Akkretion. Freigesetzte Energie verändert den thermischen Zustand des jungen Körpers.','Ein einzelner glühender Globus steht hier für einen komplexen Akkretionsprozess. Es gibt kein eindeutiges Bild einer Proto-Erde.','Im frühen Hadaikum; das Wachstum verlief über lange Zeiträume.'],
+ ['4. Magmaozeane','Einschläge, Druck und Zerfall radioaktiver Elemente tragen zur Aufheizung bei. Teile der frühen Erde können umfangreich geschmolzen gewesen sein.','Die dargestellte Oberfläche ist eine Illustration möglicher Schmelzphasen, keine gemessene globale Temperaturkarte.','Frühe Magmaozeane könnten mehrfach aufgetreten sein; sie sind keine strikt einzelne Episode.'],
+ ['5. Differentiation','Dichtere, metallische Bestandteile sammeln sich im Inneren. Kern, Mantel und spätere Kruste entwickeln sich durch verschiedene Prozesse.','Die sichtbaren Schichten sind übertrieben groß und transparent; Materialanteile und Vorgänge sind nicht maßstabsgerecht.','Kernbildung und thermische Entwicklung überschneiden sich mit der Akkretion.'],
+ ['6. Mondentstehung','Eine führende Modellfamilie beschreibt einen großen Einschlag mit anschließendem Materialaustausch und der Bildung des Mondes. Varianten unterscheiden sich stark.','Nur eine schematische Giant-Impact-Illustration. Weder Einschlagsgeometrie noch Trümmerbahnen sind aus Daten berechnet.','Der genaue Ablauf und Zeitpunkt sind weiterhin Gegenstand der Forschung.'],
+ ['7. Frühe Abkühlung','Abkühlung, wiederholtes Aufschmelzen und die mögliche Bildung von Kruste und Wasser kennzeichnen verschiedene Hypothesen zur jungen Erde.','Die grünen und blauen Muster stehen nicht für nachgewiesene heutige Kontinente; hier wird kein realer Oberflächenzustand behauptet.','Für manche Prozesse liefern sehr alte Zirkone und andere Belege indirekte Hinweise.']
+];
+</script>
+</body></html>
