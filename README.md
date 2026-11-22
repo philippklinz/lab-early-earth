@@ -2,7 +2,7 @@
 
 > Wie wurde aus einem jungen Planeten ein möglicher Lebensraum?
 
-**Status: Konzept / Grundgerüst.** Interaktive Experimente sind hier noch nicht implementiert. Dieses Repository ist eine eigenständige, öffentlich teilbare Lernumgebung und wird unabhängig von den anderen Learning Labs entwickelt.
+**Status: Konzept / Grundgerüst; Ausbauplan für interaktive Unterlabore festgelegt.** Interaktive Experimente sind hier noch nicht implementiert. Dieses Repository ist eine eigenständige, öffentlich teilbare Lernumgebung und wird unabhängig von den anderen Learning Labs entwickelt.
 
 ## Warum dieses Labor?
 
@@ -48,3 +48,7 @@ Siehe [AGENTS.md](AGENTS.md) für Aufgaben, Designgrundsätze, Prüfpunkte und w
 ## Modern Objectivity style kit
 
 Die Gestaltung nutzt eine **lokale, unveränderte Kopie** des [Modern Objectivity Style Kits v0.1 (Draft)](https://philippklinz.github.io/modern-objectivity-style/) aus [`styles/modern-objectivity.css`](https://github.com/philippklinz/modern-objectivity-style/blob/main/styles/modern-objectivity.css), Quellstand `c6af71a8688b9001313d19a642e8f308fa463280` (GPL-2.0-only). Die eigenständige HTML-Seite definiert ihre spezifische Bühne über die semantischen `--mo-*`-Tokens. Keine externe Runtime oder CDN erforderlich.
+
+## Ausbauplan LAB 01
+
+Der [detaillierte Ausbauplan](docs/LAB-01-ROADMAP.md) beschreibt fünf eigenständige Unterlabore: Entstehung der Proto-Erde (Three.js), Geological Time Explorer, Geological Time Trainer, junge Erde und geologische Methoden. Referenz für die Zeitskala ist die ICS-Chart **2026/06**. Die Übungen sollen tägliches Lernen aus einer gedruckten Zeitskala unterstützen; bislang sind sie geplant, nicht implementiert.

@@ -71,3 +71,7 @@ Modern Objectivity, as documented in the provisional Apperception Machinery Bran
 ## Modern Objectivity implementation
 
 Use the **locally vendored** `modern-objectivity.css` (the v0.1 draft [practical style kit](https://philippklinz.github.io/modern-objectivity-style/), source SHA `c6af71a8688b9001313d19a642e8f308fa463280`). Preserve the vendor stylesheet as an exact copy; make stage-specific changes in the local page styles and prefer `--mo-*` semantic tokens. This is a reference style, **not a universal visual mandate**. Keep the standalone site functioning with no CDN dependencies. If upgrading the kit, compare behavior and update attribution/version notes.
+
+## Agreed lab structure (planning)
+
+Read [docs/LAB-01-ROADMAP.md](docs/LAB-01-ROADMAP.md) before implementing learning exhibits. In particular, the user wants an accurate **Geological Time Explorer**, a daily **Geological Time Trainer** to complement a printed chart, and a Three.js visual exploration of Proto-Earth formation. Use the ICS v2026/06 chart as the versioned starting source; do not hard-code silently outdated ages or claim planetary animations are physically validated. Follow the roadmap incrementally without introducing a cross-lab dependency. The roadmap is not proof that features are already implemented.
