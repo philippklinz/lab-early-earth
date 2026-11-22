@@ -120,6 +120,13 @@ window.EarthPhases=[
   });
   window.EarthPhaseUI={get index(){return current},get playing(){return !paused}};
   show(0);
+  // The external 3D library may be blocked or unavailable; never leave an endless loading message.
+  window.setTimeout(()=>{
+    const fb=document.getElementById("proto-fallback");
+    if(fb&&!fb.hidden){
+      document.getElementById("proto-load-status").textContent="Die 3D-Ansicht ist derzeit nicht verfügbar (fehlendes WebGL, Offline-Modus oder Three.js-Ladefehler). Du kannst alle Prozesse weiterhin über die Szenentasten und Texte erkunden.";
+    }
+  },9000);
 })();
 </script>
 </body></html>
