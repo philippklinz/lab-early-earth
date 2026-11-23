@@ -48,6 +48,15 @@
     U('quat','Quartär','period',2.58,0,'ceno','#e1c48a')
   ];
   const byId = new Map(units.map(u => [u.id,u]));
+  // Selected finer units for the hierarchy lesson, not a complete epoch/age
+  // catalogue. Keep them separate from the 36 explorer/trainer portraits.
+  // Parent boundaries are reused; all numeric ages follow ICS 2026/06.
+  const guideUnits = [
+    U('holo','Holozän','epoch',0.0117,byId.get('quat').young,'quat','#e1c48a'),
+    U('megha','Meghalayum','age',0.0042,0,'holo','#e1c48a'),
+    U('latejura','Später Jura','epoch',161.5,byId.get('jura').young,'jura','#75a0b2'),
+    U('tithon','Tithonium','age',149.2,byId.get('jura').young,'latejura','#75a0b2')
+  ];
   const ranks={eon:'Äon',era:'Ära',period:'Periode'};
   const fmt = n => n === 0 ? 'heute' : new Intl.NumberFormat('de-DE',{maximumFractionDigits:3}).format(n) + ' Ma';
   const children = parent => units.filter(u=>u.parent===parent).sort((a,b)=>b.old-a.old);
@@ -58,6 +67,6 @@
   Object.assign(window,{GeoTime:Object.freeze({
     version:'2026/06', source:'https://stratigraphy.org/chart/',
     license:'CC BY 4.0 — International Commission on Stratigraphy',
-    MAX:4567,units,byId,ranks,fmt,children,path,phanerozoic,eons,eras
+    MAX:4567,units,byId,ranks,fmt,children,path,phanerozoic,eons,eras,guideUnits
   })});
 })();

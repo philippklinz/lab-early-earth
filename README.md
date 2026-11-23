@@ -9,7 +9,7 @@ Ein eigenständiges, interaktives Lernlabor zur Entstehung der Erde und zur geol
 | Unterlabor | Seite | Was funktioniert? |
 |---|---|---|
 | 01 — Proto-Erde | [01_protoerde.html](01_protoerde.html) | Sieben steuerbare **schematische** 3D-Szenen über Planetenentstehung, Akkretion, Magmaozeane, Differentiation und Mondentstehung. Fachliche Beschreibungen funktionieren auch ohne 3D. |
-| 02 — Geological Time Explorer | [02_zeitmassstab.html](02_zeitmassstab.html) | Maßstabsgetreue Zeitachse mit Zoom, Auswahl und **36 illustrierten Zeitporträts**: geologische Merkmale, Grenzdefinitionen, Unsicherheiten, Merksätze, eigene Notizen. |
+| 02 — Geological Time Explorer | [02_zeitmassstab.html](02_zeitmassstab.html) | Maßstabsgetreue Zeitachse mit Zoom, Auswahl, **36 illustrierten Zeitporträts** und aufklappbarer Erklärung der Zeiteinteilung: Äon, Ära, Periode, Epoche und Alter (Age). |
 | 03 — Geological Time Trainer | [03_zeittrainer.html](03_zeittrainer.html) | Multiple Choice, Reihenfolge, Zuordnung, numerische Grenzwerte, Platzierung, aktive Erinnerung, tägliche Wiederholungen und Lückentabelle. |
 
 | 04 — Die junge Erde | [04_junge_erde.html](04_junge_erde.html) | Vier auswählbare Prozesse mit Oberfläche/Querschnitt/Atmosphärenansicht; Beobachtungen, Interpretationen und wissenschaftliche Unsicherheiten getrennt. |
@@ -28,6 +28,14 @@ Das [Unterlabor 05](05_geologische_methoden.html) unterscheidet **relative Datie
 - **Beweisketten:** Meteorite, Jack-Hills-Zirkone, alte Krustengesteine und Mondgesteine werden jeweils nach Befund, Schlussfolgerung und Unsicherheit erklärt.
 
 Die beiden neuen Module benötigen keine zusätzlichen JavaScript-Bibliotheken oder externe Laufzeitressourcen. Wissenschaftliche Links befinden sich direkt auf jeder Seite; Eigenzeichnungen sind **nicht maßstabsgerecht oder reale Forschungsdaten**.
+
+## Die geologische Zeiteinteilung verstehen
+
+Direkt über der Zeitleiste erklärt eine aufklappbare [Lernhilfe](02_zeitmassstab.html#zeiteinteilung) die fünf Hauptränge **Äon → Ära → Periode → Epoche → Alter (Age)**. Vier umschaltbare Beispiele (heute, vor 145 Ma, vor 600 Ma und vor 4,3 Ga) zeigen, wie Zeitabschnitte ineinander liegen und wo die ICS-Skala noch keine feineren formalen Unterteilungen enthält. Die Verschachtelung ist ausdrücklich kein Zeitmaßstab.
+
+Die Begriffstabelle, der Vergleich unterschiedlich langer Perioden und Vertiefungen zu Zeit/Gestein, GSSP/GSSA, Präkambrium, Unterrängen, Chron und Anthropozän sind auch ohne JavaScript lesbar. Quellen stehen direkt in der Lernhilfe. Der Link `#zeiteinteilung` öffnet sie automatisch mit JavaScript; sonst lässt sich die Erklärung über ihre Zusammenfassung öffnen.
+
+`time-guide.js` und `time-guide.css` ergänzen nur dieses Kapitel. Vier ausgewählte Epochen/Alter stehen als `GeoTime.guideUnits` in `time-data.js`, getrennt von den unveränderten 36 Einheiten des Explorers und Trainers. Die Lernhilfe verwendet weder Fortschrittsspeicherung noch persönliche Notizen. Die Zeitleiste selbst zeigt weiterhin die drei Ränge Äon, Ära und Periode.
 
 ## Zeitporträts und dein geologisches Notizbuch
 

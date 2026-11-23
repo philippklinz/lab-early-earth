@@ -6,6 +6,7 @@
 - **License:** Creative Commons Attribution 4.0 International (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/
 - **Attribution:** © International Commission on Stratigraphy, 2026.
 - **Modifications:** Selected units and numerical ages transcribed to `time-data.js`. Editorial German labels, simplified hierarchy, original colors, new explanatory text and interactive presentations. This project is not an official ICS publication or translation.
+- **Hierarchy lesson:** `GeoTime.guideUnits` in the same file includes four selected epoch/age examples (Holocene, Meghalayan, Late Jurassic, Tithonian), not a complete finer-rank dataset. Existing parent boundaries are reused. These examples are displayed by `time-guide.js`; the 36-unit timeline/trainer catalogue is unchanged.
 - **Important:** Numerical boundary ages may change. In the Phanerozoic and Ediacaran, stratigraphic boundaries are defined by GSSPs, not the printed numeric ages alone.
 - **Suggested citation:** Cohen K, Harper D, Gibbard P, Car N (2025), *The ICS international chronostratigraphic chart this decade*, Episodes 48:105–115, https://doi.org/10.18814/epiiugs/2025/025001.
 
@@ -16,6 +17,17 @@
 - **Version:** practical style v0.1.0 draft; source CSS blob `c6af71a8688b9001313d19a642e8f308fa463280`.
 - **License:** GNU GPL version 2 only, GPL-2.0-only.
 - **Integration:** Unmodified local copy in `modern-objectivity.css`. Project-specific stage CSS is in `earth-lab.css`.
+
+## Geological-time terminology lesson
+
+The text and nested HTML illustration in `02_zeitmassstab.html#zeiteinteilung` are independently authored educational explanations, not reproduced ICS/DSK prose or artwork. The numerical examples follow the ICS chart and its CC BY 4.0 attribution above. The nesting diagram shows containment, not proportional duration. References checked on 24 November 2026:
+
+- ICS, *International Chronostratigraphic Chart v2026/06*: https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf.
+- Steininger, F. F. & Piller, W. E. (eds., 1999), *Empfehlungen (Richtlinien) zur Handhabung der stratigraphischen Nomenklatur*, terminology excerpt hosted by DSK: https://www.stratigraphie.de/perm-trias/dsk_richtlin.htm.
+- ICS, *International Stratigraphic Guide, Chapter 9: Chronostratigraphic Units*: https://stratigraphy.org/guide/chron. Used for concepts; current unit inventory and dates follow the versioned chart, not older examples in the guide.
+- ICS, *GSSP register and proposal procedure*: https://stratigraphy.org/gssps/.
+- Walker et al. (2018), *Formal ratification of the subdivision of the Holocene Series/Epoch (Quaternary System/Period): two new Global Boundary Stratotype Sections and Points (GSSPs) and three new stages/subseries*: https://doi.org/10.18814/epiiugs/2018/018016. The lesson displays the rounded chart ages; these must not be treated as exact calendar dates or confused with the publication's b2k reference year.
+- IUGS/ICS (2024), *Joint statement on the vote by the ICS Subcommission on Quaternary Stratigraphy*: https://stratigraphy.org/news/152.
 
 ## Three.js
 

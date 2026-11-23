@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="modern-objectivity.css">
 <link rel="stylesheet" href="earth-lab.css">
 <link rel="stylesheet" href="period-portraits.css">
+<link rel="stylesheet" href="time-guide.css">
 <script defer src="time-data.js"></script>
+<script defer src="time-guide.js"></script>
 <script defer src="period-portraits-data.js"></script>
 <script defer src="period-portraits.js"></script>
 <script defer src="timeline.js"></script>
@@ -24,6 +26,143 @@
 <div class="earth-overline" style="margin-top:24px">GEOLOGICAL TIME EXPLORER · ICS 2026/06</div>
 <h1>4,567 Milliarden Jahre.<br>Eine Zeitleiste.</h1>
 <p class="earth-lead">Von der Bildung des Sonnensystems bis heute. Zoome in Äonen, Ären und Perioden hinein, wähle einen Abschnitt und erkunde seine Stellung in der geologischen Zeit.</p>
+<details class="time-guide" id="zeiteinteilung">
+ <summary><span class="guide-summary-copy"><span class="earth-overline">GRUNDLAGEN / DIE ZEITEINTEILUNG VERSTEHEN</span><strong>Äon, Ära, Periode, Epoche, Age</strong><span>Was bedeuten diese Begriffe – und wie gehören sie zusammen?</span></span><span class="guide-summary-action" aria-hidden="true">Erklärung <span class="guide-open-label">öffnen</span><span class="guide-close-label">schließen</span></span></summary>
+ <div class="guide-body">
+  <header class="guide-intro">
+   <h2>Eine Erdgeschichte. Fünf Hauptebenen.</h2>
+   <p>Die geologische Zeitskala ordnet die Geschichte der Erde in <strong>ineinander verschachtelte Zeitabschnitte</strong>. Ein großer Abschnitt enthält kleinere Abschnitte, die wiederum weiter unterteilt sein können. Äon, Ära und Epoche sind also verschiedene <strong>Ränge</strong> in dieser Ordnung. Phanerozoikum, Känozoikum und Holozän sind die <strong>Namen</strong> konkreter Abschnitte.</p>
+   <p class="guide-key">Vom Großen zum Kleinen: <strong>Äon → Ära → Periode → Epoche → Alter (englisch: Age)</strong>. Diese Reihenfolge beschreibt die Einteilung, nicht fünf aufeinanderfolgende Zeiten.</p>
+  </header>
+
+  <section aria-labelledby="guide-example-heading">
+   <div class="guide-section-head"><div><span class="earth-overline">01 / EINEN ZEITPUNKT EINORDNEN</span><h3 id="guide-example-heading">Wo befinden wir uns in dieser Ordnung?</h3></div><span class="guide-figure-note">Verschachtelung · keine maßstabsgetreue Dauer</span></div>
+   <div id="guide-examples" class="guide-examples" role="group" aria-label="Beispiel für die Zeiteinteilung" hidden>
+    <button type="button" class="mo-btn mo-btn-sm" data-time-example="today" aria-pressed="true" aria-controls="guide-example-result">Heute</button>
+    <button type="button" class="mo-btn mo-btn-sm" data-time-example="jurassic" aria-pressed="false" aria-controls="guide-example-result">Vor 145 Mio. Jahren</button>
+    <button type="button" class="mo-btn mo-btn-sm" data-time-example="ediacaran" aria-pressed="false" aria-controls="guide-example-result">Vor 600 Mio. Jahren</button>
+    <button type="button" class="mo-btn mo-btn-sm" data-time-example="hadean" aria-pressed="false" aria-controls="guide-example-result">Vor 4,3 Mrd. Jahren</button>
+   </div>
+   <div class="guide-example-layout" id="guide-example-result">
+    <div class="guide-tree-wrap">
+     <p class="guide-tree-caption" id="guide-example-caption">Die geologische Adresse von heute</p>
+     <ol class="guide-tree" id="guide-tree" aria-label="Übergeordnete Zeitabschnitte, vom größten zum kleinsten">
+      <li><div class="guide-unit"><span class="guide-rank">ÄON / EON</span><strong>Phanerozoikum</strong></div><ol>
+       <li><div class="guide-unit"><span class="guide-rank">ÄRA / ERA</span><strong>Känozoikum</strong></div><ol>
+        <li><div class="guide-unit"><span class="guide-rank">PERIODE / PERIOD</span><strong>Quartär</strong></div><ol>
+         <li><div class="guide-unit"><span class="guide-rank">EPOCHE / EPOCH</span><strong>Holozän</strong></div><ol>
+          <li><div class="guide-unit"><span class="guide-rank">ALTER / AGE</span><strong>Meghalayum</strong></div></li>
+         </ol></li>
+        </ol></li>
+       </ol></li>
+      </ol></li>
+     </ol>
+    </div>
+    <aside class="guide-example-note" aria-labelledby="guide-example-title">
+     <span class="earth-overline">SO LIEST DU DAS BEISPIEL</span>
+     <h4 id="guide-example-title">Alles gleichzeitig.</h4>
+     <p id="guide-example-explanation">Heute liegt im Meghalayum. Dieses Alter gehört zur Epoche Holozän, diese zur Periode Quartär, diese zur Ära Känozoikum und diese zum Äon Phanerozoikum. Jeder eingerückte Abschnitt ist vollständig im darüberstehenden enthalten.</p>
+     <p id="guide-example-caveat">Die fünf Namen sind gleichzeitig richtig: Sie sagen nur unterschiedlich genau, welchen Zeitabschnitt wir meinen. Die heutige formale Einteilung folgt der ICS-Tabelle 2026/06.</p>
+     <p class="guide-small">Die Beispiele zeigen jeweils einen Zweig. Die übrigen Abschnitte desselben Rangs sind ausgeblendet. Gerundete Zahlen aus der ICS-Tabelle sind keine jahresgenauen Kalenderdaten. <a href="#guide-source-chart">[1]</a></p>
+    </aside>
+   </div>
+   <p id="guide-example-status" class="guide-sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+  </section>
+
+  <section class="guide-section" aria-labelledby="guide-ranks-heading">
+   <span class="earth-overline">02 / BEGRIFFE NACHSCHLAGEN</span>
+   <h3 id="guide-ranks-heading">Was bedeutet jeder Rang?</h3>
+   <p>Die englischen Begriffe stehen auf vielen internationalen Zeittafeln. Die Tabelle liest sich von groß nach klein. <a href="#guide-source-terms">[2]</a> <a href="#guide-source-ics-guide">[3]</a></p>
+   <div class="guide-table-scroll" role="region" aria-label="Tabelle der fünf geologischen Zeitränge" tabindex="0">
+    <table class="guide-table">
+     <caption>Rang, Bedeutung und Beispiele</caption>
+     <thead><tr><th scope="col">Deutsch / Englisch</th><th scope="col">Was ist das?</th><th scope="col">Beispiele</th></tr></thead>
+     <tbody>
+      <tr><th scope="row">Äon <span lang="en">Eon</span></th><td>Die größte der fünf Hauptebenen. Die Erdgeschichte ist in vier Äonen gegliedert. Ein Äon kann mehrere Ären umfassen.</td><td>Hadaikum, Archaikum, Proterozoikum, Phanerozoikum</td></tr>
+      <tr><th scope="row">Ära <span lang="en">Era</span></th><td>Ein großer Abschnitt innerhalb eines Äons. Wo die Skala entsprechend gegliedert ist, enthält er mehrere Perioden.</td><td>Das Phanerozoikum umfasst Paläozoikum, Mesozoikum und Känozoikum.</td></tr>
+      <tr><th scope="row">Periode <span lang="en">Period</span></th><td>Ein Abschnitt innerhalb einer Ära. Viele bekannte Namen der Erdgeschichte gehören zu diesem Rang.</td><td>Das Mesozoikum umfasst Trias, Jura und Kreide.</td></tr>
+      <tr><th scope="row">Epoche <span lang="en">Epoch</span></th><td>Eine Unterteilung einer Periode. Auch eine sehr kurze, noch laufende Zeitspanne kann diesen Rang haben.</td><td>Das Quartär umfasst Pleistozän und Holozän.</td></tr>
+      <tr><th scope="row">Alter <span lang="en">Age</span></th><td>Die feinste der fünf Hauptebenen: eine Unterteilung einer Epoche. „Age“ meint hier einen benannten Zeitabschnitt, nicht das gemessene Alter eines Steins.</td><td>Das Holozän umfasst Grönlandium, Northgrippium und Meghalayum.</td></tr>
+     </tbody>
+    </table>
+   </div>
+   <p class="guide-key"><strong>„Zeitalter“ ist im Alltag ein Sammelwort.</strong> Es kann eine Ära, eine Periode oder einen anderen Abschnitt meinen. Für eine genaue Einordnung nenne Rang und Namen: „die Periode Jura“ oder „die Epoche Holozän“.</p>
+  </section>
+
+  <section class="guide-section" aria-labelledby="guide-duration-heading">
+   <span class="earth-overline">03 / RANG UND DAUER UNTERSCHEIDEN</span>
+   <h3 id="guide-duration-heading">Wie viele Jahre hat eine Ära?</h3>
+   <p><strong>Dafür gibt es keine feste Zahl.</strong> Anders als Stunden oder Minuten sind diese Einheiten keine gleich langen Zeitportionen. Entscheidend sind die festgelegten Grenzen und die Stellung in der Hierarchie. Zwei Perioden können deshalb sehr unterschiedlich lange dauern.</p>
+   <div class="guide-duration-grid">
+    <div><span class="guide-rank">JURA / ABGESCHLOSSENE PERIODE</span><strong data-guide-duration="jura">Rund 58,3 Millionen Jahre</strong><p>Beginn und Ende liegen in der Vergangenheit.</p></div>
+    <div><span class="guide-rank">QUARTÄR / LAUFENDE PERIODE</span><strong data-guide-duration="quat">Bisher rund 2,58 Millionen Jahre</strong><p>Diese Periode dauert bis in die Gegenwart an.</p></div>
+   </div>
+   <p>Ein untergeordneter Abschnitt liegt immer innerhalb seines eigenen übergeordneten Abschnitts. Der Rang allein gibt aber keine feste Mindestdauer vor. Auf der Zeitleiste entspricht die Breite der tatsächlichen Zeitspanne; im eingerückten Beispiel oben zeigt die Form nur die Zugehörigkeit. <a href="#guide-source-chart">[1]</a></p>
+   <p class="guide-small"><strong>Zahlen lesen:</strong> <abbr title="Gigaannum: eine Milliarde Jahre">Ga</abbr> = Milliarden Jahre, <abbr title="Megaannum: eine Million Jahre">Ma</abbr> = Millionen Jahre, <abbr title="Kiloannum: tausend Jahre">ka</abbr> = Tausend Jahre. 1 Ga = 1.000 Ma; 1 Ma = 1.000 ka. „66 Ma“ an einer Grenze ist ein Alter relativ zur Gegenwart; eine Dauer erhältst du durch Subtraktion von Beginn und Ende. Bei sehr jungen Datierungen ist zusätzlich das Bezugsjahr wichtig: BP bezieht sich gewöhnlich auf 1950, b2k auf 2000. Die Holozän-Basis wurde auf 11.700 Jahre vor 2000 datiert. <a href="#guide-source-holocene">[5]</a></p>
+  </section>
+
+  <div class="guide-deeper">
+   <details>
+    <summary>Warum steht auf der Tabelle „System / Period“ oder „Stage / Age“?</summary>
+    <div class="guide-detail-body">
+     <p>Die Fachsprache unterscheidet <strong>Zeit</strong> und <strong>das in dieser Zeit gebildete Gestein</strong>. Die <strong>Geochronologie</strong> benennt Zeitabschnitte; die <strong>Chronostratigraphie</strong> ordnet Gesteinskörper nach ihrer Bildungszeit. Zwei Wörter in einer Tabellenüberschrift bezeichnen daher die beiden Sichtweisen desselben Rangs. <a href="#guide-source-terms">[2]</a></p>
+     <div class="guide-table-scroll" role="region" aria-label="Zeitbegriffe und zugehörige Gesteinsbegriffe" tabindex="0"><table class="guide-table guide-pairs">
+      <caption>Zeitabschnitt und zugehörige Gesteinseinheit</caption>
+      <thead><tr><th scope="col">Zeit / Geochronologie</th><th scope="col">Gestein / Chronostratigraphie</th></tr></thead>
+      <tbody>
+       <tr><td>Äon · <span lang="en">Eon</span></td><td>Äonothem · <span lang="en">Eonothem</span></td></tr>
+       <tr><td>Ära · <span lang="en">Era</span></td><td>Ärathem · <span lang="en">Erathem</span></td></tr>
+       <tr><td>Periode · <span lang="en">Period</span></td><td>System · <span lang="en">System</span></td></tr>
+       <tr><td>Epoche · <span lang="en">Epoch</span></td><td>Serie · <span lang="en">Series</span></td></tr>
+       <tr><td>Alter · <span lang="en">Age</span></td><td>Stufe · <span lang="en">Stage</span></td></tr>
+      </tbody>
+     </table></div>
+     <p><strong>Beispiel:</strong> Ein Sediment wurde während der <em>Periode Jura</em> abgelagert; das entstandene Gestein gehört zum <em>System Jura</em>. „Stufe“ ist entsprechend der Gesteinsbegriff zu einem „Age“, kein zusätzlicher Zeitrang unterhalb davon.</p>
+     <p><strong>Früh/spät und unter/ober:</strong> Zeitlich spricht man etwa vom <em>Späten Jura</em> (Late Jurassic), bei Gesteinen vom <em>Oberjura</em> (Upper Jurassic). Die Bezeichnungen „unter“ und „ober“ stammen aus der Schichtenfolge; sie sind keine heutigen Höhenangaben. <a href="#guide-source-ics-guide">[3]</a></p>
+    </div>
+   </details>
+   <details>
+    <summary>Wer legt die Grenzen fest – und warum genau dort?</summary>
+    <div class="guide-detail-body">
+     <p>Geologische Schichten bewahren Hinweise auf Veränderungen: etwa Fossilien, chemische Signale oder die Richtung des damaligen Erdmagnetfelds. Solche Merkmale helfen, Schichten verschiedener Orte zeitlich miteinander zu verbinden. Fachgruppen der <strong>International Commission on Stratigraphy (ICS)</strong> prüfen Grenzvorschläge; die <strong>International Union of Geological Sciences (IUGS)</strong> ratifiziert sie. <a href="#guide-source-boundaries">[4]</a></p>
+     <dl class="guide-definitions">
+      <div><dt>GSSP – ein Referenzpunkt im geologischen Archiv</dt><dd><em>Global Boundary Stratotype Section and Point.</em> Eine Grenze wird an einem genau beschriebenen Punkt eines Referenzprofils festgemacht, oft durch einen „Golden Spike“ markiert. Auch ein Eisbohrkern kann als Archiv dienen. Die zugehörige Alterszahl wird gemessen und kann verbessert werden, ohne dass sich der definierende Punkt ändert.</dd></div>
+      <div><dt>GSSA – eine numerisch festgelegte Altersgrenze</dt><dd><em>Global Standard Stratigraphic Age.</em> Hier wird eine Grenze über ein vereinbartes numerisches Alter definiert. Viele ältere Grenzen des Präkambriums beruhen auf diesem Verfahren. Nicht jede Einheit besitzt bereits einen ratifizierten GSSP.</dd></div>
+     </dl>
+     <p>Ein auffälliges Ereignis, etwa ein Massenaussterben, kann eine Grenze gut erkennbar machen. Es legt aber nicht von selbst den formalen Grenzpunkt fest. Beginnt an derselben Grenze auch eine übergeordnete Einheit, gilt sie für mehrere Ränge zugleich. <a href="#guide-source-ics-guide">[3]</a> <a href="#guide-source-chart">[1]</a></p>
+     <p><a href="05_geologische_methoden.html">Im Methodenlabor ausprobieren: Schichten ordnen und Gesteine datieren ↗</a></p>
+    </div>
+   </details>
+   <details>
+    <summary>Präkambrium, Unterepoche, Chron, Anthropozän – wo gehören die hin?</summary>
+    <div class="guide-detail-body">
+     <dl class="guide-definitions">
+      <div><dt>Präkambrium</dt><dd>Ein übergreifender Sammelbegriff für die Zeit vor dem Kambrium: Hadaikum, Archaikum und Proterozoikum zusammen. Es wird auch als informelles Superäon bezeichnet. Es ist kein fünftes Äon neben den anderen vier.</dd></div>
+      <div><dt>Nicht überall sind alle Ebenen ausgefüllt</dt><dd>Das Hadaikum hat in der ICS-Tabelle keine formalen Ären. Das Archaikum besitzt Ären, aber keine global ratifizierten Perioden. Auch das Ediacarium ist dort noch nicht formal in Epochen und Alter gegliedert. Leere Felder bedeuten fehlende formale Unterteilung, keine Lücke in der Zeit. <a href="#guide-source-chart">[1]</a></dd></div>
+      <div><dt>Unterperiode, Unterepoche, Unteralter</dt><dd>Zusätzliche Unterteilungen sind möglich. Beispielsweise stehen im Karbon Mississippium und Pennsylvanium als Unterperioden; im Holozän gibt es frühe, mittlere und späte Unterepochen. Die fünf Hauptränge sind deshalb ein Grundgerüst, keine vollständige Liste aller Bezeichnungen. <a href="#guide-source-ics-guide">[3]</a> <a href="#guide-source-holocene">[5]</a></dd></div>
+      <div><dt>Chron</dt><dd>Ein gesondert definierter Zeitabschnitt, zum Beispiel in der Gliederung nach der Polarität des Erdmagnetfelds. Ein Chron ist keine allgemein verbindliche sechste Sprosse unter „Age“; die zugehörige Chronozone liegt außerhalb dieser Ranghierarchie. <a href="#guide-source-ics-guide">[3]</a></dd></div>
+      <div><dt>Anthropozän</dt><dd>Ein verbreiteter Begriff für den Einfluss des Menschen auf das Erdsystem. Der Vorschlag für eine formale Epoche wurde 2024 abgelehnt. In der hier verwendeten ICS-Tabelle 2026/06 leben wir weiterhin im Holozän. Der menschliche Einfluss wird durch diese formale Entscheidung nicht bestritten. <a href="#guide-source-anthropocene">[6]</a></dd></div>
+     </dl>
+    </div>
+   </details>
+  </div>
+
+  <div class="guide-sources">
+   <strong>QUELLEN / BEGRIFFE UND GRENZEN</strong>
+   <ol>
+    <li id="guide-source-chart"><a href="https://stratigraphy.org/ICSchart/ChronostratChart2026-06.pdf">ICS: International Chronostratigraphic Chart, v2026/06 (PDF)</a> · Namen, Hierarchie und Zahlen; CC BY 4.0.</li>
+    <li id="guide-source-terms"><a href="https://www.stratigraphie.de/perm-trias/dsk_richtlin.htm">Steininger &amp; Piller (1999): Stratigraphische Richtlinien</a> · deutsche und englische Fachbegriffe.</li>
+    <li id="guide-source-ics-guide"><a href="https://stratigraphy.org/guide/chron">ICS: Stratigraphic Guide, Kapitel 9</a> · Ränge, Zeit und Gestein, Grenzdefinitionen. Aktuelle Einheiten und Alterszahlen folgen Quelle 1.</li>
+    <li id="guide-source-boundaries"><a href="https://stratigraphy.org/gssps/">ICS: GSSP-Verzeichnis und Verfahren</a> · Referenzpunkte und internationale Festlegung.</li>
+    <li id="guide-source-holocene"><a href="https://doi.org/10.18814/epiiugs/2018/018016">Walker et al. (2018): Unterteilung des Holozäns</a> · Alter, Unterepochen und Bezugsjahre.</li>
+    <li id="guide-source-anthropocene"><a href="https://stratigraphy.org/news/152">IUGS/ICS (2024): Entscheidung zum Anthropozän</a> · Status als formale Epoche.</li>
+   </ol>
+   <p>Eigenständig formulierte Lernhilfe; deutsche Bezeichnungen und Darstellung sind redaktionelle Anpassungen. Mit den verlinkten Quellen abgeglichen am 24. November 2026.</p>
+  </div>
+  <p class="guide-continue"><a href="#zeit-explorer" class="mo-btn mo-btn-primary">Die Einteilung auf der Zeitleiste erkunden ↓</a><span>Die Zeitleiste zeigt Äonen, Ären und Perioden. Epochen und Alter werden oben anhand ausgewählter Beispiele erklärt.</span></p>
+ </div>
+</details>
+<div id="zeit-explorer" class="guide-explorer-heading"><h2>Geologische Zeit erkunden</h2><span>Äonen · Ären · Perioden</span></div>
 <div class="earth-toolbar" aria-label="Zeitausschnitt auswählen">
  <div class="earth-toolgroup"><span class="earth-toolgroup-label">ANSICHT</span>
  <button type="button" class="mo-btn mo-btn-sm active" data-preset="all" aria-pressed="true">Gesamte Erde</button>
