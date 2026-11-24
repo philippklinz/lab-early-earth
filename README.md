@@ -8,7 +8,7 @@ Ein eigenständiges, interaktives Lernlabor zur Entstehung der Erde und zur geol
 
 | Unterlabor | Seite | Was funktioniert? |
 |---|---|---|
-| 01 — Proto-Erde | [01_protoerde.html](01_protoerde.html) | Sieben steuerbare **schematische** 3D-Szenen über Planetenentstehung, Akkretion, Magmaozeane, Differentiation und Mondentstehung. Fachliche Beschreibungen funktionieren auch ohne 3D. |
+| 01 — Proto-Erde | [01_protoerde.html](01_protoerde.html) | Ein zusammenhängendes **schematisches** 3D-Modell mit neun Entwicklungsstationen, Kamerafahrt, frei beweglichem Regler, Theia-Einschlag und Mondbildung. Breite Bühne, Erklärungen darunter. |
 | 02 — Geological Time Explorer | [02_zeitmassstab.html](02_zeitmassstab.html) | Maßstabsgetreue Zeitachse mit Zoom, Auswahl, **36 illustrierten Zeitporträts** und aufklappbarer Erklärung der Zeiteinteilung: Äon, Ära, Periode, Epoche und Alter (Age). |
 | 03 — Geological Time Trainer | [03_zeittrainer.html](03_zeittrainer.html) | Multiple Choice, Reihenfolge, Zuordnung, numerische Grenzwerte, Platzierung, aktive Erinnerung, tägliche Wiederholungen und Lückentabelle. |
 
@@ -70,19 +70,25 @@ Die einfachen Wiederholungsintervalle sind **1, 3, 7, 14 und 30 Tage**. Fehler b
 
 ## Three.js-Modell und seine Grenzen
 
-Der [Proto-Erde-Explorer](01_protoerde.html) lädt **Three.js 0.160.0** als fest versioniertes ES-Modul über ein CDN und benötigt für 3D eine Internetverbindung. Die Erklärungen und Schaltflächen bleiben unabhängig von WebGL und der Bibliothek bedienbar.
+Der [Proto-Erde-Explorer](01_protoerde.html) verwendet eine **lokal enthaltene Three.js 0.160.0**. Alle Oberflächen, Partikel und Texturen werden im Labor erzeugt; zur Laufzeit werden keine externen Skripte oder Bilder angefordert. Die Erklärungen und Stationsauswahl bleiben auch ohne WebGL bedienbar. Ohne JavaScript gibt es eine lesbare Zusammenfassung.
 
-**Es handelt sich ausdrücklich nicht um eine physikalische Simulation.** Die 3D-Szenen berechnen weder N-Körper-Bahnen noch Fluiddynamik, thermodynamische Prozesse, echte Materialverteilungen oder die Mondbildung. Rotationen, Farben, Größen und Szenenfolgen sind schematische Interpretationen. Die einzelnen frühen Vorgänge können sich überschneiden.
+Sonne, Erde, Theia und Mond gehören zu **einer Szene**. Der Regler verändert ihren Zustand in beide Richtungen; auch beim Zurückgehen werden keine unabhängigen Modelle ausgetauscht. Neun Stationen gliedern den Ablauf: Scheibe, Planetesimale, Proto-Erde, Magmaozean, Kernbildung, Theia, Trümmer, junger Mond, Abkühlung. Die Kamera fährt vom Sonnensystem zur Erde und hält beim Einschlag mehr Platz für den Kollisionspartner frei.
+
+Abspielen/Pause, Tempo, Stationssprünge und ein frei beweglicher Regler steuern den Ablauf. Die Kamera lässt sich mit Maus/Touch oder Pfeiltasten drehen; Zoom, Rücksetzen, Beschriftung, Innenaufbau und Vollbild sind separat bedienbar. Reduzierte Bewegung unterbindet automatische Übergänge; explizit gestartete Wiedergabe bleibt möglich. Im Pausezustand läuft keine dauernde Render-Schleife.
+
+**Es handelt sich ausdrücklich nicht um eine physikalische Simulation.** Das Storyboard berechnet weder N-Körper-Bahnen noch Fluiddynamik, thermodynamische Prozesse, echte Materialverteilungen oder die Mondbildung. Größen, Abstände, Oberflächen und Abläufe sind schematisch; der Regler ist keine kalibrierte Zeitachse. Frühe Vorgänge können sich überschneiden. Die Theia-Sequenz zeigt einen didaktischen Modellweg, keine gesicherte Einzelrekonstruktion. Fachliche Quellen und Grenzen stehen unter der Ansicht.
 
 ## Architektur
 
 - GitHub Pages, statisches HTML, CSS und JavaScript; kein Backend, Build oder Framework erforderlich.
 - Lokal versionierte [Modern-Objectivity-Referenz-CSS](https://philippklinz.github.io/modern-objectivity-style/) (`modern-objectivity.css`) und eigenständige Labor-Bühne (`earth-lab.css`).
 - `timeline.js` und `trainer.js` verwenden dieselbe geologische Quelle (`time-data.js`) ohne Fremddienste.
-- `proto-earth.js` ist ein optionales 3D-Modul. Ohne WebGL ist die textliche Nutzung weiterhin möglich.
+- `proto-model.js` liefert den reversiblen Modellzustand und die Erklärungen; `proto-controls.js` steuert die Bedienung; `proto-earth.js` rendert die dauerhafte Szene. `proto-earth.css` gestaltet die breite Bühne. Ohne WebGL ist die textliche Nutzung weiterhin möglich.
 - Die neue Zeitskala ist gegen ICS 2026/06 abgeglichen; die Funktionslogik wurde statisch und mithilfe simulierter DOM-Interaktionen geprüft. Ein umfassender visueller und assistiver Browser-Test steht noch aus.
 
 ## Entwicklung und Lizenzen
+
+Modell-Verhalten prüfen: `node --test tests/proto-model.test.cjs`. Zusätzlich müssen Kamerafahrt, Einschlag, Pausenverhalten, Text-Fallback und die breite Ansicht im Browser geprüft werden; ein Zahlen-/Zustandstest ersetzt keine visuelle Prüfung.
 
 - [AGENTS.md](AGENTS.md): Entwicklungsgrundsätze und technische Leitplanken.
 - [Ausbauplan LAB 01](docs/LAB-01-ROADMAP.md): Details und nächste Schritte.

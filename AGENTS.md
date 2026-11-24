@@ -19,7 +19,7 @@ Entstehung der Erde, frühe Kruste, Ozeane, Atmosphäre und geologische Zeit.
 
 ### Implemented exhibits (working prototypes)
 
-- `01_protoerde.html`: seven controllable conceptual Three.js scenes; **not a physics simulation**.
+- `01_protoerde.html`: one persistent Three.js scene with nine reversible development stations, camera travel, a Theia impact sequence and Moon formation; **not a physics simulation**. Full-width viewport, explanations below.
 - `02_zeitmassstab.html` + `timeline.js`: proportional time viewer, zoom, pan, hierarchy, masking.
 - `03_zeittrainer.html` + `trainer.js`: daily and free active-recall practice, intervals, approximate placement, hide/reveal memory strip.
 - `04_junge_erde.html` + `young-earth.js`: functional early-Earth process explorer with three conceptual SVG views and separate observations, interpretations and unknowns.
@@ -84,9 +84,9 @@ Read [docs/LAB-01-ROADMAP.md](docs/LAB-01-ROADMAP.md) before implementing learni
 - `earth-lab.css` is the local stage design; keep `modern-objectivity.css` as an unchanged upstream vendor stylesheet.
 - Keep the full-Earth timeline **proportional**. The other presets are zoom states, not different age data.
 - Trainer progression is local-only (`localStorage`). Free practice **must not** write progress; due-date sessions may. Keep straightforward interval logic and reset controls.
-- The 3D viewer uses Three.js 0.160.0 from an external pinned CDN. Its inline page controls work even if Three.js cannot be loaded. Do not claim N-body, SPH or temperature-field simulation.
+- The 3D viewer uses locally vendored Three.js 0.160.0 (`vendor/three/`, MIT). `proto-model.js` evaluates a deterministic storyboard, `proto-controls.js` handles playback/text without WebGL, and `proto-earth.js` retains one scene and its objects while scrubbing. Keep the no-WebGL/no-JavaScript explanations, reduced-motion behavior and paused render loop. Do not claim N-body, SPH or temperature-field simulation, or a calibrated time axis. Theia's collision precedes the Moon's appearance. Run `node --test tests/proto-model.test.cjs` and check actual browser rendering after model changes.
 - Preserve third-party attribution in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). ICS data = CC BY 4.0, Three.js = MIT, Modern Objectivity = GPL-2.0-only.
-- Verify links among `index.html`, `01_protoerde.html`, `02_zeitmassstab.html`, `03_zeittrainer.html`. M4/M5 remain future work.
+- Verify links among `index.html` and all five implemented modules.
 - Correctness is scientific and behavioral: positive interval durations; no gaps between adjacent stratigraphic units at the same rank; keyboard-usable selections; accurate feedback; scientific uncertainty visible.
 
 ## 36 geological portraits and personal notes

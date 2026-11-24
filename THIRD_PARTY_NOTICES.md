@@ -34,14 +34,18 @@ The text and nested HTML illustration in `02_zeitmassstab.html#zeiteinteilung` a
 - **Library:** Three.js, contributors to the Three.js project.
 - **Version:** 0.160.0.
 - **Source:** https://github.com/mrdoob/three.js
-- **Runtime module:** https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js
-- **License:** MIT: https://github.com/mrdoob/three.js/blob/r160/LICENSE
-- **Integration:** This library is loaded as a pinned external ES module for the `01_protoerde.html` conceptual 3D illustration. It is not bundled or redistributed locally. All planet scene logic in `proto-earth.js` belongs to this project.
+- **Pinned source:** tag `r160`, commit `d04539a76736ff500cae883d6a38b3dd8643c548`.
+- **Runtime module:** unmodified upstream `build/three.module.min.js`, copied to `vendor/three/three.module.min.js`.
+- **License:** MIT; the full upstream notice is included in [vendor/three/LICENSE](vendor/three/LICENSE).
+- **Integration:** Locally vendored ES module for the `01_protoerde.html` conceptual 3D illustration. No CDN request is required. Scene geometry, procedural shaders/textures, storyboard and controls are authored for this project.
 
-## NASA Moon formation information
+## Proto-Earth scientific references
 
-- **Factual reference:** https://science.nasa.gov/moon/formation/
-- No NASA images, datasets or visual media are embedded in the 3D viewer.
+- NASA, *Solar System Facts*: https://science.nasa.gov/solar-system/solar-system-facts/
+- NASA, *Moon Formation*: https://science.nasa.gov/moon/formation/
+- NASA, *Earth Facts*: https://science.nasa.gov/earth/facts/
+- NASA Earth Observatory, *Ancient Crystals Suggest Earlier Ocean*: https://science.nasa.gov/earth/earth-observatory/ancient-crystals-suggest-earlier-ocean/
+- These are factual references for independently authored German explanations, checked on 24 November 2026. No NASA images, datasets or visual media are embedded. The Theia trajectory, material motion, surface patterns, camera travel and development timing are illustrative choices, not research simulation outputs.
 
 ## License scope
 

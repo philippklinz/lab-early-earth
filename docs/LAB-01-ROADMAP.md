@@ -1,6 +1,6 @@
 # LAB 01 — Die frühe Erde: Ausbauplan v0.1
 
-**Status (22. November 2026):** M1 (Zeit-Explorer), M2 (Lerntrainer) und ein schematischer M3-Prototyp (Three.js) sind implementiert. M4–M5 sind inzwischen als erste interaktive Prototypen umgesetzt. Prototypen sind nicht automatisch wissenschaftlich, visuell oder barrierefrei vollständig validiert.
+**Status (24. November 2026):** M1 (Zeit-Explorer), M2 (Lerntrainer) und M3 (zusammenhängendes Three.js-Storyboard mit Theia-Einschlag) sind implementiert. M4–M5 sind inzwischen als erste interaktive Prototypen umgesetzt. Prototypen sind nicht automatisch wissenschaftlich, visuell oder barrierefrei vollständig validiert.
 
 ## Ziel
 
@@ -10,7 +10,7 @@ Ein eigenständiges, statisches Geowissenschafts-Lernlabor mit mehreren Unterlab
 
 | Modul | Pfad (Vorschlag) | Zweck | Kerninteraktion |
 | --- | --- | --- | --- |
-| 01 Proto-Erde | `01_protoerde.html` | Entstehung des Planeten: Akkretion, Differentiation, Einschläge, Mondentstehung | 3D-Szenen und Ereignis-Schritte |
+| 01 Proto-Erde | `01_protoerde.html` | Entstehung des Planeten: Akkretion, Differentiation, Einschläge, Mondentstehung | Eine dauerhafte 3D-Szene, kontinuierlicher Entwicklungsregler, neun Stationen |
 | 02 Geological Time Explorer | `02_zeitmassstab.html` | Äonen, Ären, Perioden, Epochen und Belege | Zoom-/Pan-Zeitleiste, Hierarchiebaum, Zeitraumvergleich |
 | 03 Geological Time Trainer | `03_zeittrainer.html` | Geologische Zeitgliederung festigen | Karteikarten, Reihenfolge, Einordnen, Grenzen schätzen |
 | 04 Die junge Erde | `04_junge_erde.html` | Hadaikum/Archaikum: Oberfläche, Atmosphäre, Wasser, Kruste | Schichten/Parameter und zeitlicher Vergleich |
@@ -84,7 +84,7 @@ Eine interaktive Szene kann besonders gut folgende Phasen darstellen:
 
 Steuerung: Pause/Play, Einzelschritt, Zeitsprung, Kameraperspektive, Schichten, Legende, kurze Kontexterklärung. Keine falsche Behauptung realistischer Orbitaldynamik bei rein choreografierten Animationen. Visualisierte Partikelmengen und Zeitskalierung offen als schematisch markieren.
 
-Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, ohne die stratigraphischen Daten oder Ranghierarchie zu manipulieren.
+Der aktuelle Entwicklungsregler ist bewusst keine datierte Zeitachse. Ein Link führt zur Einordnung ins Hadaikum im Timeline Explorer. Falls später konkrete Zeitmarker ergänzt werden, müssen sie dessen Datenbasis verwenden und die Unsicherheit der Prozessdatierung getrennt ausweisen.
 
 ## Reihenfolge der Umsetzung
 
@@ -92,7 +92,7 @@ Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, oh
 
 **M2 — Erinnern und Wiederholen (Prototyp implementiert):** täglicher Lerntrainer, Einordnungs-/Reihenfolgeaufgaben, freie Übung und lokaler Fortschritt. Wichtigste Anforderung: nach kurzer Nutzung kann der Lernende die 4 Äonen und 3 Ären selbst reproduzieren.
 
-**M3 — Proto-Erde in 3D (schematischer Viewer implementiert):** Drei.js-Storyboard mit 4–6 klar getrennten Zeit-/Prozessphasen. Physik- und Evidenzhinweise gut sichtbar. Prüfen, ob lokale Three.js-Bündelung sinnvoll ist.
+**M3 — Proto-Erde in 3D (zusammenhängender Viewer implementiert):** Ein Three.js-Storyboard mit neun anwählbaren Stationen und stetigen Zustandsübergängen. Die Kamera verbindet Sonnensystem und Erde; Theia trifft ein, Material wird ausgeworfen, eine Trümmerscheibe und der junge Mond entstehen. Querschnitt, Rückwärts-Scrubbing, Pause, Tempo, Vollbild und freie Kamera sind bedienbar. Breite Bühne, Erklärungen darunter. Three.js r160 ist samt MIT-Lizenz lokal enthalten. Physik- und Evidenzhinweise bleiben sichtbar.
 
 **M4 — Junge Erde und Methoden (erste Prototypen umgesetzt):** Hadaikum, Archaikum, Gesteins- und Isotopenbelege, alternative Rekonstruktionsmodelle.
 
@@ -116,7 +116,7 @@ Die Simulation soll dieselben Zeitmarker wie der Timeline Explorer verwenden, oh
 - `time-data.js`: gemeinsame ICS-2026/06-Basis für Äonen, Ären und Perioden.
 - `02_zeitmassstab.html` / `timeline.js`: 4.567–0 Ma proportional, Zoom/Schwenken, Maskieren, Hierarchie und Detailinformationen.
 - `03_zeittrainer.html` / `trainer.js`: tägliche Wiederholungen, freie Runden, verschiedene Aufgaben, Lückenstreifen, lokales Zurücksetzen.
-- `01_protoerde.html` / `proto-earth.js`: sieben schematische Three.js-Szenen, nicht physikalisch berechnet; verständlicher Fallback ohne WebGL.
+- `01_protoerde.html` / `proto-model.js` / `proto-controls.js` / `proto-earth.js`: eine schematische Three.js-Szene mit neun reversiblen Entwicklungsstationen; keine physikalische Berechnung. Erklärungen funktionieren ohne WebGL; ohne JavaScript bleibt eine textliche Übersicht. Zustandsprüfungen: `node --test tests/proto-model.test.cjs`.
 - `THIRD_PARTY_NOTICES.md`: wissenschaftliche Quellen, Namensnennung und separate Lizenzen.
 - M4 und M5: erste funktionsfähige Prototypen vorhanden; wissenschaftliche Vertiefungen können folgen.
 
