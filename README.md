@@ -76,6 +76,8 @@ Sonne, Erde, Theia und Mond gehören zu **einer Szene**. Der Regler verändert i
 
 Abspielen/Pause, Tempo, Stationssprünge und ein frei beweglicher Regler steuern den Ablauf. Die Kamera lässt sich mit Maus/Touch oder Pfeiltasten drehen; Zoom, Rücksetzen, Beschriftung, Innenaufbau und Vollbild sind separat bedienbar. Reduzierte Bewegung unterbindet automatische Übergänge; explizit gestartete Wiedergabe bleibt möglich. Im Pausezustand läuft keine dauernde Render-Schleife.
 
+Zu jeder Station stehen ein **ungefähres Alter und die geologische Einordnung** direkt im 3D-Fenster und in der Infobox. Die Zeitanker reichen von etwa 4,57 Milliarden Jahren bis zu einem gewählten Endpunkt um 4,0 Milliarden Jahre im frühen Archaikum. Die letzte Station umfasst etwa 4,4–4,0 Milliarden Jahre: Kruste und Hinweise auf flüssiges Wasser reichen bereits ins Hadaikum zurück. Die ICS-Grenze zum Archaikum und der Beginn der Skala werden aus dem vorhandenen `time-data.js` übernommen. Altersangaben werden nicht zwischen Modellzuständen interpoliert; Theia, Trümmer und junger Mond teilen denselben groben Zeitanker um 4,5 Milliarden Jahre.
+
 **Es handelt sich ausdrücklich nicht um eine physikalische Simulation.** Das Storyboard berechnet weder N-Körper-Bahnen noch Fluiddynamik, thermodynamische Prozesse, echte Materialverteilungen oder die Mondbildung. Größen, Abstände, Oberflächen und Abläufe sind schematisch; der Regler ist keine kalibrierte Zeitachse. Frühe Vorgänge können sich überschneiden. Die Theia-Sequenz zeigt einen didaktischen Modellweg, keine gesicherte Einzelrekonstruktion. Fachliche Quellen und Grenzen stehen unter der Ansicht.
 
 ## Architektur

@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const context = {window:{}};
-vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../proto-model.js'),'utf8'),context);
+for(const file of ['time-data.js','proto-model.js'])vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../'+file),'utf8'),context);
 const {stateAt,chapters,sources} = context.window.ProtoEarthModel;
 
 test('stations span the whole storyboard and have resolvable sources',()=>{

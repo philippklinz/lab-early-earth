@@ -7,9 +7,10 @@
 <title>Proto-Erde in 3D — Die frühe Erde</title>
 <link rel="stylesheet" href="modern-objectivity.css">
 <link rel="stylesheet" href="earth-lab.css">
-<link rel="stylesheet" href="proto-earth.css">
-<script defer src="proto-model.js"></script>
-<script defer src="proto-controls.js"></script>
+<link rel="stylesheet" href="proto-earth.css?v=20261124-time">
+<script defer src="time-data.js"></script>
+<script defer src="proto-model.js?v=20261124-time"></script>
+<script defer src="proto-controls.js?v=20261124-time"></script>
 <script type="module" src="proto-earth.js"></script>
 </head>
 <body class="earth-stage">
@@ -26,7 +27,7 @@
 
 <section class="proto-exhibit" id="proto-exhibit" aria-label="Interaktives Modell der Erdentstehung">
  <div class="proto-viewport" id="proto-viewport">
-  <div class="proto-stage-head"><span>FRÜHES SONNENSYSTEM <span class="proto-head-divider">/</span> <span id="proto-view-label">ÜBERBLICK</span></span><span>RÄUMLICHES MODELL</span></div>
+  <div class="proto-stage-head"><span class="proto-scene-heading">FRÜHES SONNENSYSTEM <span class="proto-head-divider">/</span> <span id="proto-view-label">ÜBERBLICK</span></span><div class="proto-stage-time" aria-label="Ungefähre zeitliche Einordnung"><strong id="stage-age">vor ca. 4,57 Mrd. Jahren</strong><span id="stage-eon">Beginn des Hadaikums</span></div></div>
   <div id="proto-labels" class="proto-labels" aria-hidden="true">
    <span class="proto-object-label" id="label-sun">Junge Sonne</span>
    <span class="proto-object-label" id="label-earth">Bildungsbereich der Erde</span>
@@ -54,7 +55,7 @@
   <div class="proto-range-captions"><span>Gas &amp; Staub</span><span>Wachstum &amp; Schmelze</span><span>Theia &amp; Mond</span><span>Frühe Erde</span></div>
  </div>
 </section>
-<div class="proto-help"><p id="proto-time-note">Der Regler ordnet Modellschritte, keine gleich langen Zeitabschnitte. Prozesse wie Akkretion und Kernbildung überlappen sich.</p><p id="proto-camera-help">Ziehen: drehen · Strg + Mausrad: zoomen · Tastatur im 3D-Fenster: Pfeile, + / −, Pos1.</p></div>
+<div class="proto-help"><p id="proto-time-note">Die Altersangaben geben eine grobe Orientierung. Mrd. = Milliarden Jahre vor heute. Der Regler zeigt unterschiedlich lange, teils überlappende Modellschritte.</p><p id="proto-camera-help">Ziehen: drehen · Strg + Mausrad: zoomen · Tastatur im 3D-Fenster: Pfeile, + / −, Pos1.</p></div>
 <p id="proto-status" class="proto-status" role="status"></p>
 
 <nav class="proto-chapters" aria-label="Entwicklungsstationen">
@@ -72,24 +73,26 @@
 <section class="proto-inspector earth-datapanel" aria-labelledby="phase-name">
  <div class="proto-inspector-header"><span class="earth-overline">DIE ENTWICKLUNG VERSTEHEN / <span id="phase-number">01 / 09</span></span><button type="button" id="play-impact" class="mo-btn mo-btn-sm">Theia-Einschlag abspielen ↗</button></div>
  <h2 id="phase-name">Eine Scheibe um die junge Sonne</h2>
+ <div class="proto-time-context"><div><span class="earth-overline">ZEITLICHE EINORDNUNG</span><strong id="phase-age">vor ca. 4,57 Milliarden Jahren</strong><span id="phase-eon">Beginn des Hadaikums</span></div><p id="phase-time-note">Um die Entstehung des Sonnensystems. 4,57 Milliarden Jahre ist ein gerundeter Zeitanker; die Erde ist noch kein fertiger Planet.</p></div>
  <div class="proto-explanation-grid">
   <div><h3>Was du siehst</h3><p id="phase-description">Gas und Staub umgeben die junge Sonne. Die feinen Punkte stehen für festes Material in dieser Scheibe. Rechts ist der Bereich markiert, in dem wir später die Erde verfolgen.</p><p id="phase-hint" class="proto-hint">Gehe langsam weiter: Aus dem feinen Material treten größere Körper hervor.</p></div>
   <div><h3>Wissenschaftliche Einordnung</h3><p id="phase-evidence">Aus dem Material einer protoplanetaren Scheibe können Planeten entstehen. Noch gibt es hier keine fertige Erde. Beobachtungen junger Sternsysteme liefern Vergleichsbilder für solche Scheiben.</p><div class="proto-source-links" id="phase-sources"><a href="https://science.nasa.gov/solar-system/solar-system-facts/">NASA · Entstehung des Sonnensystems</a></div></div>
  </div>
 </section>
 
-<noscript><section class="earth-datapanel proto-noscript"><h2>Die Entwicklung im Überblick</h2><p>Für die interaktive 3D-Ansicht und den Entwicklungsregler wird JavaScript benötigt.</p><ol><li>Gas und Staub umgeben die junge Sonne.</li><li>Planetesimale und größere Protoplaneten wachsen.</li><li>Die Proto-Erde gewinnt Material und wird heißer.</li><li>Große Schmelzbereiche können entstehen.</li><li>Metall sammelt sich im Kern; silikatisches Material bildet den Mantel.</li><li>In der Giant-Impact-Hypothese kollidiert ein Protoplanet namens Theia mit der Erde.</li><li>Ausgeworfenes Material verteilt sich um die Erde.</li><li>Ein junger Mond entsteht; die Einzelheiten sind Gegenstand der Forschung.</li><li>Die Erde kühlt ab. Kruste, Atmosphäre und frühes Wasser entwickeln sich.</li></ol></section></noscript>
+<noscript><section class="earth-datapanel proto-noscript"><h2>Die Entwicklung im Überblick</h2><p>Für die interaktive 3D-Ansicht und den Entwicklungsregler wird JavaScript benötigt. Alle Zeitangaben sind grob gerundet und beziehen sich auf Jahre vor heute.</p><ol><li><strong>Vor ca. 4,57 Milliarden Jahren:</strong> Gas und Staub umgeben die junge Sonne.</li><li><strong>Vor ca. 4,57–4,56 Milliarden Jahren:</strong> Planetesimale und größere Protoplaneten wachsen.</li><li><strong>Vor rund 4,5 Milliarden Jahren:</strong> Die Proto-Erde gewinnt Material und wird heißer.</li><li><strong>Vor rund 4,5 Milliarden Jahren:</strong> Große Schmelzbereiche können entstehen.</li><li><strong>Vor rund 4,5 Milliarden Jahren:</strong> Metall sammelt sich im Kern; silikatisches Material bildet den Mantel. Wachstum, Aufschmelzen und Kernbildung überlappen sich.</li><li><strong>Vor rund 4,5 Milliarden Jahren:</strong> In der Giant-Impact-Hypothese kollidiert ein Protoplanet namens Theia mit der Erde. Die genaue Datierung ist unsicher.</li><li><strong>Im Anschluss an diesen Einschlag:</strong> Ausgeworfenes Material verteilt sich um die Erde.</li><li><strong>Im selben frühen Ereigniskomplex:</strong> Ein junger Mond entsteht; die Einzelheiten sind Gegenstand der Forschung.</li><li><strong>Vor ca. 4,4–4,0 Milliarden Jahren:</strong> Die letzte Station fasst Abkühlung, Kruste, Atmosphäre und frühes Wasser bis ins frühe Archaikum zusammen. Hinweise auf Kruste und Wasser reichen bereits ins Hadaikum zurück.</li></ol></section></noscript>
 
 <details class="proto-model-note"><summary>Über dieses Modell und seine Quellen</summary><div>
  <p>Du siehst eine zusammenhängende, gestaltete 3D-Erzählung. Sie berechnet keine Gravitation, Strömung oder thermische Entwicklung. Sonne, Erde, Theia, Material und Mond behalten ihre Identität; ihre Darstellung verändert sich kontinuierlich mit dem Regler. Auch die rückwärts laufende Entwicklung ist eine Betrachtungsfunktion, kein physikalischer Vorgang.</p>
  <p>Die Körpergrößen und Entfernungen sind für die Sichtbarkeit stark verändert. Der Kameraflug verbindet den Überblick mit der Nahansicht. Die Zahl der Teilchen steht nicht für reale Mengen oder Massen. Der Erdquerschnitt, die glühenden Oberflächen und die Wolken sind schematisch. Die Reihenfolge hebt Prozesse hervor, die sich in Wirklichkeit überschneiden; insbesondere finden Wachstum, Kernbildung und Aufschmelzen nicht sauber nacheinander statt.</p>
  <p>Beim Theia-Einschlag zeigen wir einen möglichen didaktischen Ablauf: Annäherung, Kollision, Auswurf, Trümmerscheibe und wachsender Mond. Einschlagswinkel, Materialverteilung, Bildungsdauer und genaue Datierung sind damit nicht festgelegt. Der junge Mond trägt keine nachgezeichneten heutigen Krater oder Mare.</p>
- <ul><li><a href="https://science.nasa.gov/solar-system/solar-system-facts/">NASA: Solar System Facts</a> – Akkretion und frühes Sonnensystem.</li><li><a href="https://science.nasa.gov/moon/formation/">NASA: Moon Formation</a> – Giant-Impact-Modelle und geologische Belege.</li><li><a href="https://science.nasa.gov/earth/facts/">NASA: Earth Facts</a> – Aufbau der Erde.</li><li><a href="https://science.nasa.gov/earth/earth-observatory/ancient-crystals-suggest-earlier-ocean/">NASA Earth Observatory: Ancient Crystals Suggest Earlier Ocean</a> – Zirkone und Hinweise auf frühes Wasser.</li><li><a href="https://stratigraphy.org/chart/">ICS: International Chronostratigraphic Chart 2026/06</a> – geologische Zeiteinteilung.</li></ul>
+ <p>Die Zeitangaben gehören zu den jeweiligen Entwicklungsstationen. Sie sind gerundete Orientierungswerte, keine fortlaufende Uhr. Mehrere Schritte tragen bewusst dasselbe ungefähre Alter: Ein Einschlag, die anschließende Materialverteilung und die Mondbildung dürfen auf dieser Darstellung nicht mit gleich langen geologischen Zeitabschnitten verwechselt werden. Der letzte Abschnitt reicht von Hinweisen auf frühes Wasser um 4,4 Milliarden Jahre bis zu einem gewählten Endpunkt um 4,0 Milliarden Jahre im frühen Archaikum.</p>
+ <ul><li><a href="https://science.nasa.gov/solar-system/solar-system-facts/">NASA: Solar System Facts</a> – Akkretion und frühes Sonnensystem.</li><li><a href="https://science.nasa.gov/universe/stars/planetary-system/">NASA: Planetary Systems</a> – Planetesimale und Planetenembryonen in den ersten Millionen Jahren.</li><li><a href="https://science.nasa.gov/moon/formation/">NASA: Moon Formation</a> – Giant-Impact-Modelle und geologische Belege.</li><li><a href="https://science.nasa.gov/earth/facts/">NASA: Earth Facts</a> – Aufbau der Erde.</li><li><a href="https://science.nasa.gov/earth/earth-observatory/ancient-crystals-suggest-earlier-ocean/">NASA Earth Observatory: Ancient Crystals Suggest Earlier Ocean</a> – Zirkone und Hinweise auf frühes Wasser.</li><li><a href="https://stratigraphy.org/chart/">ICS: International Chronostratigraphic Chart 2026/06</a> – geologische Zeiteinteilung.</li></ul>
  <p class="proto-small">Alle Darstellungen sind für dieses Labor erstellt. Die 3D-Bibliothek ist lokal enthalten; die Ansicht lädt keine externen Texturen oder Skripte. <a href="THIRD_PARTY_NOTICES.md">Quellen und Lizenzen</a>.</p>
 </div></details>
 
 <section class="earth-mini"><div class="earth-section-heading"><div><span class="earth-overline">WEITER FORSCHEN</span><h2>Wo passt das in die Erdgeschichte?</h2></div></div>
-<div class="earth-mini-grid"><div class="earth-mini-item"><span class="earth-overline">ZEITLICHE EINORDNUNG</span><strong>Hadaikum</strong><p>Das älteste Äon der ICS-Zeitskala, von 4567 bis 4031 Ma. Der Beginn markiert nicht den vollständigen Abschluss der Erdentstehung.</p><a href="02_zeitmassstab.html#unit=had">Auf Zeitleiste ansehen ↗</a></div>
+<div class="earth-mini-grid"><div class="earth-mini-item"><span class="earth-overline">ZEITLICHE EINORDNUNG</span><strong>Hadaikum → Archaikum</strong><p>Das Modell beginnt mit dem frühen Sonnensystem im Bereich des Hadaikums und reicht bis ins frühe Archaikum. Entdecke beide Äonen auf der maßstabsgetreuen Zeitleiste.</p><a href="02_zeitmassstab.html#unit=had">Hadaikum ↗</a> · <a href="02_zeitmassstab.html#unit=arc">Archaikum ↗</a></div>
 <div class="earth-mini-item"><span class="earth-overline">DAS WARUM</span><strong>Geochemische Spuren</strong><p>Radiometrische Altersbestimmungen von Meteoriten und alten Mineralen helfen, den frühen Zeitraum zu rekonstruieren.</p><a href="05_geologische_methoden.html">Belege untersuchen ↗</a></div>
 <div class="earth-mini-item"><span class="earth-overline">DIE NÄCHSTE FRAGE</span><strong>Wie sah die junge Erde aus?</strong><p>Erkunde, wie sich Kruste, Atmosphäre und Wasser gegenseitig beeinflussen konnten.</p><a href="04_junge_erde.html">Die junge Erde erkunden ↗</a></div></div></section>
 </main>

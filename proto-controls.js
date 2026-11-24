@@ -15,6 +15,11 @@
     if (state.chapter !== chapter) {
       chapter = state.chapter;
       const item = M.chapters[chapter];
+      $('stage-age').textContent = item.time.age;
+      $('stage-eon').textContent = item.time.eon;
+      $('phase-age').textContent = item.time.age.replace('Mrd.', 'Milliarden');
+      $('phase-eon').textContent = item.time.eon;
+      $('phase-time-note').textContent = item.time.note;
       $('phase-name').textContent = item.name;
       $('phase-description').textContent = item.description;
       $('phase-evidence').textContent = item.observation;
@@ -28,7 +33,7 @@
       phaseButtons.forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.phase) === chapter)));
     }
     $('proto-progress').value = String(Math.round(progress * 1000));
-    $('proto-progress').setAttribute('aria-valuetext', Math.round(progress * 100) + ' Prozent des Modellablaufs: ' + state.event);
+    $('proto-progress').setAttribute('aria-valuetext', Math.round(progress * 100) + ' Prozent des Modellablaufs: ' + state.event + ', ' + M.chapters[chapter].time.age.replace('Mrd.', 'Milliarden') + ', ' + M.chapters[chapter].time.eon);
     $('stage-caption').textContent = state.event;
     $('proto-progress-label').textContent = state.event;
     $('prev-phase').disabled = progress <= 0;

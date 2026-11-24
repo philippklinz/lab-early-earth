@@ -84,7 +84,7 @@ Eine interaktive Szene kann besonders gut folgende Phasen darstellen:
 
 Steuerung: Pause/Play, Einzelschritt, Zeitsprung, Kameraperspektive, Schichten, Legende, kurze Kontexterklärung. Keine falsche Behauptung realistischer Orbitaldynamik bei rein choreografierten Animationen. Visualisierte Partikelmengen und Zeitskalierung offen als schematisch markieren.
 
-Der aktuelle Entwicklungsregler ist bewusst keine datierte Zeitachse. Ein Link führt zur Einordnung ins Hadaikum im Timeline Explorer. Falls später konkrete Zeitmarker ergänzt werden, müssen sie dessen Datenbasis verwenden und die Unsicherheit der Prozessdatierung getrennt ausweisen.
+Der Entwicklungsregler ist keine kalibrierte Zeitachse. Die Stationen tragen grobe Altersangaben und ihre Einordnung ins Hadaikum bzw. frühe Archaikum. ICS-Grenzen stammen aus `time-data.js`; die Prozessalter sind gerundete, teils überlappende Orientierungswerte mit Quellen. Theia, Trümmer und Mondbildung teilen denselben ungefähren Zeitanker. Der Abschluss umfasst etwa 4,4–4,0 Milliarden Jahre und unterscheidet frühe Wasserhinweise vom späteren Beginn des Archaikums. Links führen zu beiden Äonen im Timeline Explorer.
 
 ## Reihenfolge der Umsetzung
 

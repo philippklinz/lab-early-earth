@@ -42,10 +42,12 @@ The text and nested HTML illustration in `02_zeitmassstab.html#zeiteinteilung` a
 ## Proto-Earth scientific references
 
 - NASA, *Solar System Facts*: https://science.nasa.gov/solar-system/solar-system-facts/
+- NASA, *Planetary Systems*: https://science.nasa.gov/universe/stars/planetary-system/ — early planetesimals/embryos and the first millions of years.
 - NASA, *Moon Formation*: https://science.nasa.gov/moon/formation/
 - NASA, *Earth Facts*: https://science.nasa.gov/earth/facts/
 - NASA Earth Observatory, *Ancient Crystals Suggest Earlier Ocean*: https://science.nasa.gov/earth/earth-observatory/ancient-crystals-suggest-earlier-ocean/
 - These are factual references for independently authored German explanations, checked on 24 November 2026. No NASA images, datasets or visual media are embedded. The Theia trajectory, material motion, surface patterns, camera travel and development timing are illustrative choices, not research simulation outputs.
+- Station age labels are deliberately coarse and overlapping. The Hadean starting anchor and Archean boundary reuse the ICS dataset in `time-data.js` (attribution above). The final 4.4–4.0 Ga interval is an editorial summary extending to the early Archean, not a measured duration of crust/ocean formation. Theia, debris and early Moon formation share a single approximate 4.5 Ga anchor; animation progress is never converted into a precise date.
 
 ## License scope
 
