@@ -78,6 +78,8 @@ Abspielen/Pause, Tempo, Stationssprünge und ein frei beweglicher Regler steuern
 
 Zu jeder Station stehen ein **ungefähres Alter und die geologische Einordnung** direkt im 3D-Fenster und in der Infobox. Die Zeitanker reichen von etwa 4,57 Milliarden Jahren bis zu einem gewählten Endpunkt um 4,0 Milliarden Jahre im frühen Archaikum. Die letzte Station umfasst etwa 4,4–4,0 Milliarden Jahre: Kruste und Hinweise auf flüssiges Wasser reichen bereits ins Hadaikum zurück. Die ICS-Grenze zum Archaikum und der Beginn der Skala werden aus dem vorhandenen `time-data.js` übernommen. Altersangaben werden nicht zwischen Modellzuständen interpoliert; Theia, Trümmer und junger Mond teilen denselben groben Zeitanker um 4,5 Milliarden Jahre.
 
+Der Einstieg zeigt bereits eine protoplanetare Scheibe um die junge Sonne. Die erste Station erklärt, warum sie am Beginn des Hadaikums eingeordnet ist: Die formale ICS-Untergrenze beruht auf frühen Feststoffen aus dieser Scheibe; die Erde entsteht im Verlauf des Äons. Die maßgebliche Publikation von Halla et al. (2024) ist direkt verlinkt.
+
 **Es handelt sich ausdrücklich nicht um eine physikalische Simulation.** Das Storyboard berechnet weder N-Körper-Bahnen noch Fluiddynamik, thermodynamische Prozesse, echte Materialverteilungen oder die Mondbildung. Größen, Abstände, Oberflächen und Abläufe sind schematisch; der Regler ist keine kalibrierte Zeitachse. Frühe Vorgänge können sich überschneiden. Die Theia-Sequenz zeigt einen didaktischen Modellweg, keine gesicherte Einzelrekonstruktion. Fachliche Quellen und Grenzen stehen unter der Ansicht.
 
 ## Architektur

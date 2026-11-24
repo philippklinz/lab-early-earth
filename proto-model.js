@@ -16,14 +16,15 @@
     moon: ['NASA · Mondentstehung und ihre Belege', 'https://science.nasa.gov/moon/formation/'],
     earth: ['NASA · Aufbau der Erde', 'https://science.nasa.gov/earth/facts/'],
     water: ['NASA · Alte Zirkone und frühes Wasser', 'https://science.nasa.gov/earth/earth-observatory/ancient-crystals-suggest-earlier-ocean/'],
-    ics: ['ICS · Geologische Zeitskala ' + G.version, G.source]
+    ics: ['ICS · Geologische Zeitskala ' + G.version, G.source],
+    hadean: ['ICS/IUGS · Definition des Hadaikum-Beginns', 'https://doi.org/10.18814/epiiugs/2024/024002']
   };
   const chapters = [
     { at: 0, short: 'Scheibe', name: 'Eine Scheibe um die junge Sonne',
-      time: {age:'vor ca. ' + startGa + ' Mrd. Jahren', eon:'Beginn des Hadaikums', note:'Um die Entstehung des Sonnensystems. ' + startGa + ' Milliarden Jahre ist ein gerundeter Zeitanker; die Erde ist noch kein fertiger Planet.'},
+      time: {age:'vor ca. ' + startGa + ' Mrd. Jahren', eon:'Am Beginn des Hadaikums', note:'Die ICS legt den Beginn des Hadaikums anhand des Alters früher calcium- und aluminiumreicher Einschlüsse in Meteoriten fest. Diese Feststoffe entstanden in der protoplanetaren Scheibe. Eine fertige Erde ist dafür keine Voraussetzung: Ihre Entstehung gehört bereits zum Hadaikum.'},
       description: 'Gas und Staub umgeben die junge Sonne. Die feinen Punkte stehen für festes Material in dieser Scheibe. Rechts ist der Bereich markiert, in dem wir später die Erde verfolgen.',
       observation: 'Aus dem Material einer protoplanetaren Scheibe können Planeten entstehen. Noch gibt es hier keine fertige Erde. Beobachtungen junger Sternsysteme liefern Vergleichsbilder für solche Scheiben.',
-      hint: 'Gehe langsam weiter: Aus dem feinen Material treten größere Körper hervor.', sources: ['solar', 'ics'] },
+      hint: 'Gehe langsam weiter: Aus dem feinen Material treten größere Körper hervor.', sources: ['solar', 'hadean', 'ics'] },
     { at: .14, short: 'Planetesimale', name: 'Aus kleinen Körpern werden größere',
       time: {age:'vor ca. ' + startGa + '–4,56 Mrd. Jahren', eon:'Frühes Hadaikum', note:'Planetesimale und erste Planetenembryonen entstehen bereits in den ersten Millionen Jahren. Der gerundete Bereich ordnet die Aufbauphase ein; nicht alle Körper entstehen oder wachsen gleichzeitig.'},
       description: 'Größere Gesteinskörper erscheinen zwischen dem Staub. Die Kamera nähert sich dem Bildungsbereich der Erde. Die Sonne bleibt am selben Ort im Sonnensystem.',
